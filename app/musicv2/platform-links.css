@@ -1,0 +1,35 @@
+/* Platform links styling */
+.platform-link {
+  transition: all 0.2s ease-in-out;
+  position: relative;
+}
+
+.platform-link:hover {
+  transform: translateY(-2px);
+}
+
+.platform-link:hover .platform-icon {
+  filter: brightness(1.2);
+}
+
+.platform-link .external-icon {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.platform-link:hover .external-icon {
+  opacity: 1;
+}
+
+.platform-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background-color: var(--spotify-green);
+  color: black;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 10px;
+  z-index: 1;
+}

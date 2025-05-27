@@ -65,12 +65,20 @@ function parseFilename(filename: string): Partial<LocalMusicTrack> {
 // Load blob URLs mapping
 function loadBlobUrls(): Record<string, string> {
   try {
-    const blobData = require('./blob-urls.json');
-    const urlMap: Record<string, string> = {};
-    blobData.files?.forEach((file: any) => {
-      urlMap[file.filename] = file.url;
-    });
-    return urlMap;
+    // Use dynamic import to avoid build-time resolution issues
+    const fs = require('fs');
+    const path = require('path');
+    const blobPath = path.join(process.cwd(), 'lib', 'blob-urls.json');
+    
+    if (fs.existsSync(blobPath)) {
+      const blobData = JSON.parse(fs.readFileSync(blobPath, 'utf8'));
+      const urlMap: Record<string, string> = {};
+      blobData.files?.forEach((file: any) => {
+        urlMap[file.filename] = file.url;
+      });
+      return urlMap;
+    }
+    return {};
   } catch (error) {
     console.log('No blob URLs found, using local files');
     return {};

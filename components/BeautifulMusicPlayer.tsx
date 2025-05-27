@@ -150,19 +150,6 @@ export function BeautifulMusicPlayer({
 
   const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
 
-  // Generate a gradient background based on track genre
-  const getGradientForGenre = (genre: string) => {
-    const gradients = {
-      'Hip-Hop': 'from-orange-500/20 via-red-500/20 to-pink-500/20',
-      'Trap': 'from-purple-500/20 via-violet-500/20 to-indigo-500/20',
-      'Chill': 'from-blue-500/20 via-cyan-500/20 to-teal-500/20',
-      'Electronic': 'from-green-500/20 via-emerald-500/20 to-cyan-500/20',
-      'Dark Trap': 'from-gray-500/20 via-slate-500/20 to-zinc-500/20',
-      'Drill': 'from-red-500/20 via-orange-500/20 to-yellow-500/20',
-    };
-    return gradients[genre as keyof typeof gradients] || 'from-purple-500/20 via-pink-500/20 to-purple-500/20';
-  };
-
   return (
     <Card 
       className={`relative overflow-hidden border transition-all duration-500 cursor-pointer group ${
@@ -172,9 +159,6 @@ export function BeautifulMusicPlayer({
       }`}
       onClick={() => onPlayerClick(track.id)}
     >
-      {/* Animated background gradient */}
-      <div className={`absolute inset-0 bg-gradient-to-br ${getGradientForGenre(track.genre || 'Hip-Hop')} opacity-30 transition-opacity duration-500`} />
-      
       {/* Animated progress background */}
       <div 
         className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300 ease-out"
@@ -197,7 +181,7 @@ export function BeautifulMusicPlayer({
             <div className="flex items-center gap-3 mb-2">
               <div className="relative">
                 <div 
-                  className={`w-12 h-12 rounded-full bg-gradient-to-br ${getGradientForGenre(track.genre || 'Hip-Hop')} flex items-center justify-center transition-transform duration-300 ${isPlaying ? 'scale-110' : 'group-hover:scale-105'}`}
+                  className={`w-12 h-12 rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center transition-transform duration-300 ${isPlaying ? 'scale-110' : 'group-hover:scale-105'}`}
                   style={isPlaying ? {
                     animation: `pulse ${getAnimationDuration()} ease-in-out infinite`
                   } : {}}
@@ -225,14 +209,6 @@ export function BeautifulMusicPlayer({
             
             {/* Metadata badges */}
             <div className="flex flex-wrap gap-2">
-              {track.genre && (
-                <Badge 
-                  variant="secondary" 
-                  className="bg-zinc-800/80 text-zinc-300 border border-zinc-700/50 backdrop-blur-sm"
-                >
-                  {track.genre}
-                </Badge>
-              )}
               {track.bpm && (
                 <Badge 
                   variant="secondary" 

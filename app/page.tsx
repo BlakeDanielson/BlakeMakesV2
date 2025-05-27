@@ -16,6 +16,7 @@ import { FeaturedMusicPlayer } from "@/components/featured-music-player"
 
 export default function Home() {
   const aboutRef = useRef<HTMLDivElement>(null)
+  const journeyRef = useRef<HTMLDivElement>(null)
 
   const heroItems = [
     {
@@ -65,24 +66,24 @@ export default function Home() {
     "Team Leadership",
     "Business Development",
     "Project Management",
-    "Cross-Functional Collaboration",
+    "Market Research",
     "Strategic Partnerships",
   ]
 
   // Technical skills
   const technicalSkills = [
+    "Prompt Engineering",
     "Python",
-    "React",
-    "Next.js",
-    "SQL",
-    "TypeScript",
-    "Tailwind CSS",
-    "Data Integration",
-    "Automation",
-    "API Development",
-    "Git/GitHub",
-    "Business Intelligence",
+    "TypeScript", 
+    "React/Next",
+    "Node.js",
+    "FastAPI/Express",
+    "AI/LLM Integration",
+    "PostgreSQL/MySQL",
+    "Web App Development",
     "Database Design",
+    "Automation Scripts",
+    "Cloud Deployment"
   ]
 
   return (
@@ -101,7 +102,7 @@ export default function Home() {
             >
               <h1 className="text-3xl font-bold tracking-tight text-white text-animation-container sm:text-4xl md:text-5xl lg:text-6xl">
                 <div className="flex flex-col items-center">
-                  <span>Hi, I'm Blake, I'm</span>
+                  <span>Hi, I&apos;m Blake, I&apos;m</span>
                   <div className="min-h-[1.5em] flex items-center justify-center">
                     <AnimatedText phrases={identityPhrases} highlightClassName="text-purple-500" />
                   </div>
@@ -109,12 +110,14 @@ export default function Home() {
               </h1>
               <div className="space-y-3 mt-6">
                 <p className="text-lg text-zinc-300 font-medium">
-                  Aspiring Product Manager with a talent for working with different teams and communicating technical
-                  and business concepts to any audience.
+                  Extreme asset to executive teams. Proven history of driving strategic initiatives that grow revenue or reduce internal costs in high-stakes environments.
                 </p>
                 <p className="text-lg text-zinc-300 font-medium">
-                  Looking for a role where I can drive innovation at a fast-growing company where the best idea wins and
-                  I never feel like the smartest person in the room.
+                  Expert at translating complex technical concepts into actionable business strategies that stakeholders of all backgrounds can understand and buy into.
+                </p>
+                <p className="text-lg text-zinc-300 font-medium">
+                  Seeking a leadership role at a visionary company where I can leverage my demonstrated track record of 
+                  success to drive breakthrough innovation and scale transformative products that define markets.
                 </p>
               </div>
               <div className="flex flex-wrap justify-center gap-4 pt-4">
@@ -152,7 +155,7 @@ export default function Home() {
           <div className="mb-8 text-center">
             <Badge className="mb-2 bg-purple-500/20 text-purple-300">About Me</Badge>
             <h2 className="text-3xl font-bold text-white mb-3">
-              Hi, I'm Blake, I'm a <span className="text-purple-500">Product Manager</span>
+              Hi, I&apos;m Blake, I&apos;m a <span className="text-purple-500">Product Manager</span>
             </h2>
             <div className="w-24 h-1 bg-purple-500 rounded-full mx-auto my-4"></div>
           </div>
@@ -187,22 +190,24 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-zinc-300 leading-relaxed">
-                  I started my academic journey in computer science, but quickly realized my true strength lies not just
-                  in coding, but in bridging people, technology, and business. While studying finance at the University
-                  of Denver, I developed an entrepreneurial edge, founded a cryptocurrency arbitrage project and became
-                  one of the most followed analysts on Seeking Alpha for the cannabis industry.
+                  I discovered my superpower early: transforming complex technical challenges into strategic business 
+                  opportunities. Starting in computer science, I quickly pivoted to finance at the University of Denver, 
+                  where I built and scaled a cryptocurrency arbitrage platform and became one of the most followed analysts on Seeking 
+                  Alpha for the cannabis sector.
                 </p>
                 <p className="text-zinc-300 leading-relaxed">
-                  My industry insights caught attention, leading to newsletter writing opportunities that generated over
-                  $100k in subscriptions and an Senior intership with Snoop Dogg's venture capital fund, Casa Verde
-                  Capital.
+                  While still in college I authored 2 weekly financial newsletters covering the cannabis and emerging technology sectors that was sent to over 10,000 paying subscribers.
+                  At the same time, I held down an internship with Snoop Dogg&apos;s venture capital fund, Casa Verde Capital. This wasn&apos;t luck—it was the result of my 
+                  ability to synthesize market data, communicate complex concepts clearly, and build products that solve 
+                  actual and existing problems for real users.
                 </p>
 
                 <p className="text-zinc-300 leading-relaxed">
-                  Post-graduation, my career accelerated as I worked directly with the CEO of California's largest legal
-                  cannabis operator, helping deploy $80 million in strategic investments. My expertise in financial
-                  modeling and analysis has landed partnerships with Fortune 50 companies, while my executive dashboards
-                  have transformed decision-making processes across organizations.
+                  Post-graduation, I jumped straight executive-level finance but quickly pivoted to product and corporate strategy, working directly with the CEO of 
+                  California&apos;s largest legal cannabis operator to deploy $80 million and build the largest indoor cannabis cultivation and processing facility in California.
+                  After several years I explored South Florida working for another Young Presidents Organization member where I architected 
+                  financial models that secured Fortune 50 partnerships, reduced operating costs by successfully integrating AI tools throughout portfolio companies, and transformed 
+                  organizational decision-making by identifying and closing critical communication gaps executives were missing.
                 </p>
               </div>
 
@@ -213,11 +218,11 @@ export default function Home() {
                     <div className="flex h-8 w-8 items-center justify-center rounded-full bg-purple-500/20 text-purple-400">
                       <Code className="h-4 w-4" />
                     </div>
-                    <h3 className="font-semibold text-white">Technical-ish</h3>
+                    <h3 className="font-semibold text-white">Beyond a Finance Bro</h3>
                   </div>
                   <p className="text-zinc-400 text-sm">
-                    Self-taught skid (script kiddie) since 2007, started with minecraft mods, ended up using AI.
-                    Experience in process automation, database management, and system architecture. integration
+                    Self-taught script kiddie since 2007, started with minecraft mods, now I launch my own Web Apps.
+                    Expert in Prompt Engineering, and AI/LLM tools. Experience in python, typescript, API building, PostgreSQL and MySQL database management.
                   </p>
                 </div>
 
@@ -229,9 +234,8 @@ export default function Home() {
                     <h3 className="font-semibold text-white">Cross-Functional Leadership</h3>
                   </div>
                   <p className="text-zinc-400 text-sm">
-                    Thrives in ambigous situations with vague "I'll know it when I see it" goals. Skilled at working
-                    with both technical and business teams, communicating complex concepts to stakeholders of varying
-                    technical backgrounds.
+                    Thrives in ambiguous situations with vague &quot;I&apos;ll know it when I see it&quot; goals. Highly skilled at working
+                    with both technical and business teams, communicating complex concepts to stakeholders of all backgrounds.
                   </p>
                 </div>
               </div>
@@ -246,9 +250,9 @@ export default function Home() {
                     <h3 className="font-semibold text-white">Revenue Generation</h3>
                   </div>
                   <p className="text-zinc-400 text-sm">
-                    Developed sophisticated financial models and executive presentations that secured partnerships with
-                    Fortune 50 companies. Collaborated directly with the CEO to raise and strategically deploy $80M in
-                    capital investments, driving company-wide growth initiatives.
+                    Individually developed financial models and executive presentations that secured partnerships with
+                    Fortune 500 companies. Collaborated directly with the CEO to strategically deploy $80M in
+                    investments and build the largest indoor cannabis facility in California.
                   </p>
                 </div>
 
@@ -260,19 +264,22 @@ export default function Home() {
                     <h3 className="font-semibold text-white">Data-Driven Leadership</h3>
                   </div>
                   <p className="text-zinc-400 text-sm">
-                    Led company-wide automation project to reduce manual work and tedious tasks that slashed annual
-                    costs by $100K+ while enhancing team productivity by 35%.
+                    Led company-wide project with ambiguous goals to reduce tedious tasks and improve communication.
+                    Identified and closed critical communication gaps, reduced labor costs by $100k/yr, and increased surveyed employee&apos;s morale by 30%.
                   </p>
                 </div>
               </div>
 
               <div className="flex flex-wrap gap-3 pt-4">
-                <Link href="/about">
-                  <Button className="bg-purple-600 hover:bg-purple-700">
-                    More About Me
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
+                <Button
+                  className="bg-purple-600 hover:bg-purple-700"
+                  onClick={() => {
+                    journeyRef.current?.scrollIntoView({ behavior: "smooth" })
+                  }}
+                >
+                  More About Me
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
                 <Link href="/projects">
                   <Button variant="outline" className="border-zinc-700 text-white hover:bg-zinc-800">
                     View Projects
@@ -324,7 +331,7 @@ export default function Home() {
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-teal-500/20 text-teal-400">
                     <Cpu className="h-5 w-5" />
                   </div>
-                  <h3 className="text-xl font-bold text-white">Technical Expertise</h3>
+                  <h3 className="text-xl font-bold text-white">Technical Skills</h3>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6">
@@ -340,6 +347,160 @@ export default function Home() {
                       <span className="text-teal-300 text-sm font-medium">{skill}</span>
                     </motion.div>
                   ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Professional Journey */}
+          <div ref={journeyRef} className="mt-24">
+            <div className="mb-12 text-center">
+              <Badge className="mb-2 bg-purple-500/20 text-purple-300">Experience</Badge>
+              <h2 className="text-3xl font-bold text-white">Professional Journey</h2>
+              <p className="mx-auto mt-4 max-w-2xl text-zinc-400">
+                My path through finance, business development, and product management
+              </p>
+            </div>
+
+            {/* Horizontal Timeline for Desktop */}
+            <div className="relative hidden md:block">
+              {/* Timeline line */}
+              <div className="absolute left-0 right-0 top-16 h-0.5 bg-gradient-to-r from-purple-500/50 via-purple-500/30 to-zinc-800"></div>
+
+              {/* Timeline items */}
+              <div className="relative mx-auto max-w-6xl">
+                <div className="grid grid-cols-3 gap-6">
+                  {/* Item 1 - Present */}
+                  <div className="relative">
+                    <div className="absolute left-1/2 top-16 -ml-3 h-6 w-6 -translate-y-1/2 transform">
+                      <div className="flex h-6 w-6 items-center justify-center rounded-full border border-purple-500/30 bg-zinc-900 shadow-lg shadow-purple-500/10">
+                        <div className="h-2 w-2 rounded-full bg-purple-500"></div>
+                      </div>
+                    </div>
+
+                    <div className="pt-24">
+                      <span className="inline-block rounded-full bg-purple-500/10 px-3 py-1 text-xs text-purple-300">
+                        Present
+                      </span>
+                      <h3 className="mt-2 text-xl font-bold text-white">Director of Sales</h3>
+                      <p className="mt-1 text-zinc-400">Stealth Startup</p>
+                      <p className="mt-4 text-zinc-400">
+                        Building SaaS tools for the home service industry. Managing SQL databases, designing automation
+                        systems, and integrating data from multiple sources to create unified platforms.
+                      </p>
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        <Badge variant="outline" className="border-zinc-700">
+                          SQL
+                        </Badge>
+                        <Badge variant="outline" className="border-zinc-700">
+                          Automation
+                        </Badge>
+                        <Badge variant="outline" className="border-zinc-700">
+                          Data Integration
+                        </Badge>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Item 2 */}
+                  <div className="relative">
+                    <div className="absolute left-1/2 top-16 -ml-3 h-6 w-6 -translate-y-1/2 transform">
+                      <div className="flex h-6 w-6 items-center justify-center rounded-full border border-purple-500/30 bg-zinc-900 shadow-lg shadow-purple-500/10">
+                        <div className="h-2 w-2 rounded-full bg-purple-500"></div>
+                      </div>
+                    </div>
+
+                    <div className="pt-24">
+                      <span className="inline-block rounded-full bg-purple-500/10 px-3 py-1 text-xs text-purple-300">
+                        Previous
+                      </span>
+                      <h3 className="mt-2 text-xl font-bold text-white">Director of Research and Analysis</h3>
+                      <p className="mt-1 text-zinc-400">Dalton Capital</p>
+                      <p className="mt-4 text-zinc-400">
+                        Led operational efficiency initiatives saving $100K+ annually, built financial models for
+                        Fortune 100 executives, and directed research on emerging technologies like AI to inform company
+                        strategy.
+                      </p>
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        <Badge variant="outline" className="border-zinc-700">
+                          Financial Modeling
+                        </Badge>
+                        <Badge variant="outline" className="border-zinc-700">
+                          Process Optimization
+                        </Badge>
+                        <Badge variant="outline" className="border-zinc-700">
+                          Product Development
+                        </Badge>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Item 3 */}
+                  <div className="relative">
+                    <div className="absolute left-1/2 top-16 -ml-3 h-6 w-6 -translate-y-1/2 transform">
+                      <div className="flex h-6 w-6 items-center justify-center rounded-full border border-purple-500/30 bg-zinc-900 shadow-lg shadow-purple-500/10">
+                        <div className="h-2 w-2 rounded-full bg-purple-500"></div>
+                      </div>
+                    </div>
+
+                    <div className="pt-24">
+                      <span className="inline-block rounded-full bg-purple-500/10 px-3 py-1 text-xs text-purple-300">
+                        Previous
+                      </span>
+                      <h3 className="mt-2 text-xl font-bold text-white">Special Projects Manager</h3>
+                      <p className="mt-1 text-zinc-400">Vertical Companies</p>
+                      <p className="mt-4 text-zinc-400">
+                        Partnered with executive leadership to secure $80M in fundraising, led M&A due diligence for
+                        dispensary acquisitions, and built executive dashboards that centralized real-time data across
+                        operations.
+                      </p>
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        <Badge variant="outline" className="border-zinc-700">
+                          Fundraising
+                        </Badge>
+                        <Badge variant="outline" className="border-zinc-700">
+                          M&A
+                        </Badge>
+                        <Badge variant="outline" className="border-zinc-700">
+                          Cannabis Industry
+                        </Badge>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Future Goals */}
+          <div className="mt-24">
+            <div className="mb-12 text-center">
+              <Badge className="mb-2 bg-purple-500/20 text-purple-300">The Future</Badge>
+              <h2 className="text-3xl font-bold text-white">Where I'm Headed</h2>
+              <p className="mx-auto mt-4 max-w-2xl text-zinc-400">Ready to drive breakthrough innovation at a visionary company</p>
+            </div>
+
+            <div className="relative rounded-xl border border-purple-500/20 bg-gradient-to-br from-zinc-900 to-black p-8">
+              <div className="absolute inset-0 bg-grid-white/5 [mask-image:linear-gradient(0deg,#000000,transparent)]"></div>
+              <div className="relative">
+                <p className="text-lg text-zinc-300">
+                  I&apos;m looking for a leadership role—whether in Product, Strategy, or something hybrid—that sits at the intersection of big vision and getting things done. I&apos;ve led strategic initiatives, closed deals with Fortune 50s, and helped deploy serious capital, but what really drives me is helping a company scale something that actually matters.
+                </p>
+                <p className="mt-4 text-lg text-zinc-300">
+                  I bridge the gap between technical and business teams, especially when there&apos;s ambiguity and high expectations. I&apos;ve found success translating complex ideas into decisions that move the needle, and I&apos;m drawn to companies where there&apos;s vision, urgency, and a need for someone who can zoom in and out—strategy one hour, execution the next.
+                </p>
+                <p className="mt-4 text-lg text-zinc-300">
+                  I want to help a team scale something that matters—not just grow for growth&apos;s sake. If there&apos;s room for someone who can wear a few hats, ask hard questions, and move things forward, that&apos;s where I thrive.
+                </p>
+                <div className="mt-8">
+                  <Link href="/contact">
+                    <div className="flex justify-end">
+                      <Button className="bg-purple-600 hover:bg-purple-700">
+                        Let&apos;s Discuss Opportunities
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </div>
+                  </Link>
                 </div>
               </div>
             </div>

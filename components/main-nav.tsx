@@ -12,7 +12,6 @@ import { ThemeToggle } from "@/components/theme-toggle"
 // Updated routes structure with Music and Business Musings as top-level items
 const routes = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
   { href: "/projects", label: "Projects" },
   { href: "/music", label: "Music" },
   { href: "/business-musings", label: "Musings" }, // Shortened to "Musings" for better fit in header

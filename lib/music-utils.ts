@@ -3,6 +3,7 @@ export interface LocalMusicTrack {
   title: string;
   filename: string;
   filepath: string;
+  blobUrl?: string; // Vercel Blob URL
   duration?: string;
   genre?: string;
   key?: string;
@@ -61,6 +62,21 @@ function parseFilename(filename: string): Partial<LocalMusicTrack> {
   return metadata;
 }
 
+// Load blob URLs mapping
+function loadBlobUrls(): Record<string, string> {
+  try {
+    const blobData = require('./blob-urls.json');
+    const urlMap: Record<string, string> = {};
+    blobData.files?.forEach((file: any) => {
+      urlMap[file.filename] = file.url;
+    });
+    return urlMap;
+  } catch (error) {
+    console.log('No blob URLs found, using local files');
+    return {};
+  }
+}
+
 // Get all music tracks from the blvke-beats folder
 export function getMusicTracks(): LocalMusicTrack[] {
   const musicFiles = [
@@ -78,14 +94,18 @@ export function getMusicTracks(): LocalMusicTrack[] {
     'Comfortable Today 90 C#maj.wav'
   ];
 
+  const blobUrls = loadBlobUrls();
+
   return musicFiles.map((filename, index) => {
     const metadata = parseFilename(filename);
     const id = `track-${index + 1}`;
+    const blobUrl = blobUrls[filename];
     
     return {
       id,
       filename,
-      filepath: `/blvke-beats/${encodeURIComponent(filename)}`,
+      filepath: blobUrl || `/blvke-beats/${encodeURIComponent(filename)}`,
+      blobUrl,
       title: metadata.title || filename,
       bpm: metadata.bpm,
       key: metadata.key,

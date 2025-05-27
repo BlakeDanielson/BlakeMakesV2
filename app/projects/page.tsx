@@ -15,7 +15,7 @@ import { SiteFooter } from "@/components/site-footer"
 import { Project, CategoryTheme, StatusInfo } from "./types"
 
 // Project categories
-const categories = ["All", "AI", "Music", "Web App", "NLP", "Data Viz"]
+const categories = ["All", "AI", "Music", "Web App", "NLP", "Data Viz", "RPG"]
 
 // Tech stack icons mapping
 const techIcons = {
@@ -40,7 +40,10 @@ const techIcons = {
   "Spotify": "🎵",
   "Web Scraping": "🕷️",
   "Image Processing": "🖼️",
-  "UX Design": "🎨"
+  "UX Design": "🎨",
+  "D&D": "🎲",
+  "RPG": "⚔️",
+  "Interactive Fiction": "📖"
 }
 
 // Category colors and themes
@@ -74,6 +77,12 @@ const categoryThemes: Record<string, CategoryTheme> = {
     bgColor: "bg-indigo-500/10",
     textColor: "text-indigo-400",
     borderColor: "border-indigo-500/30"
+  },
+  "RPG": {
+    color: "from-purple-500 to-violet-600",
+    bgColor: "bg-purple-500/10",
+    textColor: "text-purple-400",
+    borderColor: "border-purple-500/30"
   }
 }
 
@@ -186,6 +195,24 @@ const projects: Project[] = [
     pricing: "Free",
     completionDate: "2025-04",
     duration: "6 weeks"
+  },
+  {
+    title: "SoloRealms",
+    description:
+      "An AI-powered Dungeons & Dragons game that follows 5e rules, allowing players to embark on epic solo adventures with an intelligent DM that adapts to their choices and creates immersive storylines.",
+    image: "/dnd-fantasy-tavern.png",
+    category: "AI",
+    tags: ["AI", "Game", "D&D", "RPG", "Interactive Fiction"],
+    techStack: ["Next", "Typescript", "React", "AI", "Game", "API"],
+    link: "/projects/solorealms",
+    githubLink: "https://github.com/yourusername/solorealms",
+    liveLink: "https://solorealms.app",
+    featured: true,
+    icon: <BrainCircuit className="h-5 w-5" />,
+    status: "In Development",
+    pricing: "Freemium",
+    completionDate: "2025-06",
+    duration: "4 months"
   },
 ]
 

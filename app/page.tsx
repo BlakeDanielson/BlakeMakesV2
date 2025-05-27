@@ -101,7 +101,7 @@ export default function Home() {
             >
               <h1 className="text-3xl font-bold tracking-tight text-white text-animation-container sm:text-4xl md:text-5xl lg:text-6xl">
                 <div className="flex flex-col items-center">
-                  <span>Hi, I'm Blake, I'm a</span>
+                  <span>Hi, I'm Blake, I'm</span>
                   <div className="min-h-[1.5em] flex items-center justify-center">
                     <AnimatedText phrases={identityPhrases} highlightClassName="text-purple-500" />
                   </div>

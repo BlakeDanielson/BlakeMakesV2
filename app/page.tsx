@@ -92,38 +92,38 @@ export default function Home() {
 
       {/* Hero Section with Parallax */}
       <HeroParallax items={heroItems}>
-        <div className="absolute inset-0 z-10 flex items-center justify-center">
-          <div className="max-w-3xl text-center">
+        <div className="absolute inset-0 z-10 flex items-center justify-center px-4 sm:px-6">
+          <div className="max-w-4xl text-center w-full">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="space-y-6"
+              className="space-y-4 sm:space-y-6"
             >
-              <h1 className="text-3xl font-bold tracking-tight text-white text-animation-container sm:text-4xl md:text-5xl lg:text-6xl">
-                <div className="flex flex-col items-center">
-                  <span>Hi, I&apos;m Blake, I&apos;m</span>
-                  <div className="min-h-[1.5em] flex items-center justify-center">
+              <h1 className="text-2xl font-bold tracking-tight text-white text-animation-container sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
+                <div className="flex flex-col items-center space-y-1 sm:space-y-2">
+                  <span className="leading-tight">Hi, I&apos;m Blake, I&apos;m</span>
+                  <div className="min-h-[1.2em] sm:min-h-[1.5em] flex items-center justify-center">
                     <AnimatedText phrases={identityPhrases} highlightClassName="text-purple-500" />
                   </div>
                 </div>
               </h1>
-              <div className="space-y-3 mt-6">
-                <p className="text-lg text-zinc-300 font-medium">
+              <div className="space-y-2 sm:space-y-3 mt-4 sm:mt-6">
+                <p className="text-sm sm:text-base lg:text-lg text-zinc-300 font-medium px-2 sm:px-0 leading-relaxed">
                   Extreme asset to executive teams. Proven history of driving strategic initiatives that grow revenue or reduce internal costs in high-stakes environments.
                 </p>
-                <p className="text-lg text-zinc-300 font-medium">
+                <p className="text-sm sm:text-base lg:text-lg text-zinc-300 font-medium px-2 sm:px-0 leading-relaxed">
                   Expert at translating complex technical concepts into actionable business strategies that stakeholders of all backgrounds can understand and buy into.
                 </p>
-                <p className="text-lg text-zinc-300 font-medium">
+                <p className="text-sm sm:text-base lg:text-lg text-zinc-300 font-medium px-2 sm:px-0 leading-relaxed">
                   Seeking a leadership role at a visionary company where I can leverage my demonstrated track record of 
                   success to drive breakthrough innovation and scale transformative products that define markets.
                 </p>
               </div>
-              <div className="flex flex-wrap justify-center gap-4 pt-4">
+              <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 pt-4 sm:pt-6 px-4 sm:px-0">
                 <Button
                   size="lg"
-                  className="group bg-purple-600 hover:bg-purple-700"
+                  className="group bg-purple-600 hover:bg-purple-700 w-full sm:w-auto text-sm sm:text-base"
                   onClick={() => {
                     aboutRef.current?.scrollIntoView({ behavior: "smooth" })
                   }}
@@ -131,11 +131,11 @@ export default function Home() {
                   About Me
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
-                <Link href="/projects">
+                <Link href="/projects" className="w-full sm:w-auto">
                   <Button
                     variant="outline"
                     size="lg"
-                    className="border-zinc-800 bg-zinc-950/50 text-white backdrop-blur-sm hover:bg-zinc-900/50 hover:text-purple-300"
+                    className="border-zinc-800 bg-zinc-950/50 text-white backdrop-blur-sm hover:bg-zinc-900/50 hover:text-purple-300 w-full sm:w-auto text-sm sm:text-base"
                   >
                     View Projects
                   </Button>
@@ -144,33 +144,40 @@ export default function Home() {
             </motion.div>
           </div>
         </div>
-        <div className="absolute bottom-10 left-1/2 z-10 -translate-x-1/2">
-          <ChevronDown className="h-8 w-8 animate-bounce text-white opacity-70" />
+        <div className="absolute bottom-6 sm:bottom-10 left-1/2 z-10 -translate-x-1/2">
+          <ChevronDown className="h-6 w-6 sm:h-8 sm:w-8 animate-bounce text-white opacity-70" />
         </div>
       </HeroParallax>
 
       {/* About Section */}
-      <div ref={aboutRef} className="container mx-auto px-4 py-24">
+      <div ref={aboutRef} className="container mx-auto px-4 py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-6xl">
-          <div className="mb-8 text-center">
-            <Badge className="mb-2 bg-purple-500/20 text-purple-300">About Me</Badge>
-            <h2 className="text-3xl font-bold text-white mb-3">
+          <div className="mb-8 sm:mb-12 text-center">
+            <Badge className="mb-2 bg-purple-500/20 text-purple-300 text-xs sm:text-sm">About Me</Badge>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3 px-4 sm:px-0">
               Hi, I&apos;m Blake, I&apos;m a <span className="text-purple-500">Product Manager</span>
             </h2>
-            <div className="w-24 h-1 bg-purple-500 rounded-full mx-auto my-4"></div>
+            <div className="w-16 sm:w-24 h-1 bg-purple-500 rounded-full mx-auto my-4"></div>
           </div>
 
-          <div className="grid gap-12 md:grid-cols-12">
-            {/* Image Column - 5 columns on desktop */}
-            <div className="md:col-span-5 relative">
-              <div className="absolute -left-4 -top-4 h-24 w-24 rounded-full bg-purple-500/20 blur-2xl"></div>
-              <div className="sticky top-24 relative overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900 shadow-xl shadow-purple-900/10">
-                <Image src="/blake.jpg" alt="Blake Danielson" width={600} height={800} className="object-cover" />
+          <div className="grid gap-8 sm:gap-12 lg:grid-cols-12">
+            {/* Image Column - Full width on mobile, 5 columns on desktop */}
+            <div className="lg:col-span-5 relative order-1 lg:order-1">
+              <div className="absolute -left-2 sm:-left-4 -top-2 sm:-top-4 h-16 w-16 sm:h-24 sm:w-24 rounded-full bg-purple-500/20 blur-2xl"></div>
+              <div className="relative overflow-hidden rounded-xl sm:rounded-2xl border border-zinc-800 bg-zinc-900 shadow-xl shadow-purple-900/10 max-w-md mx-auto lg:max-w-none lg:sticky lg:top-24">
+                <Image 
+                  src="/blake.jpg" 
+                  alt="Blake Danielson" 
+                  width={600} 
+                  height={800} 
+                  className="object-cover w-full h-auto" 
+                  priority
+                />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent h-1/4"></div>
-                <div className="absolute bottom-4 left-4 right-4 p-4 bg-zinc-900/90 backdrop-blur-sm rounded-lg border border-zinc-800">
+                <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 p-3 sm:p-4 bg-zinc-900/90 backdrop-blur-sm rounded-lg border border-zinc-800">
                   <div className="flex items-center gap-2">
-                    <Sparkles className="h-5 w-5 text-purple-500" />
-                    <span className="text-sm font-medium text-white">
+                    <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 text-purple-500 flex-shrink-0" />
+                    <span className="text-xs sm:text-sm font-medium text-white leading-tight">
                       Finance grad leaving the dark side for the Product world
                     </span>
                   </div>
@@ -178,31 +185,31 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Content Column - 7 columns on desktop */}
-            <div className="md:col-span-7 space-y-6">
+            {/* Content Column - Full width on mobile, 7 columns on desktop */}
+            <div className="lg:col-span-7 space-y-6 order-2 lg:order-2">
               {/* Main Content */}
               <div className="space-y-4">
                 <div className="mb-4">
                   <div className="flex items-center gap-2 mb-2">
-                    <div className="h-1 w-6 bg-purple-500 rounded-full"></div>
-                    <h3 className="text-xl font-bold text-purple-400">My Journey</h3>
+                    <div className="h-1 w-4 sm:w-6 bg-purple-500 rounded-full"></div>
+                    <h3 className="text-lg sm:text-xl font-bold text-purple-400">My Journey</h3>
                     <div className="h-1 flex-1 bg-purple-500/20 rounded-full"></div>
                   </div>
                 </div>
-                <p className="text-zinc-300 leading-relaxed">
+                <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
                   I discovered my superpower early: transforming complex technical challenges into strategic business 
                   opportunities. Starting in computer science, I quickly pivoted to finance at the University of Denver, 
                   where I built and scaled a cryptocurrency arbitrage platform and became one of the most followed analysts on Seeking 
                   Alpha for the cannabis sector.
                 </p>
-                <p className="text-zinc-300 leading-relaxed">
+                <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
                   While still in college I authored 2 weekly financial newsletters covering the cannabis and emerging technology sectors that was sent to over 10,000 paying subscribers.
                   At the same time, I held down an internship with Snoop Dogg&apos;s venture capital fund, Casa Verde Capital. This wasn&apos;t luck—it was the result of my 
                   ability to synthesize market data, communicate complex concepts clearly, and build products that solve 
                   actual and existing problems for real users.
                 </p>
 
-                <p className="text-zinc-300 leading-relaxed">
+                <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
                   Post-graduation, I jumped straight executive-level finance but quickly pivoted to product and corporate strategy, working directly with the CEO of 
                   California&apos;s largest legal cannabis operator to deploy $80 million and build the largest indoor cannabis cultivation and processing facility in California.
                   After several years I explored South Florida working for another Young Presidents Organization member where I architected 
@@ -211,16 +218,16 @@ export default function Home() {
                 </p>
               </div>
 
-              {/* Core Competencies - First Row */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+              {/* Core Competencies - Stack on mobile, grid on larger screens */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
                 <div className="bg-zinc-900/50 border border-zinc-800 rounded-lg p-4 hover:border-purple-500/30 transition-all">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-purple-500/20 text-purple-400">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-purple-500/20 text-purple-400 flex-shrink-0">
                       <Code className="h-4 w-4" />
                     </div>
-                    <h3 className="font-semibold text-white">Beyond a Finance Bro</h3>
+                    <h3 className="font-semibold text-white text-sm sm:text-base">Beyond a Finance Bro</h3>
                   </div>
-                  <p className="text-zinc-400 text-sm">
+                  <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed">
                     Self-taught script kiddie since 2007, started with minecraft mods, now I launch my own Web Apps.
                     Expert in Prompt Engineering, and AI/LLM tools. Experience in python, typescript, API building, PostgreSQL and MySQL database management.
                   </p>
@@ -228,12 +235,12 @@ export default function Home() {
 
                 <div className="bg-zinc-900/50 border border-zinc-800 rounded-lg p-4 hover:border-purple-500/30 transition-all">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-purple-500/20 text-purple-400">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-purple-500/20 text-purple-400 flex-shrink-0">
                       <Users className="h-4 w-4" />
                     </div>
-                    <h3 className="font-semibold text-white">Cross-Functional Leadership</h3>
+                    <h3 className="font-semibold text-white text-sm sm:text-base">Cross-Functional Leadership</h3>
                   </div>
-                  <p className="text-zinc-400 text-sm">
+                  <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed">
                     Thrives in ambiguous situations with vague &quot;I&apos;ll know it when I see it&quot; goals. Highly skilled at working
                     with both technical and business teams, communicating complex concepts to stakeholders of all backgrounds.
                   </p>
@@ -241,15 +248,15 @@ export default function Home() {
               </div>
 
               {/* Core Competencies - Second Row */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="bg-zinc-900/50 border border-zinc-800 rounded-lg p-4 hover:border-purple-500/30 transition-all">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-purple-500/20 text-purple-400">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-purple-500/20 text-purple-400 flex-shrink-0">
                       <DollarSign className="h-4 w-4" />
                     </div>
-                    <h3 className="font-semibold text-white">Revenue Generation</h3>
+                    <h3 className="font-semibold text-white text-sm sm:text-base">Revenue Generation</h3>
                   </div>
-                  <p className="text-zinc-400 text-sm">
+                  <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed">
                     Individually developed financial models and executive presentations that secured partnerships with
                     Fortune 500 companies. Collaborated directly with the CEO to strategically deploy $80M in
                     investments and build the largest indoor cannabis facility in California.
@@ -258,21 +265,21 @@ export default function Home() {
 
                 <div className="bg-zinc-900/50 border border-zinc-800 rounded-lg p-4 hover:border-purple-500/30 transition-all">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-purple-500/20 text-purple-400">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-purple-500/20 text-purple-400 flex-shrink-0">
                       <BarChart className="h-4 w-4" />
                     </div>
-                    <h3 className="font-semibold text-white">Data-Driven Leadership</h3>
+                    <h3 className="font-semibold text-white text-sm sm:text-base">Data-Driven Leadership</h3>
                   </div>
-                  <p className="text-zinc-400 text-sm">
+                  <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed">
                     Led company-wide project with ambiguous goals to reduce tedious tasks and improve communication.
                     Identified and closed critical communication gaps, reduced labor costs by $100k/yr, and increased surveyed employee&apos;s morale by 30%.
                   </p>
                 </div>
               </div>
 
-              <div className="flex flex-wrap gap-3 pt-4">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 pt-4">
                 <Button
-                  className="bg-purple-600 hover:bg-purple-700"
+                  className="bg-purple-600 hover:bg-purple-700 w-full sm:w-auto text-sm sm:text-base"
                   onClick={() => {
                     journeyRef.current?.scrollIntoView({ behavior: "smooth" })
                   }}
@@ -280,8 +287,8 @@ export default function Home() {
                   More About Me
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
-                <Link href="/projects">
-                  <Button variant="outline" className="border-zinc-700 text-white hover:bg-zinc-800">
+                <Link href="/projects" className="w-full sm:w-auto">
+                  <Button variant="outline" className="border-zinc-700 text-white hover:bg-zinc-800 w-full sm:w-auto text-sm sm:text-base">
                     View Projects
                   </Button>
                 </Link>
@@ -290,26 +297,26 @@ export default function Home() {
           </div>
 
           {/* Skills Section with Dot + Label Style */}
-          <div className="mt-24">
-            <div className="mb-12 text-center">
-              <Badge className="mb-2 bg-purple-500/20 text-purple-300">My Skills</Badge>
-              <h2 className="text-3xl font-bold text-white">Expertise & Capabilities</h2>
-              <p className="mx-auto mt-4 max-w-2xl text-zinc-400">
+          <div className="mt-16 sm:mt-20 lg:mt-24">
+            <div className="mb-8 sm:mb-12 text-center">
+              <Badge className="mb-2 bg-purple-500/20 text-purple-300 text-xs sm:text-sm">My Skills</Badge>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white px-4 sm:px-0">Expertise & Capabilities</h2>
+              <p className="mx-auto mt-4 max-w-2xl text-sm sm:text-base text-zinc-400 px-4 sm:px-0 leading-relaxed">
                 A blend of business acumen and technical know-how that bridges the gap between strategy and execution
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {/* Business & Leadership Skills Tile */}
-              <div className="rounded-xl border border-purple-500/30 bg-zinc-900/30 p-6 shadow-lg shadow-purple-500/5 hover:border-purple-500/50 transition-all">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-purple-500/20 text-purple-400">
-                    <Briefcase className="h-5 w-5" />
+              <div className="rounded-xl border border-purple-500/30 bg-zinc-900/30 p-4 sm:p-6 shadow-lg shadow-purple-500/5 hover:border-purple-500/50 transition-all">
+                <div className="flex items-center gap-3 mb-4 sm:mb-6">
+                  <div className="flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-purple-500/20 text-purple-400 flex-shrink-0">
+                    <Briefcase className="h-4 w-4 sm:h-5 sm:w-5" />
                   </div>
-                  <h3 className="text-xl font-bold text-white">Business & Leadership</h3>
+                  <h3 className="text-lg sm:text-xl font-bold text-white">Business & Leadership</h3>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 sm:gap-y-4 gap-x-4 sm:gap-x-6">
                   {businessSkills.map((skill, index) => (
                     <motion.div
                       key={skill}
@@ -318,23 +325,23 @@ export default function Home() {
                       transition={{ duration: 0.2, delay: index * 0.03 }}
                       className="flex items-center gap-2.5"
                     >
-                      <div className="h-2.5 w-2.5 rounded-full bg-purple-500"></div>
-                      <span className="text-purple-300 text-sm font-medium">{skill}</span>
+                      <div className="h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-purple-500 flex-shrink-0"></div>
+                      <span className="text-purple-300 text-xs sm:text-sm font-medium">{skill}</span>
                     </motion.div>
                   ))}
                 </div>
               </div>
 
               {/* Technical Skills Tile */}
-              <div className="rounded-xl border border-teal-500/30 bg-zinc-900/30 p-6 shadow-lg shadow-teal-500/5 hover:border-teal-500/50 transition-all">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-teal-500/20 text-teal-400">
-                    <Cpu className="h-5 w-5" />
+              <div className="rounded-xl border border-teal-500/30 bg-zinc-900/30 p-4 sm:p-6 shadow-lg shadow-teal-500/5 hover:border-teal-500/50 transition-all">
+                <div className="flex items-center gap-3 mb-4 sm:mb-6">
+                  <div className="flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-teal-500/20 text-teal-400 flex-shrink-0">
+                    <Cpu className="h-4 w-4 sm:h-5 sm:w-5" />
                   </div>
-                  <h3 className="text-xl font-bold text-white">Technical Skills</h3>
+                  <h3 className="text-lg sm:text-xl font-bold text-white">Technical Skills</h3>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 sm:gap-y-4 gap-x-4 sm:gap-x-6">
                   {technicalSkills.map((skill, index) => (
                     <motion.div
                       key={skill}
@@ -343,8 +350,8 @@ export default function Home() {
                       transition={{ duration: 0.2, delay: index * 0.03 }}
                       className="flex items-center gap-2.5"
                     >
-                      <div className="h-2.5 w-2.5 rounded-full bg-teal-500"></div>
-                      <span className="text-teal-300 text-sm font-medium">{skill}</span>
+                      <div className="h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-teal-500 flex-shrink-0"></div>
+                      <span className="text-teal-300 text-xs sm:text-sm font-medium">{skill}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -353,17 +360,124 @@ export default function Home() {
           </div>
 
           {/* Professional Journey */}
-          <div ref={journeyRef} className="mt-24">
-            <div className="mb-12 text-center">
-              <Badge className="mb-2 bg-purple-500/20 text-purple-300">Experience</Badge>
-              <h2 className="text-3xl font-bold text-white">Professional Journey</h2>
-              <p className="mx-auto mt-4 max-w-2xl text-zinc-400">
+          <div ref={journeyRef} className="mt-16 sm:mt-20 lg:mt-24">
+            <div className="mb-8 sm:mb-12 text-center">
+              <Badge className="mb-2 bg-purple-500/20 text-purple-300 text-xs sm:text-sm">Experience</Badge>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white px-4 sm:px-0">Professional Journey</h2>
+              <p className="mx-auto mt-4 max-w-2xl text-sm sm:text-base text-zinc-400 px-4 sm:px-0 leading-relaxed">
                 My path through finance, business development, and product management
               </p>
             </div>
 
-            {/* Horizontal Timeline for Desktop */}
-            <div className="relative hidden md:block">
+            {/* Mobile Timeline - Vertical */}
+            <div className="relative block lg:hidden space-y-8">
+              {/* Vertical timeline line */}
+              <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500/50 via-purple-500/30 to-zinc-800"></div>
+
+              {/* Timeline items */}
+              <div className="space-y-8">
+                {/* Item 1 - Present */}
+                <div className="relative pl-12">
+                  <div className="absolute left-2.5 top-2 h-3 w-3 -translate-x-1/2">
+                    <div className="flex h-3 w-3 items-center justify-center rounded-full border border-purple-500/30 bg-zinc-900 shadow-lg shadow-purple-500/10">
+                      <div className="h-1.5 w-1.5 rounded-full bg-purple-500"></div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <span className="inline-block rounded-full bg-purple-500/10 px-2 py-1 text-xs text-purple-300">
+                      Present
+                    </span>
+                    <h3 className="mt-2 text-lg font-bold text-white">Director of Sales</h3>
+                    <p className="mt-1 text-sm text-zinc-400">Stealth Startup</p>
+                    <p className="mt-3 text-sm text-zinc-400 leading-relaxed">
+                      Building SaaS tools for the home service industry. Managing SQL databases, designing automation
+                      systems, and integrating data from multiple sources to create unified platforms.
+                    </p>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      <Badge variant="outline" className="border-zinc-700 text-xs">
+                        SQL
+                      </Badge>
+                      <Badge variant="outline" className="border-zinc-700 text-xs">
+                        Automation
+                      </Badge>
+                      <Badge variant="outline" className="border-zinc-700 text-xs">
+                        Data Integration
+                      </Badge>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Item 2 */}
+                <div className="relative pl-12">
+                  <div className="absolute left-2.5 top-2 h-3 w-3 -translate-x-1/2">
+                    <div className="flex h-3 w-3 items-center justify-center rounded-full border border-purple-500/30 bg-zinc-900 shadow-lg shadow-purple-500/10">
+                      <div className="h-1.5 w-1.5 rounded-full bg-purple-500"></div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <span className="inline-block rounded-full bg-purple-500/10 px-2 py-1 text-xs text-purple-300">
+                      Previous
+                    </span>
+                    <h3 className="mt-2 text-lg font-bold text-white">Director of Research and Analysis</h3>
+                    <p className="mt-1 text-sm text-zinc-400">Dalton Capital</p>
+                    <p className="mt-3 text-sm text-zinc-400 leading-relaxed">
+                      Led operational efficiency initiatives saving $100K+ annually, built financial models for
+                      Fortune 100 executives, and directed research on emerging technologies like AI to inform company
+                      strategy.
+                    </p>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      <Badge variant="outline" className="border-zinc-700 text-xs">
+                        Financial Modeling
+                      </Badge>
+                      <Badge variant="outline" className="border-zinc-700 text-xs">
+                        Process Optimization
+                      </Badge>
+                      <Badge variant="outline" className="border-zinc-700 text-xs">
+                        Product Development
+                      </Badge>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Item 3 */}
+                <div className="relative pl-12">
+                  <div className="absolute left-2.5 top-2 h-3 w-3 -translate-x-1/2">
+                    <div className="flex h-3 w-3 items-center justify-center rounded-full border border-purple-500/30 bg-zinc-900 shadow-lg shadow-purple-500/10">
+                      <div className="h-1.5 w-1.5 rounded-full bg-purple-500"></div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <span className="inline-block rounded-full bg-purple-500/10 px-2 py-1 text-xs text-purple-300">
+                      Previous
+                    </span>
+                    <h3 className="mt-2 text-lg font-bold text-white">Special Projects Manager</h3>
+                    <p className="mt-1 text-sm text-zinc-400">Vertical Companies</p>
+                    <p className="mt-3 text-sm text-zinc-400 leading-relaxed">
+                      Partnered with executive leadership to secure $80M in fundraising, led M&A due diligence for
+                      dispensary acquisitions, and built executive dashboards that centralized real-time data across
+                      operations.
+                    </p>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      <Badge variant="outline" className="border-zinc-700 text-xs">
+                        Fundraising
+                      </Badge>
+                      <Badge variant="outline" className="border-zinc-700 text-xs">
+                        M&A
+                      </Badge>
+                      <Badge variant="outline" className="border-zinc-700 text-xs">
+                        Cannabis Industry
+                      </Badge>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Desktop Timeline - Horizontal */}
+            <div className="relative hidden lg:block">
               {/* Timeline line */}
               <div className="absolute left-0 right-0 top-16 h-0.5 bg-gradient-to-r from-purple-500/50 via-purple-500/30 to-zinc-800"></div>
 
@@ -473,29 +587,29 @@ export default function Home() {
           </div>
 
           {/* Future Goals */}
-          <div className="mt-24">
-            <div className="mb-12 text-center">
-              <Badge className="mb-2 bg-purple-500/20 text-purple-300">The Future</Badge>
-              <h2 className="text-3xl font-bold text-white">Where I'm Headed</h2>
-              <p className="mx-auto mt-4 max-w-2xl text-zinc-400">Ready to drive breakthrough innovation at a visionary company</p>
+          <div className="mt-16 sm:mt-20 lg:mt-24">
+            <div className="mb-8 sm:mb-12 text-center">
+              <Badge className="mb-2 bg-purple-500/20 text-purple-300 text-xs sm:text-sm">The Future</Badge>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white px-4 sm:px-0">Where I'm Headed</h2>
+              <p className="mx-auto mt-4 max-w-2xl text-sm sm:text-base text-zinc-400 px-4 sm:px-0 leading-relaxed">Ready to drive breakthrough innovation at a visionary company</p>
             </div>
 
-            <div className="relative rounded-xl border border-purple-500/20 bg-gradient-to-br from-zinc-900 to-black p-8">
+            <div className="relative rounded-xl border border-purple-500/20 bg-gradient-to-br from-zinc-900 to-black p-6 sm:p-8">
               <div className="absolute inset-0 bg-grid-white/5 [mask-image:linear-gradient(0deg,#000000,transparent)]"></div>
               <div className="relative">
-                <p className="text-lg text-zinc-300">
+                <p className="text-sm sm:text-base lg:text-lg text-zinc-300 leading-relaxed">
                   I&apos;m looking for a leadership role—whether in Product, Strategy, or something hybrid—that sits at the intersection of big vision and getting things done. I&apos;ve led strategic initiatives, closed deals with Fortune 50s, and helped deploy serious capital, but what really drives me is helping a company scale something that actually matters.
                 </p>
-                <p className="mt-4 text-lg text-zinc-300">
+                <p className="mt-4 text-sm sm:text-base lg:text-lg text-zinc-300 leading-relaxed">
                   I bridge the gap between technical and business teams, especially when there&apos;s ambiguity and high expectations. I&apos;ve found success translating complex ideas into decisions that move the needle, and I&apos;m drawn to companies where there&apos;s vision, urgency, and a need for someone who can zoom in and out—strategy one hour, execution the next.
                 </p>
-                <p className="mt-4 text-lg text-zinc-300">
+                <p className="mt-4 text-sm sm:text-base lg:text-lg text-zinc-300 leading-relaxed">
                   I want to help a team scale something that matters—not just grow for growth&apos;s sake. If there&apos;s room for someone who can wear a few hats, ask hard questions, and move things forward, that&apos;s where I thrive.
                 </p>
-                <div className="mt-8">
+                <div className="mt-6 sm:mt-8">
                   <Link href="/contact">
-                    <div className="flex justify-end">
-                      <Button className="bg-purple-600 hover:bg-purple-700">
+                    <div className="flex justify-center sm:justify-end">
+                      <Button className="bg-purple-600 hover:bg-purple-700 w-full sm:w-auto text-sm sm:text-base">
                         Let&apos;s Discuss Opportunities
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
@@ -509,18 +623,18 @@ export default function Home() {
       </div>
 
       {/* Featured Projects Section */}
-      <div className="border-t border-zinc-800 bg-gradient-to-br from-zinc-900 to-purple-950/20 py-24">
+      <div className="border-t border-zinc-800 bg-gradient-to-br from-zinc-900 to-purple-950/20 py-16 sm:py-20 lg:py-24">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-6xl">
-            <div className="mb-12 text-center">
-              <Badge className="mb-2 bg-purple-500/20 text-purple-300">Featured Projects</Badge>
-              <h2 className="text-3xl font-bold text-white">My Best Work</h2>
-              <p className="mx-auto mt-4 max-w-2xl text-zinc-400">
+            <div className="mb-8 sm:mb-12 text-center">
+              <Badge className="mb-2 bg-purple-500/20 text-purple-300 text-xs sm:text-sm">Featured Projects</Badge>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white px-4 sm:px-0">My Best Work</h2>
+              <p className="mx-auto mt-4 max-w-2xl text-sm sm:text-base text-zinc-400 px-4 sm:px-0 leading-relaxed">
                 A selection of projects that showcase my skills and expertise
               </p>
             </div>
 
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-6 sm:gap-8 md:grid-cols-2 xl:grid-cols-3">
               {/* Project 1 */}
               <div className="group relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/50 transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/30 hover:bg-zinc-900/70 hover:shadow-lg hover:shadow-purple-500/5">
                 <div className="relative aspect-video overflow-hidden">
@@ -532,12 +646,12 @@ export default function Home() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                   <div className="absolute right-3 top-3">
-                    <Badge className="bg-purple-500/20 text-purple-300">AI</Badge>
+                    <Badge className="bg-purple-500/20 text-purple-300 text-xs">AI</Badge>
                   </div>
                 </div>
-                <div className="p-6">
-                  <h3 className="mb-2 text-xl font-bold text-white">OurStories</h3>
-                  <p className="mb-4 text-sm text-zinc-400">
+                <div className="p-4 sm:p-6">
+                  <h3 className="mb-2 text-lg sm:text-xl font-bold text-white">OurStories</h3>
+                  <p className="mb-4 text-xs sm:text-sm text-zinc-400 leading-relaxed">
                     A bedtime story generator that makes your child the star of the story, with AI-generated images and
                     physical printing options.
                   </p>
@@ -546,7 +660,7 @@ export default function Home() {
                     <span className="rounded-full bg-zinc-800 px-2 py-1 text-xs text-zinc-300">NLP</span>
                     <span className="rounded-full bg-zinc-800 px-2 py-1 text-xs text-zinc-300">Image Generation</span>
                   </div>
-                  <Link href="/projects/ourstories" className="flex items-center text-sm font-medium text-purple-400">
+                  <Link href="/projects/ourstories" className="flex items-center text-xs sm:text-sm font-medium text-purple-400">
                     View Project
                     <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Link>
@@ -564,12 +678,12 @@ export default function Home() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                   <div className="absolute right-3 top-3">
-                    <Badge className="bg-purple-500/20 text-purple-300">Music</Badge>
+                    <Badge className="bg-purple-500/20 text-purple-300 text-xs">Music</Badge>
                   </div>
                 </div>
-                <div className="p-6">
-                  <h3 className="mb-2 text-xl font-bold text-white">Music Production Analyzer</h3>
-                  <p className="mb-4 text-sm text-zinc-400">
+                <div className="p-4 sm:p-6">
+                  <h3 className="mb-2 text-lg sm:text-xl font-bold text-white">Music Production Analyzer</h3>
+                  <p className="mb-4 text-xs sm:text-sm text-zinc-400 leading-relaxed">
                     An AI tool that analyzes dense and long music production videos and podcasts to extract specific
                     tips and techniques.
                   </p>
@@ -580,7 +694,7 @@ export default function Home() {
                   </div>
                   <Link
                     href="/projects/music-production-analyzer"
-                    className="flex items-center text-sm font-medium text-purple-400"
+                    className="flex items-center text-xs sm:text-sm font-medium text-purple-400"
                   >
                     View Project
                     <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -589,7 +703,7 @@ export default function Home() {
               </div>
 
               {/* Project 3 */}
-              <div className="group relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/50 transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/30 hover:bg-zinc-900/70 hover:shadow-lg hover:shadow-purple-500/5">
+              <div className="group relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/50 transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/30 hover:bg-zinc-900/70 hover:shadow-lg hover:shadow-purple-500/5 md:col-span-2 xl:col-span-1">
                 <div className="relative aspect-video overflow-hidden">
                   <Image
                     src="/jumpscare-preview.png"
@@ -599,12 +713,12 @@ export default function Home() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                   <div className="absolute right-3 top-3">
-                    <Badge className="bg-purple-500/20 text-purple-300">Web App</Badge>
+                    <Badge className="bg-purple-500/20 text-purple-300 text-xs">Web App</Badge>
                   </div>
                 </div>
-                <div className="p-6">
-                  <h3 className="mb-2 text-xl font-bold text-white">JumpScare Generator</h3>
-                  <p className="mb-4 text-sm text-zinc-400">
+                <div className="p-4 sm:p-6">
+                  <h3 className="mb-2 text-lg sm:text-xl font-bold text-white">JumpScare Generator</h3>
+                  <p className="mb-4 text-xs sm:text-sm text-zinc-400 leading-relaxed">
                     A web application that lets users create custom jump scare videos by combining uploaded content with
                     startling effects.
                   </p>
@@ -615,7 +729,7 @@ export default function Home() {
                   </div>
                   <Link
                     href="/projects/jumpscare-generator"
-                    className="flex items-center text-sm font-medium text-purple-400"
+                    className="flex items-center text-xs sm:text-sm font-medium text-purple-400"
                   >
                     View Project
                     <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -624,9 +738,9 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="mt-12 text-center">
+            <div className="mt-8 sm:mt-12 text-center">
               <Link href="/projects">
-                <Button variant="outline" className="border-zinc-700 text-white hover:bg-zinc-800">
+                <Button variant="outline" className="border-zinc-700 text-white hover:bg-zinc-800 w-full sm:w-auto text-sm sm:text-base">
                   View All Projects
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -637,13 +751,13 @@ export default function Home() {
       </div>
 
       {/* Featured Music Player */}
-      <div className="border-t border-zinc-800 bg-black py-24">
+      <div className="border-t border-zinc-800 bg-black py-16 sm:py-20 lg:py-24">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-6xl">
-            <div className="mb-12 text-center">
-              <Badge className="mb-2 bg-purple-500/20 text-purple-300">Featured Tracks</Badge>
-              <h2 className="text-3xl font-bold text-white">My Music</h2>
-              <p className="mx-auto mt-4 max-w-2xl text-zinc-400">
+            <div className="mb-8 sm:mb-12 text-center">
+              <Badge className="mb-2 bg-purple-500/20 text-purple-300 text-xs sm:text-sm">Featured Tracks</Badge>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white px-4 sm:px-0">My Music</h2>
+              <p className="mx-auto mt-4 max-w-2xl text-sm sm:text-base text-zinc-400 px-4 sm:px-0 leading-relaxed">
                 Music has been my creative outlet since I was 8. What started as a private passion has evolved into a
                 serious side project—crafting bass-heavy beats that absolutely slap.
               </p>
@@ -651,9 +765,9 @@ export default function Home() {
 
             <FeaturedMusicPlayer />
 
-            <div className="mt-12 text-center">
+            <div className="mt-8 sm:mt-12 text-center">
               <Link href="/music">
-                <Button className="bg-purple-600 hover:bg-purple-700">
+                <Button className="bg-purple-600 hover:bg-purple-700 w-full sm:w-auto text-sm sm:text-base">
                   Explore Full Music Portfolio
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>

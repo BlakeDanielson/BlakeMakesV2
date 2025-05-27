@@ -201,7 +201,7 @@ const projects: Project[] = [
     description:
       "An AI-powered Dungeons & Dragons game that follows 5e rules, allowing players to embark on epic solo adventures with an intelligent DM that adapts to their choices and creates immersive storylines.",
     image: "/dnd-fantasy-tavern.png",
-    category: "AI",
+    category: "RPG",
     tags: ["AI", "Game", "D&D", "RPG", "Interactive Fiction"],
     techStack: ["Next", "Typescript", "React", "AI", "Game", "API"],
     link: "/projects/solorealms",
@@ -507,7 +507,7 @@ export default function ProjectsPage() {
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-300">
             From executive dashboards that transformed decision-making to AI tools that solve real problems—these are
-            the projects I'm most proud of.
+            the projects I&apos;m most proud of.
           </p>
 
           <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black to-transparent"></div>
@@ -573,13 +573,13 @@ export default function ProjectsPage() {
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold text-white">Have a project in mind?</h2>
             <p className="mt-4 text-zinc-400">
-              I'm always looking for interesting challenges and creative collaborations. Whether you need help with data
-              integration, process optimization, or building something entirely new—I'd love to hear about it.
+              I&apos;m always looking for interesting challenges and creative collaborations. Whether you need help with data
+              integration, process optimization, or building something entirely new—I&apos;d love to hear about it.
             </p>
             <div className="mt-8">
               <Link href="/contact">
                 <Button size="lg" className="bg-purple-600 hover:bg-purple-700">
-                  Let's Work Together
+                  Let&apos;s Work Together
                 </Button>
               </Link>
             </div>

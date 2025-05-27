@@ -45,18 +45,18 @@ export default function SoloRealmsPage() {
               <div>
                 <h2 className="text-2xl font-bold text-white">The Challenge</h2>
                 <p className="mt-4 text-zinc-400">
-                  Many D&D enthusiasts struggle to find consistent groups or available Dungeon Masters for regular gameplay. 
-                  Traditional solo D&D experiences lack the dynamic storytelling and rule enforcement that make tabletop RPGs engaging. 
-                  Players want the full D&D experience but often can't coordinate schedules or find experienced DMs.
+                  Many D&amp;D enthusiasts struggle to find consistent groups or available Dungeon Masters for regular gameplay. 
+                  Traditional solo D&amp;D experiences lack the dynamic storytelling and rule enforcement that make tabletop RPGs engaging. 
+                  Players want the full D&amp;D experience but often can&apos;t coordinate schedules or find experienced DMs.
                 </p>
               </div>
 
               <div>
                 <h2 className="text-2xl font-bold text-white">The Solution</h2>
                 <p className="mt-4 text-zinc-400">
-                  SoloRealms brings the complete D&D 5e experience to solo players through an AI Dungeon Master that understands 
+                  SoloRealms brings the complete D&amp;D 5e experience to solo players through an AI Dungeon Master that understands 
                   the rules, creates compelling narratives, and adapts to player choices in real-time. The platform combines 
-                  official D&D 5e mechanics with advanced AI storytelling to create immersive adventures that feel authentic 
+                                      official D&amp;D 5e mechanics with advanced AI storytelling to create immersive adventures that feel authentic 
                   to the tabletop experience.
                 </p>
               </div>
@@ -66,7 +66,7 @@ export default function SoloRealmsPage() {
                 <ul className="mt-4 space-y-2 text-zinc-400">
                   <li className="flex items-start">
                     <Dice6 className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
-                    <span>Full D&D 5e rule implementation with automated dice rolling and stat tracking</span>
+                    <span>Full D&amp;D 5e rule implementation with automated dice rolling and stat tracking</span>
                   </li>
                   <li className="flex items-start">
                     <Scroll className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
@@ -78,7 +78,7 @@ export default function SoloRealmsPage() {
                   </li>
                   <li className="flex items-start">
                     <Shield className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
-                    <span>Character creation wizard with all official D&D 5e classes, races, and backgrounds</span>
+                    <span>Character creation wizard with all official D&amp;D 5e classes, races, and backgrounds</span>
                   </li>
                   <li className="flex items-start">
                     <Sparkles className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
@@ -94,16 +94,16 @@ export default function SoloRealmsPage() {
               <div>
                 <h2 className="text-2xl font-bold text-white">Technical Implementation</h2>
                 <p className="mt-4 text-zinc-400">
-                  SoloRealms leverages cutting-edge AI and game development technologies to create an authentic D&D experience:
+                  SoloRealms leverages cutting-edge AI and game development technologies to create an authentic D&amp;D experience:
                 </p>
                 <ul className="mt-4 space-y-2 text-zinc-400">
                   <li className="flex items-start">
                     <Sparkles className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
-                    <span>GPT-4 fine-tuned on D&D 5e rules and adventure modules for accurate gameplay</span>
+                    <span>GPT-4 fine-tuned on D&amp;D 5e rules and adventure modules for accurate gameplay</span>
                   </li>
                   <li className="flex items-start">
                     <Sparkles className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
-                    <span>Custom rule engine that enforces D&D 5e mechanics and validates player actions</span>
+                    <span>Custom rule engine that enforces D&amp;D 5e mechanics and validates player actions</span>
                   </li>
                   <li className="flex items-start">
                     <Sparkles className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
@@ -123,7 +123,7 @@ export default function SoloRealmsPage() {
               <div>
                 <h2 className="text-2xl font-bold text-white">Game Features</h2>
                 <p className="mt-4 text-zinc-400">
-                  Experience the full depth of D&D 5e with features designed for solo play:
+                  Experience the full depth of D&amp;D 5e with features designed for solo play:
                 </p>
                 <div className="mt-6 grid gap-4 sm:grid-cols-2">
                   <div className="rounded-lg border border-zinc-800 bg-zinc-900/50 p-4">
@@ -132,7 +132,7 @@ export default function SoloRealmsPage() {
                       <h3 className="font-semibold text-white">Character Creation</h3>
                     </div>
                     <p className="text-sm text-zinc-400">
-                      Full D&D 5e character creation with all official classes, races, and backgrounds. 
+                      Full D&amp;D 5e character creation with all official classes, races, and backgrounds. 
                       Automated stat generation and equipment selection.
                     </p>
                   </div>
@@ -142,7 +142,7 @@ export default function SoloRealmsPage() {
                       <h3 className="font-semibold text-white">Dynamic Storytelling</h3>
                     </div>
                     <p className="text-sm text-zinc-400">
-                      AI-generated adventures that adapt to your character's background, choices, 
+                      AI-generated adventures that adapt to your character&apos;s background, choices, 
                       and play style for unique experiences every time.
                     </p>
                   </div>
@@ -152,7 +152,7 @@ export default function SoloRealmsPage() {
                       <h3 className="font-semibold text-white">Combat System</h3>
                     </div>
                     <p className="text-sm text-zinc-400">
-                      Turn-based combat following D&D 5e rules with intelligent enemy AI 
+                      Turn-based combat following D&amp;D 5e rules with intelligent enemy AI 
                       and tactical decision-making support.
                     </p>
                   </div>
@@ -269,7 +269,7 @@ export default function SoloRealmsPage() {
                 <div className="mt-4 space-y-3 text-sm text-zinc-400">
                   <div className="flex items-start gap-2">
                     <Sparkles className="mt-0.5 h-3 w-3 flex-shrink-0 text-purple-500" />
-                    <span>Implemented complete D&D 5e rule system with 500+ spells and abilities</span>
+                    <span>Implemented complete D&amp;D 5e rule system with 500+ spells and abilities</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <Sparkles className="mt-0.5 h-3 w-3 flex-shrink-0 text-purple-500" />
@@ -281,7 +281,7 @@ export default function SoloRealmsPage() {
                   </div>
                   <div className="flex items-start gap-2">
                     <Sparkles className="mt-0.5 h-3 w-3 flex-shrink-0 text-purple-500" />
-                    <span>Designed intuitive character sheet interface for complex D&D mechanics</span>
+                    <span>Designed intuitive character sheet interface for complex D&amp;D mechanics</span>
                   </div>
                 </div>
               </div>

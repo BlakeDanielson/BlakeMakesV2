@@ -4,7 +4,7 @@ import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { ArrowRight, Filter, Music, BookOpen, Sparkles, Code, BrainCircuit } from "lucide-react"
+import { ArrowRight, Filter, Music, BookOpen, Sparkles, Code, BrainCircuit, ExternalLink, Github, Calendar, Clock, Star, Zap } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -12,12 +12,73 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { MainNav } from "@/components/main-nav"
 import { SiteFooter } from "@/components/site-footer"
+import { Project, CategoryTheme, StatusInfo } from "./types"
 
 // Project categories
 const categories = ["All", "AI", "Music", "Web App", "NLP", "Data Viz"]
 
-// Project data
-const projects = [
+// Tech stack icons mapping
+const techIcons = {
+  "React": "⚛️",
+  "Next": "▲",
+  "Next.js": "▲",
+  "Typescript": "📘",
+  "TypeScript": "📘",
+  "Python": "🐍",
+  "AI": "🤖",
+  "NLP": "💬",
+  "Node.js": "🟢",
+  "FFmpeg": "🎬",
+  "API": "🔌",
+  "Database": "🗄️",
+  "Machine Learning": "🧠",
+  "Web Game": "🎮",
+  "Game": "🎮",
+  "E-commerce": "🛒",
+  "Audio": "🎵",
+  "Video": "🎬",
+  "Spotify": "🎵",
+  "Web Scraping": "🕷️",
+  "Image Processing": "🖼️",
+  "UX Design": "🎨"
+}
+
+// Category colors and themes
+const categoryThemes: Record<string, CategoryTheme> = {
+  "AI": {
+    color: "from-blue-500 to-purple-600",
+    bgColor: "bg-blue-500/10",
+    textColor: "text-blue-400",
+    borderColor: "border-blue-500/30"
+  },
+  "Music": {
+    color: "from-pink-500 to-red-600", 
+    bgColor: "bg-pink-500/10",
+    textColor: "text-pink-400",
+    borderColor: "border-pink-500/30"
+  },
+  "Web App": {
+    color: "from-green-500 to-emerald-600",
+    bgColor: "bg-green-500/10", 
+    textColor: "text-green-400",
+    borderColor: "border-green-500/30"
+  },
+  "NLP": {
+    color: "from-yellow-500 to-orange-600",
+    bgColor: "bg-yellow-500/10",
+    textColor: "text-yellow-400", 
+    borderColor: "border-yellow-500/30"
+  },
+  "Data Viz": {
+    color: "from-indigo-500 to-blue-600",
+    bgColor: "bg-indigo-500/10",
+    textColor: "text-indigo-400",
+    borderColor: "border-indigo-500/30"
+  }
+}
+
+// Project data with enhanced details
+const projects: Project[] = [
   {
     title: "OurStories",
     description:
@@ -25,9 +86,16 @@ const projects = [
     image: "/forest-friends-picnic.png",
     category: "AI",
     tags: ["AI", "NLP", "Image Generation", "E-commerce"],
+    techStack: ["Next", "Typescript", "API", "AI", "React"],
     link: "/projects/ourstories",
+    githubLink: "https://github.com/yourusername/ourstories",
+    liveLink: "https://ourstories.app",
     featured: true,
     icon: <BookOpen className="h-5 w-5" />,
+    status: "In Development",
+    pricing: "Premium",
+    completionDate: "2025-03",
+    duration: "3 months"
   },
   {
     title: "Music Production Analyzer",
@@ -36,9 +104,16 @@ const projects = [
     image: "/audio-spectrum-display.png",
     category: "Music",
     tags: ["AI", "Music Production", "Content Analysis", "Audio Processing"],
+    techStack: ["Next", "Typescript", "API", "AI", "React", "Audio"],
     link: "/projects/music-production-analyzer",
+    githubLink: "https://github.com/yourusername/music-analyzer",
+    liveLink: null,
     featured: false,
     icon: <Music className="h-5 w-5" />,
+    status: "In Development",
+    pricing: "Freemium",
+    completionDate: "2025-04",
+    duration: "2 months"
   },
   {
     title: "Constant-Craft",
@@ -47,9 +122,16 @@ const projects = [
     image: "/mystical-alchemy-table.png",
     category: "Web App",
     tags: ["Web Game", "React", "Interactive", "Clone"],
+    techStack: ["Next", "Typescript", "API", "AI", "React", "Game"],
     link: "/projects/constant-craft",
+    githubLink: "https://github.com/yourusername/constant-craft",
+    liveLink: "https://constant-craft.vercel.app",
     featured: false,
     icon: <Sparkles className="h-5 w-5" />,
+    status: "In Development",
+    pricing: "Free",
+    completionDate: "2025-03",
+    duration: "1 week"
   },
   {
     title: "JumpScare Generator",
@@ -58,9 +140,16 @@ const projects = [
     image: "/jumpscare-preview.png",
     category: "Web App",
     tags: ["React", "Python", "FFmpeg", "Uploadthing"],
+    techStack: ["Next", "Typescript", "API", "AI", "React", "Video"],
     link: "/projects/jumpscare-generator",
+    githubLink: "https://github.com/yourusername/jumpscare-generator",
+    liveLink: "https://jumpscare-gen.app",
     featured: false,
     icon: <Code className="h-5 w-5" />,
+    status: "Live",
+    pricing: "Free",
+    completionDate: "2025-03",
+    duration: "2 weeks"
   },
   {
     title: "Mood2Song",
@@ -69,9 +158,16 @@ const projects = [
     image: "/placeholder.svg?key=x9wrf",
     category: "Music",
     tags: ["Music Discovery", "React", "API Integration", "UX Design"],
+    techStack: ["Next", "Typescript", "API", "AI", "React", "Spotify"],
     link: "/projects/mood2song",
+    githubLink: "https://github.com/yourusername/mood2song",
+    liveLink: null,
     featured: false,
     icon: <Music className="h-5 w-5" />,
+    status: "Live",
+    pricing: "Free",
+    completionDate: "2025-04",
+    duration: "1 month"
   },
   {
     title: "Mugshot Matcher",
@@ -80,92 +176,279 @@ const projects = [
     image: "/facial-recognition-comparison.png",
     category: "AI",
     tags: ["Facial Recognition", "AI", "Image Processing", "Historical Data"],
+    techStack: ["Next", "Typescript", "React", "Python", "Web Scraping", "Game"],
     link: "/projects/mugshot-matcher",
+    githubLink: "https://github.com/yourusername/mugshot-matcher",
+    liveLink: "https://mugshot-matcher.app",
     featured: false,
     icon: <BrainCircuit className="h-5 w-5" />,
+    status: "Live",
+    pricing: "Free",
+    completionDate: "2025-04",
+    duration: "6 weeks"
   },
 ]
 
+// Helper function to get status color and icon
+function getStatusInfo(status: string): StatusInfo {
+  switch (status) {
+    case "Live":
+      return { color: "text-green-400", bgColor: "bg-green-500/10", icon: <Zap className="h-3 w-3" /> }
+    case "In Development":
+      return { color: "text-yellow-400", bgColor: "bg-yellow-500/10", icon: <Clock className="h-3 w-3" /> }
+    case "Archived":
+      return { color: "text-gray-400", bgColor: "bg-gray-500/10", icon: <Star className="h-3 w-3" /> }
+    default:
+      return { color: "text-gray-400", bgColor: "bg-gray-500/10", icon: <Star className="h-3 w-3" /> }
+  }
+}
+
+// Helper function to get pricing color
+function getPricingColor(pricing: string) {
+  switch (pricing) {
+    case "Free":
+      return "text-green-400"
+    case "Freemium":
+      return "text-yellow-400"
+    case "Premium":
+      return "text-purple-400"
+    default:
+      return "text-gray-400"
+  }
+}
+
 // Project Card Component
-function ProjectCard({ project }) {
+function ProjectCard({ project }: { project: Project }) {
+  const categoryTheme = categoryThemes[project.category as keyof typeof categoryThemes] || categoryThemes["Web App"]
+  const statusInfo = getStatusInfo(project.status)
+  
   return (
-    <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-      <Link href={project.link}>
-        <Card className="h-full overflow-hidden border-zinc-800 bg-zinc-900/50 transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/30 hover:bg-zinc-900/70 hover:shadow-lg hover:shadow-purple-500/5">
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }} 
+      animate={{ opacity: 1, y: 0 }} 
+      transition={{ duration: 0.5 }}
+      className="group"
+    >
+      <Link href={project.link} className="block h-full">
+        <Card className={`h-full overflow-hidden border-zinc-800 bg-zinc-900/50 transition-all duration-300 hover:-translate-y-1 hover:${categoryTheme.borderColor} hover:bg-zinc-900/70 hover:shadow-lg hover:shadow-purple-500/5 cursor-pointer`}>
           <CardContent className="p-0">
-            <div className="relative aspect-video overflow-hidden">
-              <Image
-                src={project.image || "/placeholder.svg"}
-                alt={project.title}
-                fill
-                className="object-cover transition-transform duration-500 hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-              <div className="absolute right-3 top-3">
-                <Badge className="bg-purple-500/20 text-purple-300">{project.category}</Badge>
-              </div>
+          {/* Image Section */}
+          <div className="relative aspect-video overflow-hidden">
+            <Image
+              src={project.image || "/placeholder.svg"}
+              alt={`${project.title} project screenshot`}
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+            
+            {/* Quick action buttons */}
+            <div className="absolute bottom-3 right-3 flex gap-2 opacity-0 transition-opacity group-hover:opacity-100">
+              {project.githubLink && (
+                <Button
+                  size="sm"
+                  variant="secondary"
+                  className="h-8 w-8 p-0 bg-black/50 hover:bg-black/70"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    e.stopPropagation()
+                    if (project.githubLink) window.open(project.githubLink, '_blank')
+                  }}
+                >
+                  <Github className="h-4 w-4" />
+                </Button>
+              )}
+              {project.liveLink && (
+                <Button
+                  size="sm"
+                  variant="secondary"
+                  className="h-8 w-8 p-0 bg-black/50 hover:bg-black/70"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    e.stopPropagation()
+                    if (project.liveLink) window.open(project.liveLink, '_blank')
+                  }}
+                >
+                  <ExternalLink className="h-4 w-4" />
+                </Button>
+              )}
             </div>
-            <div className="p-6">
-              <div className="mb-3 flex items-center gap-2">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-purple-500/10 text-purple-400">
-                  {project.icon}
+          </div>
+          
+          {/* Content Section */}
+          <div className="p-4 sm:p-6">
+            {/* Header */}
+            <div className="mb-3 flex items-center gap-2">
+              <div className={`flex h-8 w-8 items-center justify-center rounded-full ${categoryTheme.bgColor} ${categoryTheme.textColor}`}>
+                {project.icon}
+              </div>
+              <h3 className="text-lg sm:text-xl font-bold text-white truncate">{project.title}</h3>
+            </div>
+            
+                         {/* Description */}
+             <p className="mb-4 text-sm text-zinc-400 line-clamp-3">{project.description}</p>
+             
+             {/* Project Tags */}
+             <div className="mb-4">
+               <div className="flex flex-wrap gap-2">
+                 <Badge className={`${statusInfo.bgColor} ${statusInfo.color} border-0 flex items-center gap-1`}>
+                   {statusInfo.icon}
+                   {project.status}
+                 </Badge>
+                 <Badge className={`${categoryTheme.bgColor} ${categoryTheme.textColor} border-0`}>
+                   {project.category}
+                 </Badge>
+                 <Badge className={`bg-zinc-800 ${getPricingColor(project.pricing)} border-0`}>
+                   {project.pricing}
+                 </Badge>
+               </div>
+             </div>
+             
+             {/* Tech Stack */}
+             <div className="mb-4">
+               <p className="text-xs text-zinc-500 mb-2">Tech Stack</p>
+               <div className="flex flex-wrap gap-2">
+                 {project.techStack.map((tech: string) => (
+                   <span 
+                     key={tech} 
+                     className="inline-flex items-center gap-1.5 rounded-full bg-zinc-800 px-3 py-1.5 text-xs text-zinc-300"
+                     title={tech}
+                   >
+                     <span className="text-sm">{techIcons[tech as keyof typeof techIcons] || "⚡"}</span>
+                     <span className="hidden sm:inline">{tech}</span>
+                   </span>
+                 ))}
+               </div>
+             </div>
+             
+             {/* Project Details */}
+             <div className="mb-4 flex flex-wrap gap-3 text-xs text-zinc-500">
+              {project.completionDate && (
+                <div className="flex items-center gap-1">
+                  <Calendar className="h-3 w-3" />
+                  <span>{new Date(project.completionDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}</span>
                 </div>
-                <h3 className="text-xl font-bold text-white">{project.title}</h3>
-              </div>
-              <p className="mb-4 text-sm text-zinc-400">{project.description}</p>
-              <div className="mb-4 flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
-                  <span key={tag} className="rounded-full bg-zinc-800 px-2 py-1 text-xs text-zinc-300">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <div className="flex items-center text-sm font-medium text-purple-400">
-                View Project
-                <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              )}
+              <div className="flex items-center gap-1">
+                <Clock className="h-3 w-3" />
+                <span>{project.duration}</span>
               </div>
             </div>
-          </CardContent>
-        </Card>
-      </Link>
-    </motion.div>
-  )
+                       </div>
+         </CardContent>
+       </Card>
+     </Link>
+   </motion.div>
+ )
 }
 
 // Featured Project Component
-function FeaturedProject({ project }) {
+function FeaturedProject({ project }: { project: Project }) {
+  const categoryTheme = categoryThemes[project.category as keyof typeof categoryThemes] || categoryThemes["Web App"]
+  const statusInfo = getStatusInfo(project.status)
+  
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="relative overflow-hidden rounded-xl border border-purple-500/20 bg-gradient-to-br from-zinc-900 to-black p-1"
+      className={`relative overflow-hidden rounded-xl border ${categoryTheme.borderColor} bg-gradient-to-br from-zinc-900 to-black p-1 group`}
     >
       <div className="absolute inset-0 bg-grid-white/5 [mask-image:linear-gradient(0deg,#000000,transparent)]"></div>
-      <div className="relative grid gap-8 p-6 md:grid-cols-2 md:p-10">
-        <div className="flex flex-col justify-center space-y-4">
-          <Badge className="w-fit bg-purple-500/20 text-purple-300">{project.category}</Badge>
-          <h2 className="text-3xl font-bold text-white">{project.title}</h2>
-          <p className="text-zinc-400">{project.description}</p>
+      <div className="relative grid gap-6 p-6 lg:grid-cols-2 lg:gap-8 lg:p-10">
+                        <div className="flex flex-col justify-center space-y-4 lg:space-y-6">
+          {/* Status and Category Badges */}
           <div className="flex flex-wrap gap-2">
-            {project.tags.map((tag) => (
-              <span key={tag} className="rounded-full bg-zinc-800 px-3 py-1 text-xs text-zinc-300">
-                {tag}
-              </span>
-            ))}
+            <Badge className={`${statusInfo.bgColor} ${statusInfo.color} border-0 flex items-center gap-1`}>
+              {statusInfo.icon}
+              {project.status}
+            </Badge>
+            <Badge className={`${categoryTheme.bgColor} ${categoryTheme.textColor} border-0`}>
+              {project.category}
+            </Badge>
+            <Badge className={`bg-black/50 ${getPricingColor(project.pricing)} border-0`}>
+              {project.pricing}
+            </Badge>
           </div>
-          <div className="pt-4">
+          
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">{project.title}</h2>
+          <p className="text-zinc-400 text-sm sm:text-base">{project.description}</p>
+          
+          {/* Tech Stack */}
+          <div>
+            <p className="text-xs text-zinc-500 mb-3">Tech Stack</p>
+            <div className="flex flex-wrap gap-2">
+              {project.techStack.map((tech: string) => (
+                <span 
+                  key={tech} 
+                  className="inline-flex items-center gap-1.5 rounded-full bg-zinc-800 px-3 py-1.5 text-xs text-zinc-300"
+                >
+                  <span className="text-sm">{techIcons[tech as keyof typeof techIcons] || "⚡"}</span>
+                  <span>{tech}</span>
+                </span>
+              ))}
+            </div>
+          </div>
+          
+          {/* Project Details */}
+          <div className="flex flex-wrap gap-4 text-sm text-zinc-500">
+            {project.completionDate && (
+              <div className="flex items-center gap-1">
+                <Calendar className="h-4 w-4" />
+                <span>{new Date(project.completionDate).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</span>
+              </div>
+            )}
+            <div className="flex items-center gap-1">
+              <Clock className="h-4 w-4" />
+              <span>{project.duration}</span>
+            </div>
+          </div>
+          
+          {/* Action Buttons */}
+          <div className="flex flex-wrap gap-3 pt-2">
             <Link href={project.link}>
-              <Button className="bg-purple-600 hover:bg-purple-700">
+              <Button className={`bg-gradient-to-r ${categoryTheme.color} hover:opacity-90 text-white`}>
                 View Case Study
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
+            {project.liveLink && (
+              <Button 
+                variant="outline" 
+                className="border-zinc-700 hover:bg-zinc-800"
+                                 onClick={(e) => {
+                   e.stopPropagation()
+                   if (project.liveLink) window.open(project.liveLink, '_blank')
+                 }}
+              >
+                <ExternalLink className="mr-2 h-4 w-4" />
+                Live Demo
+              </Button>
+            )}
+            {project.githubLink && (
+              <Button 
+                variant="outline" 
+                className="border-zinc-700 hover:bg-zinc-800"
+                                 onClick={(e) => {
+                   e.stopPropagation()
+                   if (project.githubLink) window.open(project.githubLink, '_blank')
+                 }}
+              >
+                <Github className="mr-2 h-4 w-4" />
+                Source Code
+              </Button>
+            )}
           </div>
         </div>
-        <div className="relative aspect-video overflow-hidden rounded-lg border border-zinc-800">
-          <Image src={project.image || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
-          <div className="absolute inset-0 bg-black/20 opacity-0 transition-opacity hover:opacity-100"></div>
+        
+        <div className="relative aspect-video overflow-hidden rounded-lg border border-zinc-800 order-first lg:order-last">
+          <Image 
+            src={project.image || "/placeholder.svg"} 
+            alt={`${project.title} project screenshot`} 
+            fill 
+            className="object-cover transition-transform duration-500 group-hover:scale-105" 
+          />
+          <div className="absolute inset-0 bg-black/20 opacity-0 transition-opacity group-hover:opacity-100"></div>
         </div>
       </div>
     </motion.div>
@@ -211,28 +494,35 @@ export default function ProjectsPage() {
           {featuredProject && <FeaturedProject project={featuredProject} />}
 
           {/* Filter Categories */}
-          <div className="mb-8 mt-16 flex items-center justify-between">
+          <div className="mb-8 mt-12 lg:mt-16 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div className="flex items-center gap-2">
               <Filter className="h-4 w-4 text-zinc-400" />
-              <span className="text-sm text-zinc-400">Filter by:</span>
+              <span className="text-sm text-zinc-400">Filter by category:</span>
             </div>
             <Tabs defaultValue="All" value={selectedCategory} onValueChange={setSelectedCategory}>
-              <TabsList className="bg-zinc-900">
-                {categories.map((category) => (
-                  <TabsTrigger
-                    key={category}
-                    value={category}
-                    className="data-[state=active]:bg-purple-900 data-[state=active]:text-white"
-                  >
-                    {category}
-                  </TabsTrigger>
-                ))}
+              <TabsList className="bg-zinc-900 grid grid-cols-3 sm:grid-cols-6 w-full sm:w-auto h-auto p-1">
+                {categories.map((category) => {
+                  const theme = categoryThemes[category as keyof typeof categoryThemes]
+                  return (
+                    <TabsTrigger
+                      key={category}
+                      value={category}
+                      className={`text-xs sm:text-sm px-3 sm:px-4 py-2.5 min-h-[44px] touch-manipulation rounded-md ${
+                        selectedCategory === category 
+                          ? `${theme?.bgColor || 'bg-purple-900'} ${theme?.textColor || 'text-white'}` 
+                          : 'data-[state=active]:bg-purple-900 data-[state=active]:text-white hover:bg-zinc-800'
+                      }`}
+                    >
+                      {category}
+                    </TabsTrigger>
+                  )
+                })}
               </TabsList>
             </Tabs>
           </div>
 
           {/* Projects Grid */}
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 sm:gap-6 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
             {filteredProjects.map((project) => (
               <ProjectCard key={project.title} project={project} />
             ))}

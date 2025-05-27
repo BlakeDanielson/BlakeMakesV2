@@ -12,14 +12,14 @@ import { AnimatedText } from "@/components/animated-text"
 export default function AboutPage() {
   // Identity/role phrases for animation
   const identityPhrases = [
-    "product manager",
-    "great +1",
-    "entrepreneur",
-    "consultant",
-    "music producer",
-    "financial analyst",
-    "executive advisor",
-    "AI wizard",
+    "a product manager",
+    "a great +1",
+    "an entrepreneur",
+    "a consultant",
+    "a music producer",
+    "a financial analyst",
+    "an executive advisor",
+    "great at learning",
   ]
 
   return (
@@ -54,29 +54,20 @@ export default function AboutPage() {
               <div className="flex flex-col justify-center space-y-6">
                 <h2 className="text-2xl font-bold text-white text-animation-container sm:text-3xl">
                   <span className="flex items-center whitespace-nowrap">
-                    <span className="whitespace-nowrap">I'm Blake, I'm a&nbsp;</span>
+                    <span className="whitespace-nowrap">I'm Blake, I'm&nbsp;</span>
                     <AnimatedText phrases={identityPhrases} highlightClassName="text-purple-400" inline={true} />
                   </span>
                 </h2>
 
                 <div className="space-y-4 text-zinc-400">
                   <p>
-                    My journey began in computer science, but I discovered my passion lies in bridging people, technology, and business, leading me to a finance degree from the University of Denver. During college, I dove into entrepreneurial projects, co-founding a cryptocurrency arbitrage group and gaining recognition as an analyst in the burgeoning cannabis industry. My work, including financial newsletters that garnered over $100k in subscriptions, paved the way for an internship with Snoop Dogg's venture capital fund, Casa Verde Capital.
+                    I started in computer science but found my passion bridging people, technology, and business—leading to a finance degree from the University of Denver. During college, I co-founded a cryptocurrency arbitrage group and built financial newsletters that generated $100k+ in subscriptions, earning an internship with Snoop Dogg's VC fund, Casa Verde Capital.
                   </p>
                   <p>
-                    Since graduating, my professional highlights include:
-                  </p>
-                  <ul className="list-disc pl-5 space-y-2">
-                    <li>Working directly with the CEO of California's largest legal cannabis operator.</li>
-                    <li>Helping deploy $80 million in strategic investments within the cannabis sector.</li>
-                    <li>Leading financial modeling and analysis that secured partnerships with Fortune 50 companies.</li>
-                    <li>Developing executive dashboards that significantly improved strategic decision-making.</li>
-                  </ul>
-                  <p>
-                    I excel at transforming complex data into actionable insights, leveraging financial acumen and product-driven strategies to boost efficiency and growth. My experience includes saving businesses substantial amounts through workflow automation and database system streamlining.
+                    Since graduating, I've worked directly with Fortune 50 companies and California's largest cannabis operator, helping deploy $80M in strategic investments and launched several online businesses. I specialize in turning complex data into actionable insights others may have missed and have a knack for learning new things quickly.
                   </p>
                   <p>
-                    Beyond my professional life, music is a core passion. I produce EDM and hip-hop and am an avid attendee of live music events, especially at Red Rocks.
+                    Beyond work, I'm passionate about music—producing EDM and hip-hop, and catching shows at Red Rocks whenever possible.
                   </p>
                 </div>
 

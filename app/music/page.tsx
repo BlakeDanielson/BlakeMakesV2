@@ -12,19 +12,8 @@ import { Badge } from "@/components/ui/badge"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { MainNav } from "@/components/main-nav"
 import { SiteFooter } from "@/components/site-footer"
-import { SoundCloudPlayerCard } from "@/components/SoundCloudPlayerCard"
-
-// Define TypeScript interfaces
-interface MusicTrack {
-  id: string;
-  title: string;
-  description: string;
-  coverImage: string;
-  soundcloudUrl?: string;
-  duration: string;
-  genre: string;
-  year: string;
-}
+import { BeautifulMusicPlayer } from "@/components/BeautifulMusicPlayer"
+import { getMusicTracks, LocalMusicTrack } from "@/lib/music-utils"
 
 interface MusicProject {
   id: string;
@@ -43,60 +32,8 @@ interface SocialPlatform {
   color: string;
 }
 
-// Updated music data for SoundCloud - REPLACE PLACEHOLDER URLS
-const musicTracks: MusicTrack[] = [
-  {
-    id: "track-1",
-    title: "Midnight Echoes",
-    description: "An ambient electronic piece with layered synths and atmospheric textures.",
-    coverImage: "/sonic-abstraction.png",
-    soundcloudUrl: "YOUR_SOUNDCLOUD_URL_HERE_1", // Replace with actual SoundCloud track URL
-    duration: "3:45",
-    genre: "Electronic",
-    year: "2023",
-  },
-  {
-    id: "track-2",
-    title: "Urban Reflections",
-    description: "Hip-hop instrumental with jazz influences and melodic samples.",
-    coverImage: "/rhythmic-cityscape.png",
-    soundcloudUrl: "YOUR_SOUNDCLOUD_URL_HERE_2", // Replace with actual SoundCloud track URL
-    duration: "4:12",
-    genre: "Hip-Hop",
-    year: "2023",
-  },
-  {
-    id: "track-3",
-    title: "Digital Dreams",
-    description: "Experimental electronic track with glitchy beats and evolving synthesizers.",
-    coverImage: "/sonic-spectrum.png",
-    soundcloudUrl: "YOUR_SOUNDCLOUD_URL_HERE_3", // Replace with actual SoundCloud track URL
-    duration: "5:30",
-    genre: "Experimental",
-    year: "2022",
-  },
-  {
-    id: "track-4",
-    title: "Sunset Boulevard",
-    description: "Chill lo-fi beat with warm analog textures and subtle piano melodies.",
-    coverImage: "/sunset-soundscape.png",
-    soundcloudUrl: "YOUR_SOUNDCLOUD_URL_HERE_4", // Replace with actual SoundCloud track URL
-    duration: "3:18",
-    genre: "Lo-Fi",
-    year: "2022",
-  },
-  {
-    id: "track-5",
-    title: "Neural Network",
-    description: "Futuristic techno track with complex rhythms and AI-inspired sound design.",
-    coverImage: "/sonic-cityscape.png",
-    soundcloudUrl: "YOUR_SOUNDCLOUD_URL_HERE_5", // Replace with actual SoundCloud track URL
-    duration: "6:24",
-    genre: "Techno",
-    year: "2023",
-  },
-  // Add more tracks here as needed, with their SoundCloud URLs
-];
+// Get local music tracks from the blvke-beats folder
+const musicTracks: LocalMusicTrack[] = getMusicTracks();
 
 // Sample music projects/albums (remains the same for now)
 const musicProjects: MusicProject[] = [
@@ -179,38 +116,18 @@ function ProjectCard({ project }: ProjectCardProps) {
 export default function MusicPage() {
   const [activeTab, setActiveTab] = useState("tracks");
   const [activePlayerTrackId, setActivePlayerTrackId] = useState<string | null>(null);
-  const [soundCloudWidgets, setSoundCloudWidgets] = useState<{ [key: string]: any }>({});
 
   const handlePlayerClick = (trackId: string) => {
     setActivePlayerTrackId(trackId);
   };
 
-  const handlePlayerReady = (trackId: string, playerInstance: any) => {
-    setSoundCloudWidgets(prevWidgets => ({
-      ...prevWidgets,
-      [trackId]: playerInstance,
-    }));
-
-    // Bind to this player's PLAY event
-    playerInstance.bind((SC as any).Widget.Events.PLAY, () => {
-      // When THIS player starts playing, pause all others
-      Object.entries(soundCloudWidgets).forEach(([tId, widget]) => {
-        if (widget && tId !== trackId) { // Ensure widget exists and is not the current one
-          widget.pause();
-        }
-      });
-      // Also set this one as active visually if not already
-      setActivePlayerTrackId(trackId); 
-    });
+  const handlePlay = (trackId: string) => {
+    setActivePlayerTrackId(trackId);
   };
-  
-  // Ensure SC is available (this is a basic check; proper handling might involve checking window.SC)
-  useEffect(() => {
-    if (typeof SC === 'undefined') {
-      // console.warn("SoundCloud Widget API (SC) not loaded yet.");
-      // Potentially load the script here if not using next/script in _app or layout
-    }
-  }, []);
+
+  const handlePause = () => {
+    // Keep the active player ID for visual state
+  };
 
 
   return (
@@ -285,21 +202,14 @@ export default function MusicPage() {
           <TabsContent value="tracks" className="mt-8 border-none p-0">
             <div className="space-y-6">
               {musicTracks.map((track) => (
-                track.soundcloudUrl && track.soundcloudUrl !== "YOUR_SOUNDCLOUD_URL_HERE" ? ( // Check if URL is valid
-                  <SoundCloudPlayerCard
-                    key={track.id}
-                    track={track}
-                    isActive={track.id === activePlayerTrackId}
-                    onPlayerClick={handlePlayerClick}
-                    onPlayerReady={handlePlayerReady}
-                  />
-                ) : (
-                  <div key={track.id} className="my-4 p-4 border border-zinc-700 rounded-md bg-zinc-800 text-center">
-                    <p className="text-sm text-yellow-400">
-                      SoundCloud player for "{track.title}" is currently unavailable (URL missing).
-                    </p>
-                  </div>
-                )
+                <BeautifulMusicPlayer
+                  key={track.id}
+                  track={track}
+                  isActive={track.id === activePlayerTrackId}
+                  onPlayerClick={handlePlayerClick}
+                  onPlay={handlePlay}
+                  onPause={handlePause}
+                />
               ))}
             </div>
           </TabsContent>
@@ -380,10 +290,4 @@ export default function MusicPage() {
   );
 }
 
-// Make SC globally available for type checking, assuming it's loaded by next/script
-declare global {
-  interface Window {
-    SC?: any;
-  }
-}
-const SC = typeof window !== 'undefined' ? window.SC : undefined;
+

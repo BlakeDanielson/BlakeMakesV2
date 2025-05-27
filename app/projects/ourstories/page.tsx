@@ -216,31 +216,7 @@ export default function OurStoriesPage() {
                 </ul>
               </div>
 
-              <div className="rounded-lg border border-zinc-800 bg-zinc-900/50 p-6">
-                <h3 className="text-lg font-bold text-white">User Testimonial</h3>
-                <svg
-                  className="h-8 w-8 text-zinc-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M7 16l-4-4m0 0l4-4m-4 4h18"
-                  ></path>
-                </svg>
-                <p className="mt-4 italic text-zinc-400">
-                  "My daughter's face lit up when she saw herself in the story! She asks for her personalized books
-                  every night now. The physical copy we ordered is beautiful and has become a treasured keepsake."
-                </p>
-                <div className="mt-4">
-                  <p className="font-medium text-white">Sarah Johnson</p>
-                  <p className="text-sm text-zinc-500">Parent of a 5-year-old</p>
-                </div>
-              </div>
+
             </div>
           </div>
 

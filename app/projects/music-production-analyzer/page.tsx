@@ -217,32 +217,7 @@ export default function MusicProductionAnalyzerPage() {
                 </ul>
               </div>
 
-              <div className="rounded-lg border border-zinc-800 bg-zinc-900/50 p-6">
-                <h3 className="text-lg font-bold text-white">User Testimonial</h3>
-                <svg
-                  className="h-8 w-8 text-zinc-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M7 16l-4-4m0 0l4-4m-4 4h18"
-                  ></path>
-                </svg>
-                <p className="mt-4 italic text-zinc-400">
-                  "This tool has completely transformed how I learn production techniques. I used to spend hours
-                  watching tutorials to find specific information. Now I can search exactly what I need and jump right
-                  to that part of the video."
-                </p>
-                <div className="mt-4">
-                  <p className="font-medium text-white">Alex Chen</p>
-                  <p className="text-sm text-zinc-500">Electronic Music Producer</p>
-                </div>
-              </div>
+
             </div>
           </div>
 

@@ -42,15 +42,15 @@ export default function Home() {
 
   // Identity/role phrases for animation
   const identityPhrases = [
-    "Product Manager",
-    "Technical Softskiller",
-    "Bandwidth Expander",
-    "Pretty Chill Guy",
-    "Entrepreneur",
-    "Music Producer",
-    "Great +1 to a Wedding",
-    "Strategic Advisor",
-    "Published Writer",
+    "a Product Manager",
+    "a Technical Softskiller",
+    "a Bandwidth Expander",
+    "a Pretty Chill Guy",
+    "an Entrepreneur",
+    "a Music Producer",
+    "a Great +1 to a Wedding",
+    "a Strategic Advisor",
+    "a Financial Writer",
   ]
 
   // Business/Leadership skills

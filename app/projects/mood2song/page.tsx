@@ -219,32 +219,7 @@ export default function Mood2SongPage() {
                 </ul>
               </div>
 
-              <div className="rounded-lg border border-zinc-800 bg-zinc-900/50 p-6">
-                <h3 className="text-lg font-bold text-white">User Testimonial</h3>
-                <svg
-                  className="h-8 w-8 text-zinc-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M7 16l-4-4m0 0l4-4m-4 4h18"
-                  ></path>
-                </svg>
-                <p className="mt-4 italic text-zinc-400">
-                  "Mood2Song has completely changed how I discover music. Instead of scrolling through endless
-                  playlists, I can just select my current mood or describe a specific vibe I'm looking for, and it
-                  delivers perfect recommendations every time."
-                </p>
-                <div className="mt-4">
-                  <p className="font-medium text-white">Michael Torres</p>
-                  <p className="text-sm text-zinc-500">Music Producer & DJ</p>
-                </div>
-              </div>
+
             </div>
           </div>
 

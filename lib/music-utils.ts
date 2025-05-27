@@ -62,27 +62,25 @@ function parseFilename(filename: string): Partial<LocalMusicTrack> {
   return metadata;
 }
 
-// Load blob URLs mapping
+// Static blob URLs mapping (generated from blob-urls.json)
+const BLOB_URLS: Record<string, string> = {
+  "5.7.25 Twan Recording new verse BLVKE UNMIXEDmp3.mp3": "https://fstjqlddr4saipgo.public.blob.vercel-storage.com/5.7.25%20Twan%20Recording%20new%20verse%20BLVKE%20UNMIXEDmp3.mp3",
+  "@BLVKE 5G Tower 151 D#maj - UNTAGGED.mp3": "https://fstjqlddr4saipgo.public.blob.vercel-storage.com/%40BLVKE%205G%20Tower%20151%20D%23maj%20-%20UNTAGGED.mp3",
+  "Comfortable Today 90 C#maj.wav": "https://fstjqlddr4saipgo.public.blob.vercel-storage.com/Comfortable%20Today%2090%20C%23maj.wav",
+  "Dark Vacation 140 Dmin - UNTAGGED.mp3": "https://fstjqlddr4saipgo.public.blob.vercel-storage.com/Dark%20Vacation%20140%20Dmin%20-%20UNTAGGED.mp3",
+  "Hold me Close Amin 85 0 UNTAGGED.wav": "https://fstjqlddr4saipgo.public.blob.vercel-storage.com/Hold%20me%20Close%20Amin%2085%200%20UNTAGGED.wav",
+  "Illuminatis On Me 142 Dmin.mp3": "https://fstjqlddr4saipgo.public.blob.vercel-storage.com/Illuminatis%20On%20Me%20142%20Dmin.mp3",
+  "Lil Groovy 96 Emin - UNTAGGED.wav": "https://fstjqlddr4saipgo.public.blob.vercel-storage.com/Lil%20Groovy%2096%20Emin%20-%20UNTAGGED.wav",
+  "Next Level Now What 180 Dmin.mp3": "https://fstjqlddr4saipgo.public.blob.vercel-storage.com/Next%20Level%20Now%20What%20180%20Dmin.mp3",
+  "Overstimulated 153 Dmin.mp3": "https://fstjqlddr4saipgo.public.blob.vercel-storage.com/Overstimulated%20153%20Dmin.mp3",
+  "She wont wait 140 Amin - UNTAGGED.mp3": "https://fstjqlddr4saipgo.public.blob.vercel-storage.com/She%20wont%20wait%20140%20Amin%20-%20UNTAGGED.mp3",
+  "Sleeping in on vacation 115 Dmin - UNTAGGED.wav": "https://fstjqlddr4saipgo.public.blob.vercel-storage.com/Sleeping%20in%20on%20vacation%20115%20Dmin%20-%20UNTAGGED.wav",
+  "Sunbathing with you 100 Emin.wav": "https://fstjqlddr4saipgo.public.blob.vercel-storage.com/Sunbathing%20with%20you%20100%20Emin.wav"
+};
+
+// Get blob URLs mapping
 function loadBlobUrls(): Record<string, string> {
-  try {
-    // Use dynamic import to avoid build-time resolution issues
-    const fs = require('fs');
-    const path = require('path');
-    const blobPath = path.join(process.cwd(), 'lib', 'blob-urls.json');
-    
-    if (fs.existsSync(blobPath)) {
-      const blobData = JSON.parse(fs.readFileSync(blobPath, 'utf8'));
-      const urlMap: Record<string, string> = {};
-      blobData.files?.forEach((file: any) => {
-        urlMap[file.filename] = file.url;
-      });
-      return urlMap;
-    }
-    return {};
-  } catch (error) {
-    console.log('No blob URLs found, using local files');
-    return {};
-  }
+  return BLOB_URLS;
 }
 
 // Get all music tracks from the blvke-beats folder

@@ -210,10 +210,10 @@ export default function Home() {
                 </p>
 
                 <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
-                  Post-graduation, I jumped straight executive-level finance but quickly pivoted to product and corporate strategy, working directly with the CEO of 
-                  California&apos;s largest legal cannabis operator to deploy $80 million and build the largest indoor cannabis cultivation and processing facility in California.
-                  After several years I explored South Florida working for another Young Presidents Organization member where I architected 
-                  financial models that secured Fortune 50 partnerships, reduced operating costs by successfully integrating AI tools throughout portfolio companies, and transformed 
+                  Post-graduation, I jumped to straight executive-level finance but quickly pivoted to product and corporate strategy. I spent 3 years as a direct report to a Young Presidents Organization member and CEO of 
+                  California&apos;s largest legal cannabis operator. Together we deployed $80 million and built the largest indoor cannabis cultivation and processing facility in California.
+                  After several years I explored South Florida working for another YPO'er member where I architected 
+                  financial models that secured Fortune 50 partnerships, reduced operating costs by successfully integrating AI tools throughout portfolio companies, and transformed the 
                   organizational decision-making by identifying and closing critical communication gaps executives were missing.
                 </p>
               </div>

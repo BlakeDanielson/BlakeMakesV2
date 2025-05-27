@@ -7,18 +7,6 @@ import { Play, Pause, Clock, MoreHorizontal, Heart, ExternalLink } from "lucide-
 import { useSpotify } from "../spotify-provider"
 import { Topbar } from "../components/topbar"
 
-interface Track {
-  id: string
-  title: string
-  artist: string
-  duration: string
-  cover?: string
-  bpm?: number
-  genre?: string
-  date?: string
-  plays?: number
-}
-
 export default function BeatStarsPage() {
   const {
     playlists,
@@ -56,7 +44,7 @@ export default function BeatStarsPage() {
     }
   }
 
-  const handleTrackPlay = (track: Track) => {
+  const handleTrackPlay = (track: any) => {
     playTrack(track, beatStarsPlaylist)
   }
 

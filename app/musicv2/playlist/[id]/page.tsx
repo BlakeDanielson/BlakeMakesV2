@@ -28,7 +28,7 @@ export default function PlaylistPage() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const handlePlayPause = (track) => {
+  const handlePlayPause = (track: any) => {
     if (currentTrack?.id === track.id) {
       if (isPlaying) {
         pauseTrack()
@@ -36,7 +36,7 @@ export default function PlaylistPage() {
         resumeTrack()
       }
     } else {
-      playTrack(track, playlist)
+      playTrack(track, playlist || undefined)
     }
   }
 

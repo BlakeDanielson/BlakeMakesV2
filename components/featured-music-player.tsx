@@ -9,55 +9,36 @@ import { Button } from "@/components/ui/button"
 import { Slider } from "@/components/ui/slider"
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 import { Badge } from "@/components/ui/badge"
+import { getMusicTracks, LocalMusicTrack } from "@/lib/music-utils"
 
-// Featured tracks data
-const featuredTracks = [
-  {
-    id: "track-1",
-    title: "Midnight Echoes",
-    description: "Ambient electronic with layered synths",
-    coverImage: "/sonic-abstraction.png",
-    audioSrc: "https://example.com/track1.mp3", // Replace with actual audio URL
-    duration: "3:45",
-    genre: "Electronic",
-  },
-  {
-    id: "track-2",
-    title: "Urban Reflections",
-    description: "Hip-hop instrumental with jazz influences",
-    coverImage: "/rhythmic-cityscape.png",
-    audioSrc: "https://example.com/track2.mp3", // Replace with actual audio URL
-    duration: "4:12",
-    genre: "Hip-Hop",
-  },
-  {
-    id: "track-3",
-    title: "Digital Dreams",
-    description: "Experimental electronic with glitchy beats",
-    coverImage: "/sonic-spectrum.png",
-    audioSrc: "https://example.com/track3.mp3", // Replace with actual audio URL
-    duration: "5:30",
-    genre: "Experimental",
-  },
-  {
-    id: "track-4",
-    title: "Sunset Boulevard",
-    description: "Chill lo-fi beat with warm analog textures",
-    coverImage: "/sunset-soundscape.png",
-    audioSrc: "https://example.com/track4.mp3", // Replace with actual audio URL
-    duration: "3:18",
-    genre: "Lo-Fi",
-  },
-  {
-    id: "track-5",
-    title: "Neural Network",
-    description: "Futuristic techno with complex rhythms",
-    coverImage: "/sonic-cityscape.png",
-    audioSrc: "https://example.com/track5.mp3", // Replace with actual audio URL
-    duration: "6:24",
-    genre: "Techno",
-  },
-]
+// Get real tracks from the music collection
+const musicTracks = getMusicTracks()
+
+// Function to get cover image based on genre
+const getCoverImageForGenre = (genre: string): string => {
+  const coverImages = {
+    'Hip-Hop': '/rhythmic-cityscape.png',
+    'Trap': '/sonic-abstraction.png',
+    'Chill': '/sunset-soundscape.png',
+    'Electronic': '/sonic-spectrum.png',
+    'Dark Trap': '/sonic-cityscape.png',
+    'Drill': '/urban-geometric.jpg',
+  }
+  return coverImages[genre as keyof typeof coverImages] || '/sonic-abstraction.png'
+}
+
+// Convert LocalMusicTrack to the format expected by the player
+const featuredTracks = musicTracks.slice(0, 6).map((track) => ({
+  id: track.id,
+  title: track.title,
+  description: `${track.genre} ${track.bpm ? `• ${track.bpm} BPM` : ''}${track.key ? ` • ${track.key}` : ''}`,
+  coverImage: getCoverImageForGenre(track.genre || 'Hip-Hop'),
+  audioSrc: track.filepath,
+  duration: track.duration || "0:00",
+  genre: track.genre || 'Hip-Hop',
+  bpm: track.bpm,
+  key: track.key,
+}))
 
 export function FeaturedMusicPlayer() {
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0)
@@ -211,6 +192,7 @@ export function FeaturedMusicPlayer() {
               <Badge className="mb-2 bg-purple-500/20 text-purple-300">{currentTrack.genre}</Badge>
               <h3 className="text-2xl font-bold text-white">{currentTrack.title}</h3>
               <p className="mt-1 text-zinc-400">{currentTrack.description}</p>
+              <p className="mt-1 text-sm text-zinc-500">BLVKE • 2024</p>
             </div>
 
             <div className="mt-6 space-y-4">
@@ -225,7 +207,7 @@ export function FeaturedMusicPlayer() {
                 />
                 <div className="flex justify-between text-xs text-zinc-500">
                   <span>{audioRef.current ? formatTime(audioRef.current.currentTime) : "0:00"}</span>
-                  <span>{currentTrack.duration}</span>
+                  <span>{duration ? formatTime(duration) : currentTrack.duration}</span>
                 </div>
               </div>
 
@@ -319,7 +301,7 @@ export function FeaturedMusicPlayer() {
               <div className="mt-3">
                 <h4 className="line-clamp-1 font-medium text-white">{track.title}</h4>
                 <p className="line-clamp-1 text-xs text-zinc-400">
-                  {track.genre} • {track.duration}
+                  {track.genre} {track.bpm && `• ${track.bpm} BPM`}
                 </p>
               </div>
             </motion.div>

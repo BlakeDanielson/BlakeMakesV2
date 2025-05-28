@@ -1,0 +1,7 @@
+# Google AdSense Environment Variables
+# Add this to your .env.local file
+
+NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT_ID=ca-pub-5415010136926818
+
+# Note: This is a public environment variable (NEXT_PUBLIC_) because it needs to be 
+# accessible in the browser for the AdSense script to work properly. 

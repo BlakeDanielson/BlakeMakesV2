@@ -20,11 +20,18 @@ const categories = ["All", "AI", "Music", "Web App", "NLP", "Data Viz", "RPG"]
 // Tech stack icons mapping
 const techIcons = {
   "React": "⚛️",
+  "React 19": "⚛️",
   "Next": "▲",
   "Next.js": "▲",
+  "Next.js 15": "▲",
   "Typescript": "📘",
   "TypeScript": "📘",
   "Python": "🐍",
+  "FastAPI": "⚡",
+  "PostgreSQL": "🐘",
+  "GPT-4o": "🤖",
+  "WebSocket": "🔌",
+  "XState": "🔄",
   "AI": "🤖",
   "NLP": "💬",
   "Node.js": "🟢",
@@ -43,7 +50,8 @@ const techIcons = {
   "UX Design": "🎨",
   "D&D": "🎲",
   "RPG": "⚔️",
-  "Interactive Fiction": "📖"
+  "Interactive Fiction": "📖",
+  "Real-time": "⚡"
 }
 
 // Category colors and themes
@@ -199,11 +207,11 @@ const projects: Project[] = [
   {
     title: "SoloRealms",
     description:
-      "An AI-powered Dungeons & Dragons game that follows 5e rules, allowing players to embark on epic solo adventures with an intelligent DM that adapts to their choices and creates immersive storylines.",
+      "A sophisticated web-based solo Dungeons & Dragons experience where GPT-4o acts as your personal Dungeon Master. Designed for players who want to enjoy D&D adventures on their own schedule, with AI-driven storytelling that adapts to their choices and creates immersive, personalized narratives.",
     image: "/dnd-fantasy-tavern.png",
     category: "RPG",
-    tags: ["AI", "Game", "D&D", "RPG", "Interactive Fiction"],
-    techStack: ["Next", "Typescript", "React", "AI", "Game", "API"],
+    tags: ["AI", "D&D", "RPG", "Interactive Fiction", "WebSocket", "Real-time"],
+    techStack: ["Next.js 15", "React 19", "TypeScript", "FastAPI", "PostgreSQL", "GPT-4o", "WebSocket", "XState"],
     link: "/projects/solorealms",
     githubLink: "https://github.com/yourusername/solorealms",
     liveLink: "https://solorealms.app",

@@ -27,18 +27,36 @@ const getCoverImageForGenre = (genre: string): string => {
   return coverImages[genre as keyof typeof coverImages] || '/sonic-abstraction.png'
 }
 
+// Function to determine genre from track title and metadata
+const getGenreFromTrack = (track: LocalMusicTrack): string => {
+  const title = track.title.toLowerCase()
+  const filename = track.filename.toLowerCase()
+  
+  if (title.includes('drill') || filename.includes('drill')) return 'Drill'
+  if (title.includes('trap') || filename.includes('trap')) return 'Trap'
+  if (title.includes('dark') || filename.includes('dark')) return 'Dark Trap'
+  if (title.includes('chill') || title.includes('vacation') || title.includes('sunbathing') || title.includes('comfortable')) return 'Chill'
+  if (title.includes('electronic') || title.includes('5g')) return 'Electronic'
+  
+  // Default to Hip-Hop for other tracks
+  return 'Hip-Hop'
+}
+
 // Convert LocalMusicTrack to the format expected by the player
-const featuredTracks = musicTracks.slice(0, 6).map((track) => ({
-  id: track.id,
-  title: track.title,
-  description: `${track.genre} ${track.bpm ? `• ${track.bpm} BPM` : ''}${track.key ? ` • ${track.key}` : ''}`,
-  coverImage: getCoverImageForGenre(track.genre || 'Hip-Hop'),
-  audioSrc: track.filepath,
-  duration: track.duration || "0:00",
-  genre: track.genre || 'Hip-Hop',
-  bpm: track.bpm,
-  key: track.key,
-}))
+const featuredTracks = musicTracks.slice(0, 6).map((track) => {
+  const genre = getGenreFromTrack(track)
+  return {
+    id: track.id,
+    title: track.title,
+    description: `${genre} ${track.bpm ? `• ${track.bpm} BPM` : ''}${track.key ? ` • ${track.key}` : ''}`,
+    coverImage: getCoverImageForGenre(genre),
+    audioSrc: track.filepath,
+    duration: track.duration || "0:00",
+    genre: genre,
+    bpm: track.bpm,
+    key: track.key,
+  }
+})
 
 export function FeaturedMusicPlayer() {
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0)

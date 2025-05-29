@@ -4,7 +4,7 @@ import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { ArrowRight, Filter, Music, BookOpen, Sparkles, Code, BrainCircuit, ExternalLink, Github, Calendar, Clock, Star, Zap } from "lucide-react"
+import { ArrowRight, Filter, Music, BookOpen, Sparkles, Code, BrainCircuit, ExternalLink, Github, Calendar, Clock, Star, Zap, ChefHat } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -29,7 +29,12 @@ const techIcons = {
   "Python": "🐍",
   "FastAPI": "⚡",
   "PostgreSQL": "🐘",
+  "Prisma": "🔺",
   "GPT-4o": "🤖",
+  "OpenAI": "🤖",
+  "Google Gemini": "💎",
+  "Clerk": "🔐",
+  "Redis": "🔴",
   "WebSocket": "🔌",
   "XState": "🔄",
   "AI": "🤖",
@@ -187,22 +192,40 @@ const projects: Project[] = [
     duration: "1 month"
   },
   {
-    title: "Mugshot Matcher",
+    title: "Mug Matcher",
     description:
-      "A facial recognition tool I built that allows users to find their historical doppelgängers by matching their photos with a database of historical mugshots.",
-    image: "/facial-recognition-comparison.png",
+      "Interactive criminal profiling game that challenges players to match mugshots with their corresponding crimes. Built as a Progressive Web App with 400+ real criminal records, sophisticated scoring system, and dual UI themes for an engaging educational experience.",
+    image: "/mugshot-matching-game.png",
     category: "AI",
-    tags: ["Facial Recognition", "AI", "Image Processing", "Historical Data"],
-    techStack: ["Next", "Typescript", "React", "Python", "Web Scraping", "Game"],
+    tags: ["Criminal Profiling", "Interactive Game", "Educational", "Progressive Web App"],
+    techStack: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS", "Framer Motion", "Game"],
     link: "/projects/mugshot-matcher",
-    githubLink: "https://github.com/yourusername/mugshot-matcher",
-    liveLink: "https://mugshot-matcher.app",
+    githubLink: "https://github.com/BlakeDanielson/mug-matcher",
+    liveLink: "https://mugmatcher.app",
     featured: false,
     icon: <BrainCircuit className="h-5 w-5" />,
     status: "Live",
     pricing: "Free",
     completionDate: "2025-04",
     duration: "6 weeks"
+  },
+  {
+    title: "Caren's Cookbook",
+    description:
+      "AI-Powered Recipe Management Platform that transforms how users collect, organize, and manage recipes with intelligent extraction from URLs and images, smart categorization, and personalized digital cookbook experience.",
+    image: "/culinary-innovation-lab.png",
+    category: "AI",
+    tags: ["AI", "Recipe Management", "Computer Vision", "NLP", "Web Scraping"],
+    techStack: ["Next.js 15", "TypeScript", "PostgreSQL", "Prisma", "OpenAI", "Google Gemini", "Clerk", "Redis"],
+    link: "/projects/carens-cookbook",
+    githubLink: "https://github.com/yourusername/carens-cookbook",
+    liveLink: null,
+    featured: false,
+    icon: <ChefHat className="h-5 w-5" />,
+    status: "In Development",
+    pricing: "Freemium",
+    completionDate: "2025-06",
+    duration: "4-6 months"
   },
   {
     title: "SoloRealms",
@@ -215,7 +238,7 @@ const projects: Project[] = [
     link: "/projects/solorealms",
     githubLink: "https://github.com/yourusername/solorealms",
     liveLink: "https://solorealms.app",
-    featured: true,
+    featured: false,
     icon: <BrainCircuit className="h-5 w-5" />,
     status: "In Development",
     pricing: "Freemium",
@@ -493,7 +516,7 @@ function FeaturedProject({ project }: { project: Project }) {
 export default function ProjectsPage() {
   const [selectedCategory, setSelectedCategory] = useState("All")
 
-  const featuredProject = projects.find((project) => project.featured)
+  const featuredProjects = projects.filter((project) => project.featured)
   const filteredProjects =
     selectedCategory === "All"
       ? projects.filter((project) => !project.featured)
@@ -525,8 +548,14 @@ export default function ProjectsPage() {
       {/* Main Content */}
       <div className="container mx-auto px-4 py-12">
         <div className="mx-auto max-w-6xl">
-          {/* Featured Project */}
-          {featuredProject && <FeaturedProject project={featuredProject} />}
+          {/* Featured Projects */}
+          {featuredProjects.length > 0 && (
+            <div className="space-y-8 mb-12 lg:mb-16">
+              {featuredProjects.map((project) => (
+                <FeaturedProject key={project.title} project={project} />
+              ))}
+            </div>
+          )}
 
           {/* Filter Categories */}
           <div className="mb-8 mt-12 lg:mt-16 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">

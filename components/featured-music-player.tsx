@@ -43,20 +43,54 @@ const getGenreFromTrack = (track: LocalMusicTrack): string => {
 }
 
 // Convert LocalMusicTrack to the format expected by the player
-const featuredTracks = musicTracks.slice(0, 6).map((track) => {
-  const genre = getGenreFromTrack(track)
-  return {
-    id: track.id,
-    title: track.title,
-    description: `${genre} ${track.bpm ? `• ${track.bpm} BPM` : ''}${track.key ? ` • ${track.key}` : ''}`,
-    coverImage: getCoverImageForGenre(genre),
-    audioSrc: track.filepath,
-    duration: track.duration || "0:00",
-    genre: genre,
-    bpm: track.bpm,
-    key: track.key,
+// Define the desired order by track IDs (change these IDs to reorder)
+const desiredTrackOrder: string[] = [
+  'track-5',  // Hold me Close Amin 85 UNTAGGED.wav
+  'track-1',  // GOLDEN GOD.wav
+  'track-4',  // GCP type beat.mp3
+  'track-12', // Dark Vacation 140 Dmin - UNTAGGED.mp3
+  'track-13', // Anthony's Drill Track.mp3
+  'track-10', // She wont wait 140 Amin - UNTAGGED.mp3
+]
+
+const featuredTracks = (() => {
+  if (desiredTrackOrder.length > 0) {
+    // Use custom order if specified
+    return desiredTrackOrder
+      .map(id => musicTracks.find(track => track.id === id))
+      .filter((track): track is LocalMusicTrack => track !== undefined) // Remove any undefined tracks
+      .map((track) => {
+        const genre = getGenreFromTrack(track)
+        return {
+          id: track.id,
+          title: track.title,
+          description: `${genre} ${track.bpm ? `• ${track.bpm} BPM` : ''}${track.key ? ` • ${track.key}` : ''}`,
+          coverImage: getCoverImageForGenre(genre),
+          audioSrc: track.filepath,
+          duration: track.duration || "0:00",
+          genre: genre,
+          bpm: track.bpm,
+          key: track.key,
+        }
+      })
+  } else {
+    // Default behavior - first 6 tracks
+    return musicTracks.slice(0, 6).map((track) => {
+      const genre = getGenreFromTrack(track)
+      return {
+        id: track.id,
+        title: track.title,
+        description: `${genre} ${track.bpm ? `• ${track.bpm} BPM` : ''}${track.key ? ` • ${track.key}` : ''}`,
+        coverImage: getCoverImageForGenre(genre),
+        audioSrc: track.filepath,
+        duration: track.duration || "0:00",
+        genre: genre,
+        bpm: track.bpm,
+        key: track.key,
+      }
+    })
   }
-})
+})()
 
 export function FeaturedMusicPlayer() {
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0)
@@ -65,6 +99,7 @@ export function FeaturedMusicPlayer() {
   const [duration, setDuration] = useState(0)
   const [volume, setVolume] = useState(80)
   const [isMuted, setIsMuted] = useState(false)
+  const [isSeeking, setIsSeeking] = useState(false)
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const previousVolume = useRef(volume)
 
@@ -75,7 +110,7 @@ export function FeaturedMusicPlayer() {
       const audio = audioRef.current
 
       const handleTimeUpdate = () => {
-        if (audio.duration) {
+        if (audio.duration && !isSeeking) {
           setProgress((audio.currentTime / audio.duration) * 100)
         }
       }
@@ -98,7 +133,7 @@ export function FeaturedMusicPlayer() {
         audio.removeEventListener("ended", handleEnded)
       }
     }
-  }, [currentTrackIndex])
+  }, [currentTrackIndex, isSeeking])
 
   useEffect(() => {
     if (audioRef.current) {
@@ -142,9 +177,34 @@ export function FeaturedMusicPlayer() {
   const handleProgressChange = (newValue: number[]) => {
     if (audioRef.current && duration) {
       const newTime = (newValue[0] / 100) * duration
+      
+      // Always update visual progress
+      setProgress(newValue[0])
+      
+      // Always update audio time during value changes (this handles dragging)
+      audioRef.current.currentTime = newTime
+      
+      // Set seeking state to prevent time update conflicts
+      if (!isSeeking) {
+        setIsSeeking(true)
+      }
+    }
+  }
+
+  const handleProgressStart = () => {
+    setIsSeeking(true)
+  }
+
+  const handleProgressEnd = (newValue: number[]) => {
+    if (audioRef.current && duration) {
+      const newTime = (newValue[0] / 100) * duration
       audioRef.current.currentTime = newTime
       setProgress(newValue[0])
     }
+    // Use a small delay to prevent immediate time updates from overriding the seek
+    setTimeout(() => {
+      setIsSeeking(false)
+    }, 100)
   }
 
   const handleVolumeChange = (newValue: number[]) => {
@@ -221,6 +281,8 @@ export function FeaturedMusicPlayer() {
                   max={100}
                   step={0.1}
                   onValueChange={(newValue) => handleProgressChange(newValue)}
+                  onValueCommit={handleProgressEnd}
+                  onPointerDown={handleProgressStart}
                   className="cursor-pointer"
                 />
                 <div className="flex justify-between text-xs text-zinc-500">

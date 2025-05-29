@@ -42,6 +42,7 @@ export function BeautifulMusicPlayer({
   const [error, setError] = useState<string | null>(null);
   const [isFavorite, setIsFavorite] = useState(false);
   const [showVolumeSlider, setShowVolumeSlider] = useState(false);
+  const [isSeeking, setIsSeeking] = useState(false);
 
   // Calculate animation duration based on BPM
   const getAnimationDuration = () => {
@@ -95,7 +96,7 @@ export function BeautifulMusicPlayer({
   };
 
   const handleTimeUpdate = () => {
-    if (audioRef.current) {
+    if (audioRef.current && !isSeeking) {
       setCurrentTime(audioRef.current.currentTime);
     }
   };
@@ -107,11 +108,25 @@ export function BeautifulMusicPlayer({
   };
 
   const handleSeek = (value: number[]) => {
+    if (audioRef.current && isSeeking) {
+      // During seeking, update both visual progress and audio time
+      const newTime = (value[0] / 100) * duration;
+      audioRef.current.currentTime = newTime;
+      setCurrentTime(newTime);
+    }
+  };
+
+  const handleSeekStart = () => {
+    setIsSeeking(true);
+  };
+
+  const handleSeekEnd = (value: number[]) => {
     if (audioRef.current) {
       const newTime = (value[0] / 100) * duration;
       audioRef.current.currentTime = newTime;
       setCurrentTime(newTime);
     }
+    setIsSeeking(false);
   };
 
   const handleVolumeChange = (value: number[]) => {
@@ -284,6 +299,8 @@ export function BeautifulMusicPlayer({
             <Slider
               value={[progress]}
               onValueChange={handleSeek}
+              onValueCommit={handleSeekEnd}
+              onPointerDown={handleSeekStart}
               max={100}
               step={0.1}
               className="w-full [&_[role=slider]]:bg-purple-500 [&_[role=slider]]:border-purple-400 [&_.bg-primary]:bg-gradient-to-r [&_.bg-primary]:from-purple-500 [&_.bg-primary]:to-pink-500"

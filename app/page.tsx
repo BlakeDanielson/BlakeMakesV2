@@ -109,15 +109,12 @@ export default function Home() {
                 </div>
               </h1>
               <div className="space-y-2 sm:space-y-3 mt-4 sm:mt-6">
-                <p className="text-sm sm:text-base lg:text-lg text-zinc-300 font-medium px-2 sm:px-0 leading-relaxed">
-                  Extreme asset to executive teams. Proven history of driving strategic initiatives that grow revenue or reduce internal costs in high-stakes environments.
-                </p>
-                <p className="text-sm sm:text-base lg:text-lg text-zinc-300 font-medium px-2 sm:px-0 leading-relaxed">
+              <p className="text-sm sm:text-base lg:text-lg text-zinc-300 font-medium px-2 sm:px-0 leading-relaxed">
                   Expert at translating complex technical concepts into actionable business strategies that stakeholders of all backgrounds can understand and buy into.
                 </p>
+
                 <p className="text-sm sm:text-base lg:text-lg text-zinc-300 font-medium px-2 sm:px-0 leading-relaxed">
-                  Seeking a leadership role at a visionary company where I can leverage my demonstrated track record of 
-                  success to drive breakthrough innovation and scale transformative products that define markets.
+                  Worked with CEOs to deploy $80M+ and facilitated communication between technical and business teams.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 pt-4 sm:pt-6 px-4 sm:px-0">
@@ -197,24 +194,30 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
-                  I discovered my superpower early: transforming complex technical challenges into strategic business 
-                  opportunities. Starting in computer science, I quickly pivoted to finance at the University of Denver, 
-                  where I built and scaled a cryptocurrency arbitrage platform and became one of the most followed analysts on Seeking 
-                  Alpha for the cannabis sector.
+                I studied finance at the University of Denver and quickly realized my edge was transforming complex technical challenges into strategic business opportunities.
+                While in college, I built a crypto arbitrage platform, wrote two weekly financial newsletters for 10,000+ paying subscribers, and became a top cannabis analyst on Seeking Alpha.
+                I also interned in investment banking as well as at Snoop Dogg's VC fund, Casa Verde Capital. 
+
                 </p>
                 <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
-                  While still in college I authored 2 weekly financial newsletters covering the cannabis and emerging technology sectors that was sent to over 10,000 paying subscribers.
-                  At the same time, I held down an internship with Snoop Dogg&apos;s venture capital fund, Casa Verde Capital. This wasn&apos;t luck—it was the result of my 
-                  ability to synthesize market data, communicate complex concepts clearly, and build products that solve 
-                  actual and existing problems for real users.
+
                 </p>
 
                 <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
-                  Post-graduation, I jumped to straight executive-level finance but quickly pivoted to product and corporate strategy. I spent 3 years as a direct report to a Young Presidents Organization member and CEO of 
-                  California&apos;s largest legal cannabis operator. Together we deployed $80 million and built the largest indoor cannabis cultivation and processing facility in California.
-                  After several years I explored South Florida working for another YPO'er member where I architected 
-                  financial models that secured Fortune 50 partnerships, reduced operating costs by successfully integrating AI tools throughout portfolio companies, and transformed the 
-                  organizational decision-making by identifying and closing critical communication gaps executives were missing.
+                  
+                  While staying in finance would&apos;ve been the comfortable path, I took the opportunity to work for a high-growth startup and reported directly to the CEO, a member of the Young Presidents' Organization (YPO).
+                  
+                  I helped deploy $80 million to build what became California&apos;s largest indoor cannabis facility, acquired four LA based dispensaries,
+                  and launched brands in every cannabis product category.
+                  <br />
+                  <br />
+                  After a few intense years in cannabis, I didn&apos;t want to be known as the "the weed guy." I&apos;d learned a ton about scaling fast and navigating messy, unregulated markets, but I was ready for a new challenge.
+                  So I did a hard pivot and joined a family office in South Florida led by another YPO CEO.
+                  The portfolio was diverse, one company specialized in rescuing stranded backpackers, another protected foreign heads of state during political visits.
+                  There were operations in armored vehicle logistics, freight and cargo security. The industries were intense, the stakes were high, and so were the expectations.
+                  <br />
+                  <br />
+                  I built financial models that helped close Fortune 500 partnerships and overhauled operations to save over $100K annually by automating workflows. But the real win was spotting the silent friction points—closing the communication gaps that were jamming up entire teams and reshaping how the whole organization made decisions: faster, smarter, and more aligned.
                 </p>
               </div>
 
@@ -225,11 +228,11 @@ export default function Home() {
                     <div className="flex h-8 w-8 items-center justify-center rounded-full bg-purple-500/20 text-purple-400 flex-shrink-0">
                       <Code className="h-4 w-4" />
                     </div>
-                    <h3 className="font-semibold text-white text-sm sm:text-base">Beyond a Finance Bro</h3>
+                    <h3 className="font-semibold text-white text-sm sm:text-base">More Than Just Finance</h3>
                   </div>
                   <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed">
-                    Self-taught script kiddie since 2007, started with minecraft mods, now I launch my own Web Apps.
-                    Expert in Prompt Engineering, and AI/LLM tools. Experience in python, typescript, API building, PostgreSQL and MySQL database management.
+                    Been technical since I was 10 (started with Minecraft mods, now I build web apps), but business and communication have always been my strength.
+                    I can actually design, pitch, and build the stuff I'm talking about, not just PowerPoint it.
                   </p>
                 </div>
 
@@ -238,11 +241,10 @@ export default function Home() {
                     <div className="flex h-8 w-8 items-center justify-center rounded-full bg-purple-500/20 text-purple-400 flex-shrink-0">
                       <Users className="h-4 w-4" />
                     </div>
-                    <h3 className="font-semibold text-white text-sm sm:text-base">Cross-Functional Leadership</h3>
+                    <h3 className="font-semibold text-white text-sm sm:text-base">Good With People</h3>
                   </div>
                   <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed">
-                    Thrives in ambiguous situations with vague &quot;I&apos;ll know it when I see it&quot; goals. Highly skilled at working
-                    with both technical and business teams, communicating complex concepts to stakeholders of all backgrounds.
+                    I work well with both technical teams and business . Good at taking vague "I'll know it when I see it" requirements and turning them into something everyone can understand and execute on.
                   </p>
                 </div>
               </div>
@@ -254,12 +256,10 @@ export default function Home() {
                     <div className="flex h-8 w-8 items-center justify-center rounded-full bg-purple-500/20 text-purple-400 flex-shrink-0">
                       <DollarSign className="h-4 w-4" />
                     </div>
-                    <h3 className="font-semibold text-white text-sm sm:text-base">Revenue Generation</h3>
+                    <h3 className="font-semibold text-white text-sm sm:text-base">Squeezing Pennies</h3>
                   </div>
                   <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed">
-                    Individually developed financial models and executive presentations that secured partnerships with
-                    Fortune 500 companies. Collaborated directly with the CEO to strategically deploy $80M in
-                    investments and build the largest indoor cannabis facility in California.
+                    Built sales teams from the ground up and secured long-term wholesale deals for new consumer brands launched with limited budget.
                   </p>
                 </div>
 
@@ -268,11 +268,10 @@ export default function Home() {
                     <div className="flex h-8 w-8 items-center justify-center rounded-full bg-purple-500/20 text-purple-400 flex-shrink-0">
                       <BarChart className="h-4 w-4" />
                     </div>
-                    <h3 className="font-semibold text-white text-sm sm:text-base">Data-Driven Leadership</h3>
+                    <h3 className="font-semibold text-white text-sm sm:text-base">Fixing Problems</h3>
                   </div>
                   <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed">
-                    Led company-wide project with ambiguous goals to reduce tedious tasks and improve communication.
-                    Identified and closed critical communication gaps, reduced labor costs by $100k/yr, and increased surveyed employee&apos;s morale by 30%.
+                    Led a company-wide project to cut out busy work and improve communication. Found gaps that were costing money, and saved $100k/year while making people happier at work.
                   </p>
                 </div>
               </div>
@@ -301,9 +300,6 @@ export default function Home() {
             <div className="mb-8 sm:mb-12 text-center">
               <Badge className="mb-2 bg-purple-500/20 text-purple-300 text-xs sm:text-sm">My Skills</Badge>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white px-4 sm:px-0">Expertise & Capabilities</h2>
-              <p className="mx-auto mt-4 max-w-2xl text-sm sm:text-base text-zinc-400 px-4 sm:px-0 leading-relaxed">
-                A blend of business acumen and technical know-how that bridges the gap between strategy and execution
-              </p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -364,9 +360,6 @@ export default function Home() {
             <div className="mb-8 sm:mb-12 text-center">
               <Badge className="mb-2 bg-purple-500/20 text-purple-300 text-xs sm:text-sm">Experience</Badge>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white px-4 sm:px-0">Professional Journey</h2>
-              <p className="mx-auto mt-4 max-w-2xl text-sm sm:text-base text-zinc-400 px-4 sm:px-0 leading-relaxed">
-                My path through finance, business development, and product management
-              </p>
             </div>
 
             {/* Mobile Timeline - Vertical */}
@@ -591,20 +584,23 @@ export default function Home() {
             <div className="mb-8 sm:mb-12 text-center">
               <Badge className="mb-2 bg-purple-500/20 text-purple-300 text-xs sm:text-sm">The Future</Badge>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white px-4 sm:px-0">Where I'm Headed</h2>
-              <p className="mx-auto mt-4 max-w-2xl text-sm sm:text-base text-zinc-400 px-4 sm:px-0 leading-relaxed">Ready to drive breakthrough innovation at a visionary company</p>
+              <p className="mx-auto mt-4 max-w-2xl text-sm sm:text-base text-zinc-400 px-4 sm:px-0 leading-relaxed">Looking for my next challenge at a company that's building something that matters</p>
             </div>
 
             <div className="relative rounded-xl border border-purple-500/20 bg-gradient-to-br from-zinc-900 to-black p-6 sm:p-8">
               <div className="absolute inset-0 bg-grid-white/5 [mask-image:linear-gradient(0deg,#000000,transparent)]"></div>
-              <div className="relative">
+              <div className="relative text-justify">
                 <p className="text-sm sm:text-base lg:text-lg text-zinc-300 leading-relaxed">
-                  I&apos;m looking for a leadership role—whether in Product, Strategy, or something hybrid—that sits at the intersection of big vision and getting things done. I&apos;ve led strategic initiatives, closed deals with Fortune 50s, and helped deploy serious capital, but what really drives me is helping a company scale something that actually matters.
+                  I'm looking for a role within a killer Product Management, Corporate Strategy, or Strategic Partnerships team where I can work on big problems that actually matter.
                 </p>
                 <p className="mt-4 text-sm sm:text-base lg:text-lg text-zinc-300 leading-relaxed">
-                  I bridge the gap between technical and business teams, especially when there&apos;s ambiguity and high expectations. I&apos;ve found success translating complex ideas into decisions that move the needle, and I&apos;m drawn to companies where there&apos;s vision, urgency, and a need for someone who can zoom in and out—strategy one hour, execution the next.
+                  I'm good at working with both technical and business teams, especially when things are unclear and expectations are high.
                 </p>
                 <p className="mt-4 text-sm sm:text-base lg:text-lg text-zinc-300 leading-relaxed">
-                  I want to help a team scale something that matters—not just grow for growth&apos;s sake. If there&apos;s room for someone who can wear a few hats, ask hard questions, and move things forward, that&apos;s where I thrive.
+                  I like translating complex ideas into decisions that move things forward, and I work best at companies that have vision, urgency, and need someone who can think strategically one minute and execute the next.
+                </p>
+                <p className="mt-4 text-sm sm:text-base lg:text-lg text-zinc-300 leading-relaxed">
+                  I want to be a part of something meaningful that solves real problems for real people. If you need someone who can wear multiple hats, ask the right questions, and get things done, let's talk.
                 </p>
                 <div className="mt-6 sm:mt-8">
                   <Link href="/contact">
@@ -756,10 +752,9 @@ export default function Home() {
           <div className="mx-auto max-w-6xl">
             <div className="mb-8 sm:mb-12 text-center">
               <Badge className="mb-2 bg-purple-500/20 text-purple-300 text-xs sm:text-sm">Featured Tracks</Badge>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white px-4 sm:px-0">My Music</h2>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white px-4 sm:px-0">My Music (BLVKE)</h2>
               <p className="mx-auto mt-4 max-w-2xl text-sm sm:text-base text-zinc-400 px-4 sm:px-0 leading-relaxed">
-                Music has been my creative outlet since I was 8. What started as a private passion has evolved into a
-                serious side project—crafting bass-heavy beats that absolutely slap.
+                Been making music since I was 8. Started as just messing around and never saving anything, still messing around but hitting save sometimes.
               </p>
             </div>
 
@@ -768,7 +763,7 @@ export default function Home() {
             <div className="mt-8 sm:mt-12 text-center">
               <Link href="/music">
                 <Button className="bg-purple-600 hover:bg-purple-700 w-full sm:w-auto text-sm sm:text-base">
-                  Explore Full Music Portfolio
+                  Some More Songs and Beats
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>

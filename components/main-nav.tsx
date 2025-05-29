@@ -7,14 +7,12 @@ import { Menu, X } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { ThemeToggle } from "@/components/theme-toggle"
 
-// Updated routes structure with Music and Business Musings as top-level items
+// Updated routes structure with Music as top-level item
 const routes = [
   { href: "/", label: "Home" },
   { href: "/projects", label: "Projects" },
   { href: "/music", label: "Music" },
-  { href: "/business-musings", label: "Musings" }, // Shortened to "Musings" for better fit in header
   { href: "/contact", label: "Contact" },
 ]
 
@@ -48,8 +46,6 @@ export function MainNav() {
               </Link>
             ))}
           </nav>
-
-          <ThemeToggle />
 
           {/* Mobile Navigation */}
           <Sheet open={open} onOpenChange={setOpen}>

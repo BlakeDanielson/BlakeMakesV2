@@ -4,7 +4,7 @@ import type React from "react"
 
 import { useState } from "react"
 import Link from "next/link"
-import { ArrowLeft, Mail, MessageSquare, Phone, Send } from "lucide-react"
+import { ArrowLeft, Mail, MessageSquare, Phone, Send, Linkedin, Github, Music, Star } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -65,52 +65,47 @@ export default function ContactPage() {
 
               <div className="flex items-start gap-4">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-purple-100 text-purple-600 dark:bg-purple-900/50 dark:text-purple-400">
-                  <Phone className="h-5 w-5" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold">Phone</h3>
-                  <p className="mt-1 text-zinc-600 dark:text-zinc-400">(925) 324-9491</p>
-                  <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-500">Available weekdays 9am-5pm PST</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-purple-100 text-purple-600 dark:bg-purple-900/50 dark:text-purple-400">
                   <MessageSquare className="h-5 w-5" />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold">Social Media</h3>
-                  <div className="mt-1 space-y-1 text-zinc-600 dark:text-zinc-400">
-                    <p>
-                      <a
-                        href="https://www.linkedin.com/in/blakedan97/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-purple-600 hover:underline dark:text-purple-400"
-                      >
-                        LinkedIn
-                      </a>
-                    </p>
-                    <p>
-                      <a
-                        href="https://github.com/BlakeDanielson"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-purple-600 hover:underline dark:text-purple-400"
-                      >
-                        GitHub
-                      </a>
-                    </p>
-                    <p>
-                      <a
-                        href="https://soundcloud.com/blvkemusic"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-purple-600 hover:underline dark:text-purple-400"
-                      >
-                        SoundCloud
-                      </a>
-                    </p>
+                  <div className="mt-3 flex gap-4">
+                    <a
+                      href="https://www.linkedin.com/in/blakedan97/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 text-blue-600 transition-colors hover:bg-blue-200 dark:bg-blue-900/50 dark:text-blue-400 dark:hover:bg-blue-900/70"
+                      title="LinkedIn"
+                    >
+                      <Linkedin className="h-5 w-5" />
+                    </a>
+                    <a
+                      href="https://github.com/BlakeDanielson"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 text-gray-700 transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
+                      title="GitHub"
+                    >
+                      <Github className="h-5 w-5" />
+                    </a>
+                    <a
+                      href="https://soundcloud.com/blvkemusic"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-100 text-orange-600 transition-colors hover:bg-orange-200 dark:bg-orange-900/50 dark:text-orange-400 dark:hover:bg-orange-900/70"
+                      title="SoundCloud"
+                    >
+                      <Music className="h-5 w-5" />
+                    </a>
+                    <a
+                      href="https://www.beatstars.com/blvke"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex h-10 w-10 items-center justify-center rounded-full bg-yellow-100 text-yellow-600 transition-colors hover:bg-yellow-200 dark:bg-yellow-900/50 dark:text-yellow-400 dark:hover:bg-yellow-900/70"
+                      title="BeatStars"
+                    >
+                      <Star className="h-5 w-5" />
+                    </a>
                   </div>
                 </div>
               </div>
@@ -123,7 +118,7 @@ export default function ContactPage() {
                 interested in AI and product development.
               </p>
               <a
-                href="https://calendly.com"
+                href="https://calendly.com/blakejdanielson/30min"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-4 inline-flex items-center text-purple-600 hover:underline dark:text-purple-400"

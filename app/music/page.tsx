@@ -3,27 +3,16 @@
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Play, ExternalLink, Music, AudioWaveformIcon as Waveform } from "lucide-react"
+import { Play, ExternalLink, Music } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Badge } from "@/components/ui/badge"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { MainNav } from "@/components/main-nav"
 import { SiteFooter } from "@/components/site-footer"
 import { BeautifulMusicPlayer } from "@/components/BeautifulMusicPlayer"
 import { getMusicTracks, LocalMusicTrack } from "@/lib/music-utils"
-
-interface MusicProject {
-  id: string;
-  title: string;
-  description: string;
-  coverImage: string;
-  tracks: number;
-  year: string;
-  link: string;
-}
 
 interface SocialPlatform {
   name: string;
@@ -34,28 +23,6 @@ interface SocialPlatform {
 
 // Get local music tracks from the blvke-beats folder
 const musicTracks: LocalMusicTrack[] = getMusicTracks();
-
-// Sample music projects/albums (remains the same for now)
-const musicProjects: MusicProject[] = [
-  {
-    id: "project-1",
-    title: "Synthetic Memories",
-    description: "A collection of tracks exploring the intersection of technology and human emotion",
-    coverImage: "/abstract-circuitry-pulse.png",
-    tracks: 8,
-    year: "2023",
-    link: "#synthetic-memories",
-  },
-  {
-    id: "project-2",
-    title: "Urban Landscapes",
-    description: "Hip-hop instrumentals inspired by city life and urban environments",
-    coverImage: "/urban-rhythms.png",
-    tracks: 6,
-    year: "2022",
-    link: "#urban-landscapes",
-  },
-];
 
 // Social platform links (BeatStars can remain, or be replaced/supplemented)
 const socialPlatforms: SocialPlatform[] = [
@@ -79,42 +46,8 @@ const socialPlatforms: SocialPlatform[] = [
   },
 ];
 
-// Project Card Prop Types (no change)
-interface ProjectCardProps {
-  project: MusicProject;
-}
-
-// Project Card Component (no change for now)
-function ProjectCard({ project }: ProjectCardProps) {
-  return (
-    <Link href={project.link}>
-      <Card className="overflow-hidden border-zinc-800 bg-zinc-900/50 transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/30 hover:bg-zinc-900/70 hover:shadow-lg hover:shadow-purple-500/5">
-        <CardContent className="p-0">
-          <div className="relative aspect-square">
-            <Image
-              src={project.coverImage || "/placeholder.svg"}
-              alt={project.title}
-              fill
-              className="object-cover transition-transform duration-500 hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-            <div className="absolute bottom-0 left-0 right-0 p-6">
-              <h3 className="text-xl font-bold text-white">{project.title}</h3>
-              <p className="mt-1 text-sm text-zinc-300">
-                {project.tracks} tracks • {project.year}
-              </p>
-              <p className="mt-2 text-sm text-zinc-400">{project.description}</p>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-    </Link>
-  );
-}
-
 // Main Music Page Component
 export default function MusicPage() {
-  const [activeTab, setActiveTab] = useState("tracks");
   const [activePlayerTrackId, setActivePlayerTrackId] = useState<string | null>(null);
 
   const handlePlayerClick = (trackId: string) => {
@@ -186,43 +119,21 @@ export default function MusicPage() {
 
       {/* Main Content */}
       <div className="container mx-auto px-4 py-12">
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="mx-auto max-w-5xl">
-          <TabsList className="grid w-full grid-cols-2 bg-zinc-900">
-            <TabsTrigger value="tracks" className="data-[state=active]:bg-purple-900 data-[state=active]:text-white">
-              <Music className="mr-2 h-4 w-4" />
-              Tracks
-            </TabsTrigger>
-            <TabsTrigger value="projects" className="data-[state=active]:bg-purple-900 data-[state=active]:text-white">
-              <Waveform className="mr-2 h-4 w-4" />
-              Projects
-            </TabsTrigger>
-          </TabsList>
-
-          {/* Tracks Tab */}
-          <TabsContent value="tracks" className="mt-8 border-none p-0">
-            <div className="space-y-6">
-              {musicTracks.map((track) => (
-                <BeautifulMusicPlayer
-                  key={track.id}
-                  track={track}
-                  isActive={track.id === activePlayerTrackId}
-                  onPlayerClick={handlePlayerClick}
-                  onPlay={handlePlay}
-                  onPause={handlePause}
-                />
-              ))}
-            </div>
-          </TabsContent>
-
-          {/* Projects Tab */}
-          <TabsContent value="projects" className="mt-8 border-none p-0">
-            <div className="grid gap-6 sm:grid-cols-2">
-              {musicProjects.map((project) => (
-                <ProjectCard key={project.id} project={project} />
-              ))}
-            </div>
-          </TabsContent>
-        </Tabs>
+        <div className="mx-auto max-w-5xl">
+          
+          <div className="space-y-6">
+            {musicTracks.map((track) => (
+              <BeautifulMusicPlayer
+                key={track.id}
+                track={track}
+                isActive={track.id === activePlayerTrackId}
+                onPlayerClick={handlePlayerClick}
+                onPlay={handlePlay}
+                onPause={handlePause}
+              />
+            ))}
+          </div>
+        </div>
       </div>
 
       {/* Featured Collaboration */}

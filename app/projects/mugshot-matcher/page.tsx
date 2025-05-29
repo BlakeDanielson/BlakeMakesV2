@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowLeft, ExternalLink, Github, Calendar, Users, Sparkles, Camera, History, Search } from "lucide-react"
+import { ArrowLeft, ExternalLink, Github, Calendar, Users, Sparkles, Target, Shield, Brain, Gamepad2, Trophy, Clock } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -23,18 +23,18 @@ export default function MugshotMatcherPage() {
           </Link>
 
           <div className="mt-8">
-            <Badge className="mb-4 bg-purple-500/20 text-purple-300">AI Facial Recognition</Badge>
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">Mugshot Matcher</h1>
+            <Badge className="mb-4 bg-purple-500/20 text-purple-300">Interactive Criminal Profiling Game</Badge>
+            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">Mug Matcher</h1>
             <p className="mt-4 text-xl text-zinc-400">
-              A facial recognition tool that allows users to find their historical doppelgängers by matching their
-              photos with a database of historical mugshots.
+              An interactive detective skills game that challenges players to match mugshots with their corresponding crimes, 
+              combining visual recognition with criminal justice education.
             </p>
           </div>
 
           <div className="mt-8 overflow-hidden rounded-xl border border-zinc-800 max-w-3xl mx-auto">
             <Image
-              src="/facial-recognition-comparison.png"
-              alt="Mugshot Matcher"
+              src="/mugshot-matching-game.png"
+              alt="Mug Matcher Game Interface"
               width={1200}
               height={600}
               className="w-full object-cover"
@@ -46,21 +46,22 @@ export default function MugshotMatcherPage() {
               <div>
                 <h2 className="text-2xl font-bold text-white">The Challenge</h2>
                 <p className="mt-4 text-zinc-400">
-                  Creating an accurate facial recognition system that can match modern photos with historical mugshots
-                  presented several challenges. Historical photos often have different lighting, quality, and
-                  photographic techniques compared to modern digital photos. Additionally, building a comprehensive
-                  database of historical mugshots required extensive research and data collection.
+                  Traditional criminal justice education and detective training often rely on theoretical knowledge without practical application. 
+                  Law enforcement professionals, criminology students, and true crime enthusiasts lack engaging, interactive tools to develop 
+                  their visual recognition skills and understanding of criminal behavior patterns. The challenge was to create an educational 
+                  yet entertaining platform that tests visual recognition abilities, builds understanding of crime categorization, provides 
+                  immediate feedback, and remains engaging across multiple play sessions while working seamlessly across desktop and mobile devices.
                 </p>
               </div>
 
               <div>
                 <h2 className="text-2xl font-bold text-white">The Solution</h2>
                 <p className="mt-4 text-zinc-400">
-                  Mugshot Matcher uses advanced AI facial recognition technology optimized for cross-era matching. The
-                  platform allows users to upload their photo and receive matches from a curated database of historical
-                  mugshots, complete with historical context and similarity analysis. The system accounts for
-                  differences in photographic styles and quality to provide accurate matches across different time
-                  periods.
+                  Mug Matcher is a web-based detective skills game that challenges players to match mugshots with their corresponding crimes. 
+                  Built as a Progressive Web App using Next.js 15, the game combines visual recognition challenges with criminal justice education. 
+                  Players are presented with 6 mugshots and 6 crime descriptions, testing their ability to make connections based on visual cues, 
+                  crime patterns, and criminal profiling knowledge. The game features a sophisticated points system that rewards accuracy, speed, 
+                  and consecutive correct matches, while providing detailed feedback to help players learn from their mistakes.
                 </p>
               </div>
 
@@ -68,24 +69,28 @@ export default function MugshotMatcherPage() {
                 <h2 className="text-2xl font-bold text-white">Key Features</h2>
                 <ul className="mt-4 space-y-2 text-zinc-400">
                   <li className="flex items-start">
-                    <Sparkles className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
-                    <span>Advanced facial recognition algorithms optimized for historical photos</span>
+                    <Brain className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
+                    <span>Intelligent Crime Matching System with 400+ real criminal records</span>
                   </li>
                   <li className="flex items-start">
-                    <Sparkles className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
-                    <span>Curated database of historical mugshots from various time periods</span>
+                    <Target className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
+                    <span>Smart crime categorization preventing similar offenses in single rounds</span>
                   </li>
                   <li className="flex items-start">
-                    <Sparkles className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
-                    <span>Detailed similarity analysis showing facial feature matches</span>
+                    <Trophy className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
+                    <span>Sophisticated scoring system considering accuracy, speed, and attempt count</span>
                   </li>
                   <li className="flex items-start">
-                    <Sparkles className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
-                    <span>Historical context for each match, including biographical information</span>
+                    <Clock className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
+                    <span>Real-time statistics with accuracy percentage and completion time tracking</span>
                   </li>
                   <li className="flex items-start">
-                    <Sparkles className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
-                    <span>Privacy-focused design with options to delete uploaded photos</span>
+                    <Gamepad2 className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
+                    <span>Dual UI themes: Professional ShadCN and animated Aceternity interfaces</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Shield className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
+                    <span>Progressive Web App with mobile-first responsive design and haptic feedback</span>
                   </li>
                 </ul>
               </div>
@@ -93,37 +98,59 @@ export default function MugshotMatcherPage() {
               <div>
                 <h2 className="text-2xl font-bold text-white">Technical Implementation</h2>
                 <p className="mt-4 text-zinc-400">
-                  Mugshot Matcher combines several technologies to deliver accurate historical matches:
+                  Mug Matcher combines cutting-edge web technologies with sophisticated game mechanics:
                 </p>
-                <ul className="mt-4 space-y-2 text-zinc-400">
-                  <li className="flex items-start">
-                    <Sparkles className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
-                    <span>TensorFlow for custom-trained facial recognition models</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Sparkles className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
-                    <span>Python backend for image processing and feature extraction</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Sparkles className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
-                    <span>React frontend for responsive user interface and results display</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Sparkles className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
-                    <span>AWS infrastructure for scalable image processing and database hosting</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Sparkles className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
-                    <span>Historical data API for retrieving contextual information about matches</span>
-                  </li>
-                </ul>
+                <div className="mt-6 grid gap-6 sm:grid-cols-2">
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-3">Frontend Architecture</h3>
+                    <ul className="space-y-2 text-zinc-400">
+                      <li className="flex items-start">
+                        <Sparkles className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
+                        <span>Next.js 15 with React 19 and TypeScript</span>
+                      </li>
+                      <li className="flex items-start">
+                        <Sparkles className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
+                        <span>Tailwind CSS with custom animations</span>
+                      </li>
+                      <li className="flex items-start">
+                        <Sparkles className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
+                        <span>Radix UI with ShadCN/UI and Aceternity UI</span>
+                      </li>
+                      <li className="flex items-start">
+                        <Sparkles className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
+                        <span>Framer Motion for smooth transitions</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-3">Backend & Data</h3>
+                    <ul className="space-y-2 text-zinc-400">
+                      <li className="flex items-start">
+                        <Sparkles className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
+                        <span>Next.js API routes with error handling</span>
+                      </li>
+                      <li className="flex items-start">
+                        <Sparkles className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
+                        <span>CSV-based system with Papa Parse</span>
+                      </li>
+                      <li className="flex items-start">
+                        <Sparkles className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
+                        <span>Singleton pattern for in-memory caching</span>
+                      </li>
+                      <li className="flex items-start">
+                        <Sparkles className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
+                        <span>Multi-layer data validation</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
 
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="overflow-hidden rounded-lg border border-zinc-800">
                   <Image
-                    src="/facial-recognition-historical.png"
-                    alt="Facial Recognition Interface"
+                    src="/mugshot-game-interface.png"
+                    alt="Game Interface with Mugshots"
                     width={400}
                     height={300}
                     className="aspect-[4/3] w-full object-cover"
@@ -131,8 +158,8 @@ export default function MugshotMatcherPage() {
                 </div>
                 <div className="overflow-hidden rounded-lg border border-zinc-800">
                   <Image
-                    src="/historical-mugshot-database.png"
-                    alt="Historical Mugshot Database"
+                    src="/crime-matching-system.png"
+                    alt="Crime Matching System"
                     width={400}
                     height={300}
                     className="aspect-[4/3] w-full object-cover"
@@ -158,7 +185,7 @@ export default function MugshotMatcherPage() {
                     <Calendar className="h-5 w-5 text-purple-500" />
                     <div>
                       <p className="text-sm text-zinc-500">Timeline</p>
-                      <p className="font-medium text-white">Approx. Y months</p>
+                      <p className="font-medium text-white">6 weeks</p>
                     </div>
                   </div>
                 </div>
@@ -167,34 +194,34 @@ export default function MugshotMatcherPage() {
                   <p className="text-sm text-zinc-500">Technologies</p>
                   <div className="mt-2 flex flex-wrap gap-2">
                     <Badge variant="outline" className="border-zinc-700">
-                      Python
+                      Next.js 15
                     </Badge>
                     <Badge variant="outline" className="border-zinc-700">
-                      TensorFlow
+                      React 19
                     </Badge>
                     <Badge variant="outline" className="border-zinc-700">
-                      React
+                      TypeScript
                     </Badge>
                     <Badge variant="outline" className="border-zinc-700">
-                      AWS
+                      Tailwind CSS
                     </Badge>
                     <Badge variant="outline" className="border-zinc-700">
-                      Computer Vision
+                      Framer Motion
                     </Badge>
                     <Badge variant="outline" className="border-zinc-700">
-                      Historical Data
+                      Progressive Web App
                     </Badge>
                   </div>
                 </div>
 
                 <div className="mt-6 flex flex-col gap-3">
-                  <Link href="https://mugshotmatcher.com" target="_blank" rel="noopener noreferrer">
+                  <Link href="https://mugmatcher.app" target="_blank" rel="noopener noreferrer">
                     <Button className="w-full bg-purple-600 hover:bg-purple-700">
                       <ExternalLink className="mr-2 h-4 w-4" />
-                      Try Mugshot Matcher
+                      Play Mug Matcher
                     </Button>
                   </Link>
-                  <Link href="https://github.com/BlakeDanielson" target="_blank" rel="noopener noreferrer">
+                  <Link href="https://github.com/BlakeDanielson/mug-matcher" target="_blank" rel="noopener noreferrer">
                     <Button variant="outline" className="w-full border-zinc-700">
                       <Github className="mr-2 h-4 w-4" />
                       View Source Code
@@ -207,21 +234,37 @@ export default function MugshotMatcherPage() {
                 <h3 className="text-lg font-bold text-white">Target Users</h3>
                 <ul className="mt-4 space-y-3 text-zinc-400">
                   <li className="flex items-start">
-                    <Camera className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
-                    <span>History enthusiasts curious about their historical lookalikes</span>
+                    <Shield className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
+                    <span>Law enforcement professionals seeking to sharpen visual recognition skills</span>
                   </li>
                   <li className="flex items-start">
-                    <History className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
-                    <span>Educators looking for engaging historical learning tools</span>
+                    <Brain className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
+                    <span>Criminology students and educators needing interactive learning tools</span>
                   </li>
                   <li className="flex items-start">
-                    <Search className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
-                    <span>Genealogy researchers exploring family resemblances</span>
+                    <Gamepad2 className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
+                    <span>True crime enthusiasts and gamers who enjoy detective work and puzzles</span>
                   </li>
                 </ul>
               </div>
 
-
+              <div className="rounded-lg border border-zinc-800 bg-zinc-900/50 p-6">
+                <h3 className="text-lg font-bold text-white">Monetization Ready</h3>
+                <ul className="mt-4 space-y-3 text-zinc-400">
+                  <li className="flex items-start">
+                    <Sparkles className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
+                    <span>Integrated Buy Me A Coffee support</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Sparkles className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
+                    <span>Google AdSense preparation with strategic ad zones</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Sparkles className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
+                    <span>Built-in analytics hooks for user behavior tracking</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
 

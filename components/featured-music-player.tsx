@@ -120,7 +120,11 @@ export function FeaturedMusicPlayer() {
       }
 
       const handleEnded = () => {
-        handleNext()
+        setCurrentTrackIndex((prev) => (prev === featuredTracks.length - 1 ? 0 : prev + 1))
+        if (isPlaying) {
+          setIsPlaying(false)
+          setTimeout(() => setIsPlaying(true), 100)
+        }
       }
 
       audio.addEventListener("timeupdate", handleTimeUpdate)
@@ -133,7 +137,7 @@ export function FeaturedMusicPlayer() {
         audio.removeEventListener("ended", handleEnded)
       }
     }
-  }, [currentTrackIndex, isSeeking])
+  }, [currentTrackIndex, isSeeking, isPlaying])
 
   useEffect(() => {
     if (audioRef.current) {

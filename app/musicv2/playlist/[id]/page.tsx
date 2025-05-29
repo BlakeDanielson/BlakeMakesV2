@@ -4,7 +4,7 @@ import { useParams } from "next/navigation"
 import { useEffect, useState } from "react"
 import Image from "next/image"
 import { Play, Clock, Download, Share, MoreHorizontal, Search } from "lucide-react"
-import { useSpotify } from "../../spotify-provider"
+import { useSpotify, Track } from "../../spotify-provider"
 import { Topbar } from "../../components/topbar"
 import { ensureValidImageSrc, getPlaceholderImage } from "../../utils/image-helpers"
 
@@ -28,7 +28,7 @@ export default function PlaylistPage() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const handlePlayPause = (track: any) => {
+  const handlePlayPause = (track: Track) => {
     if (currentTrack?.id === track.id) {
       if (isPlaying) {
         pauseTrack()
@@ -56,7 +56,7 @@ export default function PlaylistPage() {
 
   return (
     <div className="relative min-h-full">
-      <div className="spotify-playlist-gradient" style={{ "--gradient-color": "#535353" } as any}></div>
+      <div className="spotify-playlist-gradient" style={{ "--gradient-color": "#535353" } as React.CSSProperties}></div>
 
       <Topbar />
 

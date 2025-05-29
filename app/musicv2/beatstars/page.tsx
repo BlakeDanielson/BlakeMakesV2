@@ -4,7 +4,7 @@ import { useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Play, Pause, Clock, MoreHorizontal, Heart, ExternalLink } from "lucide-react"
-import { useSpotify } from "../spotify-provider"
+import { useSpotify, Track } from "../spotify-provider"
 import { Topbar } from "../components/topbar"
 
 export default function BeatStarsPage() {
@@ -44,7 +44,7 @@ export default function BeatStarsPage() {
     }
   }
 
-  const handleTrackPlay = (track: any) => {
+  const handleTrackPlay = (track: Track) => {
     playTrack(track, beatStarsPlaylist)
   }
 

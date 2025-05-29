@@ -66,9 +66,13 @@ export function BeautifulMusicPlayer({
   // Handle play/pause when isActive changes from parent
   useEffect(() => {
     if (!isActive && isPlaying) {
-      handlePause();
+      if (audioRef.current) {
+        audioRef.current.pause();
+        setIsPlaying(false);
+        onPause();
+      }
     }
-  }, [isActive, isPlaying]);
+  }, [isActive, isPlaying, onPause]);
 
   const handlePlay = async () => {
     if (!audioRef.current) return;
@@ -320,7 +324,11 @@ export function BeautifulMusicPlayer({
                 size="icon"
                 onClick={(e) => {
                   e.stopPropagation();
-                  isPlaying ? handlePause() : handlePlay();
+                  if (isPlaying) {
+                    handlePause();
+                  } else {
+                    handlePlay();
+                  }
                 }}
                 disabled={isLoading}
                 className="h-14 w-14 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 disabled:opacity-50"
@@ -371,10 +379,10 @@ export function BeautifulMusicPlayer({
             <div className="flex items-center gap-2 text-zinc-400">
               <div className="text-right">
                 <div className="text-xs font-mono uppercase tracking-wider">
-                  {track.filename.split('.').pop()}
+                  {track.filename.split('.').pop() || 'unknown'}
                 </div>
                 <div className="text-xs opacity-60">
-                  {Math.round((track.filename.length * 1024) / 1024)}KB
+                  {track.filename.length} chars
                 </div>
               </div>
             </div>

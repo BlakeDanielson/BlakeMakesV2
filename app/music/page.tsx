@@ -1,12 +1,10 @@
 "use client"
 
 import { useState } from "react"
-import Link from "next/link"
 import Image from "next/image"
-import { Play, ExternalLink, Music } from "lucide-react"
+import { Play, ExternalLink } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { MainNav } from "@/components/main-nav"

@@ -46,9 +46,9 @@ export default function Mood2SongPage() {
                 <h2 className="text-2xl font-bold text-white">The Challenge</h2>
                 <p className="mt-4 text-zinc-400">
                   Traditional music discovery platforms often rely on genre classifications or algorithmic
-                  recommendations based on listening history. However, these approaches don't always capture the
+                  recommendations based on listening history. However, these approaches don&apos;t always capture the
                   emotional context in which people want to discover music. Most users struggle to find music that
-                  matches their current mood or specific vibe they're looking for.
+                  matches their current mood or specific vibe they&apos;re looking for.
                 </p>
               </div>
 

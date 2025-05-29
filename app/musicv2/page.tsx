@@ -3,18 +3,10 @@
 import Link from "next/link"
 import Image from "next/image"
 import { MoreHorizontal, ExternalLink } from "lucide-react"
-import { useSpotify } from "./spotify-provider"
 import { Topbar } from "./components/topbar"
 import { ensureValidImageSrc, getPlaceholderImage } from "./utils/image-helpers"
 
 export default function MusicV2Page() {
-  const { playlists, playTrack } = useSpotify()
-
-  // Filter playlists by type
-  const dailyMixes = playlists.filter((p) => p.title.includes("Daily Mix"))
-  const blvkePlaylists = playlists.filter((p) => p.title.includes("BLVKE") && p.owner === "BLVKE")
-  const userPlaylists = playlists.filter((p) => !p.title.includes("Daily Mix") && !p.title.includes("BLVKE"))
-
   // Social platform links
   const platformLinks = [
     {
@@ -39,7 +31,7 @@ export default function MusicV2Page() {
 
   return (
     <div className="relative min-h-full">
-      <div className="spotify-main-gradient" style={{ "--gradient-color": "#121212" } as any}></div>
+      <div className="spotify-main-gradient" style={{ "--gradient-color": "#121212" } as React.CSSProperties}></div>
 
       <Topbar />
 

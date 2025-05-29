@@ -4,7 +4,7 @@ import type React from "react"
 
 import { useState } from "react"
 import Link from "next/link"
-import { ArrowLeft, Mail, MessageSquare, Phone, Send, Linkedin, Github, Music, Star } from "lucide-react"
+import { ArrowLeft, Mail, MessageSquare, Send, Linkedin, Github, Music, Star } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -46,7 +46,7 @@ export default function ContactPage() {
         <div className="mt-8">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">Get in Touch</h1>
           <p className="mt-4 text-xl text-zinc-600 dark:text-zinc-400">
-            I'd love to hear from you! Whether you have a project in mind or just want to connect.
+            I&apos;d love to hear from you! Whether you have a project in mind or just want to connect.
           </p>
         </div>
 
@@ -112,9 +112,9 @@ export default function ContactPage() {
             </div>
 
             <div className="mt-12 rounded-lg border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-800/50">
-              <h3 className="text-lg font-bold">Let's grab a virtual coffee</h3>
+              <h3 className="text-lg font-bold">Let&apos;s grab a virtual coffee</h3>
               <p className="mt-2 text-zinc-600 dark:text-zinc-400">
-                I'm always open to connecting with fellow tech enthusiasts, potential collaborators, or anyone
+                I&apos;m always open to connecting with fellow tech enthusiasts, potential collaborators, or anyone
                 interested in AI and product development.
               </p>
               <a

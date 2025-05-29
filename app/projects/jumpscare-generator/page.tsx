@@ -47,7 +47,7 @@ export default function JumpscareGeneratorPage() {
                 <h2 className="text-2xl font-bold text-white">The Challenge</h2>
                 <p className="mt-4 text-zinc-400">
                   Creating effective jump scares requires precise timing, audio-visual synchronization, and technical
-                  knowledge of video editing. Most people don't have access to professional video editing software or
+                  knowledge of video editing. Most people don&apos;t have access to professional video editing software or
                   the skills to create these effects, despite their popularity in social media pranks and content
                   creation.
                 </p>

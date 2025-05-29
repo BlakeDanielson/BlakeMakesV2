@@ -55,8 +55,8 @@ export default function OurStoriesPage() {
               <div>
                 <h2 className="text-2xl font-bold text-white">The Solution</h2>
                 <p className="mt-4 text-zinc-400">
-                  OurStories combines the best of both worlds: the convenience of "tell me a bedtime story" with the
-                  tangible experience of "read me a bedtime story." The platform allows parents to generate personalized
+                  OurStories combines the best of both worlds: the convenience of &quot;tell me a bedtime story&quot; with the
+                  tangible experience of &quot;read me a bedtime story.&quot; The platform allows parents to generate personalized
                   stories featuring their child as the main character, complete with AI-generated illustrations that
                   incorporate actual photos of the child. These stories can be enjoyed digitally or ordered as physical
                   printed books.
@@ -68,7 +68,7 @@ export default function OurStoriesPage() {
                 <ul className="mt-4 space-y-2 text-zinc-400">
                   <li className="flex items-start">
                     <Sparkles className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
-                    <span>Personalized story generation based on child's name, interests, and preferences</span>
+                    <span>Personalized story generation based on child&apos;s name, interests, and preferences</span>
                   </li>
                   <li className="flex items-start">
                     <Sparkles className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
@@ -84,7 +84,7 @@ export default function OurStoriesPage() {
                   </li>
                   <li className="flex items-start">
                     <Sparkles className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
-                    <span>Educational themes and moral lessons customized to parents' preferences</span>
+                    <span>Educational themes and moral lessons customized to parents&apos; preferences</span>
                   </li>
                 </ul>
               </div>

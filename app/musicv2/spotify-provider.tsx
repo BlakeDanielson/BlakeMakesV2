@@ -3,7 +3,7 @@
 import type React from "react"
 import { createContext, useContext, useState, useEffect } from "react"
 
-interface Track {
+export interface Track {
   id: string
   title: string
   artist: string
@@ -739,7 +739,7 @@ export function SpotifyProvider({ children }: { children: React.ReactNode }) {
   const [isShuffled, setIsShuffled] = useState(false)
   const [repeatMode, setRepeatMode] = useState<"off" | "all" | "one">("off")
   const [currentPlaylist, setCurrentPlaylist] = useState<Playlist | null>(null)
-  const [playlists, setPlaylists] = useState<Playlist[]>(allPlaylists)
+  const playlists = allPlaylists
 
   // Simulate audio playback
   useEffect(() => {
@@ -754,7 +754,6 @@ export function SpotifyProvider({ children }: { children: React.ReactNode }) {
       interval = setInterval(() => {
         setProgress((prev) => {
           if (prev >= durationInSeconds) {
-            nextTrack()
             return 0
           }
           return prev + 1

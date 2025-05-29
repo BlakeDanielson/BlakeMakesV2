@@ -104,12 +104,12 @@ export default function BusinessMusingsPage() {
         >
           <Badge className="mb-4 bg-purple-500/20 text-purple-300">Featured Insight</Badge>
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
-            Business <span className="text-purple-400">Musings</span>
+            Business <span className="text-purple-400 italic">Musings</span>
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-300">
             Quotes, stories, and wisdom gathered from the business world
             <br />
-            But the big catch is: they're not <em className="text-purple-400 italic">that</em> cheesy
+            But the big catch is: they&apos;re not <em className="text-purple-400 italic">that</em> cheesy
           </p>
 
           <div className="mt-12 max-w-3xl">

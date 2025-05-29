@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowLeft, ExternalLink, Github, Calendar, Users, Sparkles, ChefHat, Camera, Brain, Database, Globe, Smartphone, Clock, CheckCircle, AlertCircle, Utensils, BookOpen, Zap, Shield, Search, Tag, Star } from "lucide-react"
+import { ArrowLeft, ExternalLink, Github, Calendar, Users, Brain, Database, Globe, Smartphone, Clock, CheckCircle, BookOpen, Zap, Shield, Search, Tag } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -24,7 +24,7 @@ export default function CarensCookbookPage() {
 
           <div className="mt-8">
             <Badge className="mb-4 bg-green-500/20 text-green-300">AI Recipe Management</Badge>
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">Caren's Cookbook</h1>
+            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">Caren&apos;s Cookbook</h1>
             <p className="mt-4 text-xl text-zinc-400">
               AI-Powered Recipe Management Platform - Transform how you collect, organize, and manage recipes with intelligent extraction from URLs and images, smart categorization, and personalized digital cookbook experience.
             </p>
@@ -55,9 +55,9 @@ export default function CarensCookbookPage() {
           <div className="mt-12 grid gap-12 md:grid-cols-3">
             <div className="space-y-6 md:col-span-2">
               <div>
-                <h2 className="text-2xl font-bold text-white">🍳 What is Caren's Cookbook?</h2>
+                <h2 className="text-2xl font-bold text-white">🍳 What is Caren&apos;s Cookbook?</h2>
                 <p className="mt-4 text-zinc-400">
-                  Caren's Cookbook is a Next.js-based web application that leverages AI to transform how users collect, organize, and manage their recipes. 
+                  Caren&apos;s Cookbook is a Next.js-based web application that leverages AI to transform how users collect, organize, and manage their recipes. 
                   The platform uses advanced computer vision and natural language processing to automatically extract recipe data from multiple sources, 
                   then intelligently categorizes and organizes them in a personalized digital cookbook.
                 </p>

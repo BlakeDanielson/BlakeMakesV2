@@ -196,7 +196,7 @@ export default function Home() {
                 <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
                 I studied finance at the University of Denver and quickly realized my edge was transforming complex technical challenges into strategic business opportunities.
                 While in college, I built a crypto arbitrage platform, wrote two weekly financial newsletters for 10,000+ paying subscribers, and became a top cannabis analyst on Seeking Alpha.
-                I also interned in investment banking as well as at Snoop Dogg's VC fund, Casa Verde Capital. 
+                I also interned in investment banking as well as at Snoop Dogg&apos;s VC fund, Casa Verde Capital. 
 
                 </p>
                 <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
@@ -205,13 +205,13 @@ export default function Home() {
 
                 <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
                   
-                  While staying in finance would&apos;ve been the comfortable path, I took the opportunity to work for a high-growth startup and reported directly to the CEO, a member of the Young Presidents' Organization (YPO).
+                  While staying in finance would&apos;ve been the comfortable path, I took the opportunity to work for a high-growth startup and reported directly to the CEO, a member of the Young Presidents&apos; Organization (YPO).
                   
                   I helped deploy $80 million to build what became California&apos;s largest indoor cannabis facility, acquired four LA based dispensaries,
                   and launched brands in every cannabis product category.
                   <br />
                   <br />
-                  After a few intense years in cannabis, I didn&apos;t want to be known as the "the weed guy." I&apos;d learned a ton about scaling fast and navigating messy, unregulated markets, but I was ready for a new challenge.
+                  After a few intense years in cannabis, I didn&apos;t want to be known as the &quot;the weed guy.&quot; I&apos;d learned a ton about scaling fast and navigating messy, unregulated markets, but I was ready for a new challenge.
                   So I did a hard pivot and joined a family office in South Florida led by another YPO CEO.
                   The portfolio was diverse, one company specialized in rescuing stranded backpackers, another protected foreign heads of state during political visits.
                   There were operations in armored vehicle logistics, freight and cargo security. The industries were intense, the stakes were high, and so were the expectations.
@@ -232,7 +232,7 @@ export default function Home() {
                   </div>
                   <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed">
                     Been technical since I was 10 (started with Minecraft mods, now I build web apps), but business and communication have always been my strength.
-                    I can actually design, pitch, and build the stuff I'm talking about, not just PowerPoint it.
+                    I can actually design, pitch, and build the stuff I&apos;m talking about, not just PowerPoint it.
                   </p>
                 </div>
 
@@ -244,7 +244,7 @@ export default function Home() {
                     <h3 className="font-semibold text-white text-sm sm:text-base">Good With People</h3>
                   </div>
                   <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed">
-                    I work well with both technical teams and business . Good at taking vague "I'll know it when I see it" requirements and turning them into something everyone can understand and execute on.
+                    I work well with both technical teams and business . Good at taking vague &quot;I&apos;ll know it when I see it&quot; requirements and turning them into something everyone can understand and execute on.
                   </p>
                 </div>
               </div>
@@ -583,24 +583,21 @@ export default function Home() {
           <div className="mt-16 sm:mt-20 lg:mt-24">
             <div className="mb-8 sm:mb-12 text-center">
               <Badge className="mb-2 bg-purple-500/20 text-purple-300 text-xs sm:text-sm">The Future</Badge>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white px-4 sm:px-0">Where I'm Headed</h2>
-              <p className="mx-auto mt-4 max-w-2xl text-sm sm:text-base text-zinc-400 px-4 sm:px-0 leading-relaxed">Looking for my next challenge at a company that's building something that matters</p>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white px-4 sm:px-0">Where I&apos;m Headed</h2>
+              <p className="mx-auto mt-4 max-w-2xl text-sm sm:text-base text-zinc-400 px-4 sm:px-0 leading-relaxed">Looking for my next challenge at a company that&apos;s building something that matters</p>
             </div>
 
             <div className="relative rounded-xl border border-purple-500/20 bg-gradient-to-br from-zinc-900 to-black p-6 sm:p-8">
               <div className="absolute inset-0 bg-grid-white/5 [mask-image:linear-gradient(0deg,#000000,transparent)]"></div>
               <div className="relative text-justify">
                 <p className="text-sm sm:text-base lg:text-lg text-zinc-300 leading-relaxed">
-                  I'm looking for a role within a killer Product Management, Corporate Strategy, or Strategic Partnerships team where I can work on big problems that actually matter.
+                  I&apos;m looking for a role within a killer Product Management, Corporate Strategy, or Strategic Partnerships team where I can work on big problems that actually matter.
                 </p>
                 <p className="mt-4 text-sm sm:text-base lg:text-lg text-zinc-300 leading-relaxed">
-                  I'm good at working with both technical and business teams, especially when things are unclear and expectations are high.
+                  I&apos;m good at working with both technical and business teams, especially when things are unclear and expectations are high.
                 </p>
                 <p className="mt-4 text-sm sm:text-base lg:text-lg text-zinc-300 leading-relaxed">
-                  I like translating complex ideas into decisions that move things forward, and I work best at companies that have vision, urgency, and need someone who can think strategically one minute and execute the next.
-                </p>
-                <p className="mt-4 text-sm sm:text-base lg:text-lg text-zinc-300 leading-relaxed">
-                  I want to be a part of something meaningful that solves real problems for real people. If you need someone who can wear multiple hats, ask the right questions, and get things done, let's talk.
+                  I want to be a part of something meaningful that solves real problems for real people. If you need someone who can wear multiple hats, ask the right questions, and get things done, let&apos;s talk.
                 </p>
                 <div className="mt-6 sm:mt-8">
                   <Link href="/contact">

@@ -34,6 +34,14 @@ export function SiteFooter() {
             >
               SoundCloud
             </a>
+            <a
+              href="https://buymeacoffee.com/blvke"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-zinc-400 transition-colors hover:text-yellow-400"
+            >
+              Buy Me a Coffee
+            </a>
           </div>
           <div className="text-sm text-zinc-500">
             © {new Date().getFullYear()} Blake Danielson. All rights reserved.

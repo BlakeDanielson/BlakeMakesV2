@@ -402,7 +402,7 @@ export default function SoloRealmsPage() {
                       Play SoloRealms
                     </Button>
                   </Link>
-                  <Link href="https://github.com/yourusername/solorealms" target="_blank" rel="noopener noreferrer">
+                  <Link href="https://github.com/BlakeDanielson/solorealms" target="_blank" rel="noopener noreferrer">
                     <Button variant="outline" className="w-full border-zinc-700">
                       <Github className="mr-2 h-4 w-4" />
                       View Source Code

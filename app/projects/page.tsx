@@ -110,9 +110,9 @@ const projects: Project[] = [
     tags: ["AI", "NLP", "Image Generation", "E-commerce"],
     techStack: ["Next", "Typescript", "API", "AI", "React"],
     link: "/projects/ourstories",
-    githubLink: "https://github.com/BlakeDanielson/ourstories",
+    githubLink: "https://github.com/BlakeDanielson/OurStoriesV3",
     liveLink: "https://ourstories.app",
-    featured: true,
+    featured: false,
     icon: <BookOpen className="h-5 w-5" />,
     status: "In Development",
     pricing: "Premium",
@@ -218,9 +218,9 @@ const projects: Project[] = [
     tags: ["AI", "Recipe Management", "Computer Vision", "NLP", "Web Scraping"],
     techStack: ["Next.js 15", "TypeScript", "PostgreSQL", "Prisma", "OpenAI", "Google Gemini", "Clerk", "Redis"],
     link: "/projects/carens-cookbook",
-    githubLink: "https://github.com/BlakeDanielson/carens-cookbook",
+    githubLink: "https://github.com/BlakeDanielson/FinalMothersDayV2",
     liveLink: null,
-    featured: false,
+    featured: true,
     icon: <ChefHat className="h-5 w-5" />,
     status: "In Development",
     pricing: "Freemium",
@@ -378,20 +378,6 @@ function ProjectCard({ project }: { project: Project }) {
                  ))}
                </div>
              </div>
-             
-             {/* Project Details */}
-             <div className="mb-4 flex flex-wrap gap-3 text-xs text-zinc-500">
-              {project.completionDate && (
-                <div className="flex items-center gap-1">
-                  <Calendar className="h-3 w-3" />
-                  <span>{new Date(project.completionDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}</span>
-                </div>
-              )}
-              <div className="flex items-center gap-1">
-                <Clock className="h-3 w-3" />
-                <span>{project.duration}</span>
-              </div>
-            </div>
                        </div>
          </CardContent>
        </Card>

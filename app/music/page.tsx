@@ -2,14 +2,15 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import { Play, ExternalLink } from "lucide-react"
+import { ExternalLink } from "lucide-react"
 
-import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { MainNav } from "@/components/main-nav"
 import { SiteFooter } from "@/components/site-footer"
-import { BeautifulMusicPlayer } from "@/components/BeautifulMusicPlayer"
+import { MainMusicPlayer } from "@/components/main-music-player"
+import { MusicSongCard } from "@/components/music-song-card"
 import { getMusicTracks, LocalMusicTrack } from "@/lib/music-utils"
 
 interface SocialPlatform {
@@ -22,7 +23,7 @@ interface SocialPlatform {
 // Get local music tracks from the blvke-beats folder
 const musicTracks: LocalMusicTrack[] = getMusicTracks();
 
-// Social platform links (BeatStars can remain, or be replaced/supplemented)
+// Social platform links
 const socialPlatforms: SocialPlatform[] = [
   {
     name: "BeatStars",
@@ -33,39 +34,67 @@ const socialPlatforms: SocialPlatform[] = [
   {
     name: "SoundCloud",
     icon: "/soundcloud-logo-on-headphones.png",
-    url: "https://soundcloud.com/blvkemusic", // Your main SoundCloud profile
+    url: "https://soundcloud.com/blvkemusic",
     color: "bg-orange-600 hover:bg-orange-700",
   },
   {
     name: "YouTube",
     icon: "/youtube-logo-display.png",
-    url: "https://www.youtube.com/", // Add your specific YouTube channel URL
+    url: "https://www.youtube.com/",
     color: "bg-red-600 hover:bg-red-700",
   },
 ];
 
-// Main Music Page Component
 export default function MusicPage() {
-  const [activePlayerTrackId, setActivePlayerTrackId] = useState<string | null>(null);
+  const [currentTrack, setCurrentTrack] = useState<LocalMusicTrack | null>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [currentTrackIndex, setCurrentTrackIndex] = useState<number>(-1);
 
-  const handlePlayerClick = (trackId: string) => {
-    setActivePlayerTrackId(trackId);
+  const handleTrackSelect = (track: LocalMusicTrack) => {
+    const trackIndex = musicTracks.findIndex(t => t.id === track.id);
+    setCurrentTrack(track);
+    setCurrentTrackIndex(trackIndex);
+    setIsPlaying(true);
   };
 
-  const handlePlay = (trackId: string) => {
-    setActivePlayerTrackId(trackId);
+  const handlePlayPause = () => {
+    setIsPlaying(!isPlaying);
   };
 
-  const handlePause = () => {
-    // Keep the active player ID for visual state
+  const handleNext = () => {
+    if (currentTrackIndex < musicTracks.length - 1) {
+      const nextIndex = currentTrackIndex + 1;
+      setCurrentTrack(musicTracks[nextIndex]);
+      setCurrentTrackIndex(nextIndex);
+      setIsPlaying(true);
+    } else {
+      // Loop back to first track
+      setCurrentTrack(musicTracks[0]);
+      setCurrentTrackIndex(0);
+      setIsPlaying(true);
+    }
   };
 
+  const handlePrevious = () => {
+    if (currentTrackIndex > 0) {
+      const prevIndex = currentTrackIndex - 1;
+      setCurrentTrack(musicTracks[prevIndex]);
+      setCurrentTrackIndex(prevIndex);
+      setIsPlaying(true);
+    } else {
+      // Loop to last track
+      const lastIndex = musicTracks.length - 1;
+      setCurrentTrack(musicTracks[lastIndex]);
+      setCurrentTrackIndex(lastIndex);
+      setIsPlaying(true);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-black">
       <MainNav />
 
-      {/* New Header Section (replacing hero) */}
+      {/* Header Section */}
       <div className="relative bg-zinc-900 pt-24">
         <div className="absolute inset-0 bg-grid-white/5 opacity-50"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-zinc-900"></div>
@@ -79,7 +108,7 @@ export default function MusicPage() {
             Explore my original compositions, productions, and musical projects
           </p>
           
-          {/* Social Platforms integrated into header */}
+          {/* Social Platforms */}
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             {socialPlatforms.map((platform) => (
               <TooltipProvider key={platform.name}>
@@ -117,19 +146,42 @@ export default function MusicPage() {
 
       {/* Main Content */}
       <div className="container mx-auto px-4 py-12">
-        <div className="mx-auto max-w-5xl">
+        <div className="mx-auto max-w-6xl space-y-12">
           
-          <div className="space-y-6">
-            {musicTracks.map((track) => (
-              <BeautifulMusicPlayer
-                key={track.id}
-                track={track}
-                isActive={track.id === activePlayerTrackId}
-                onPlayerClick={handlePlayerClick}
-                onPlay={handlePlay}
-                onPause={handlePause}
-              />
-            ))}
+          {/* Main Music Player */}
+          <div>
+            <div className="mb-6 text-center">
+              <h2 className="text-2xl font-bold text-white mb-2">Now Playing</h2>
+              <p className="text-zinc-400">Select a track below to start listening</p>
+            </div>
+            <MainMusicPlayer
+              currentTrack={currentTrack}
+              isPlaying={isPlaying}
+              onPlayPause={handlePlayPause}
+              onNext={handleNext}
+              onPrevious={handlePrevious}
+              allTracks={musicTracks}
+            />
+          </div>
+
+          {/* Song Collection */}
+          <div>
+            <div className="mb-8 text-center">
+              <h2 className="text-2xl font-bold text-white mb-2">My Collection</h2>
+              <p className="text-zinc-400">Click any track to load it into the player above</p>
+            </div>
+            
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              {musicTracks.map((track) => (
+                <MusicSongCard
+                  key={track.id}
+                  track={track}
+                  isCurrentTrack={currentTrack?.id === track.id}
+                  isPlaying={isPlaying && currentTrack?.id === track.id}
+                  onTrackSelect={handleTrackSelect}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -149,7 +201,7 @@ export default function MusicPage() {
                       size="icon"
                       className="h-16 w-16 rounded-full border-purple-500/50 bg-purple-500/20 text-white hover:bg-purple-500/30"
                     >
-                      <Play className="h-8 w-8" />
+                      <ExternalLink className="h-8 w-8" />
                     </Button>
                   </div>
                 </div>

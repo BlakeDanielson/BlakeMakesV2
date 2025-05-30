@@ -4,7 +4,7 @@ import { useRef } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { ArrowRight, ChevronDown, Sparkles, Code, Users, DollarSign, BarChart, Briefcase, Cpu } from "lucide-react"
+import { ArrowRight, ChevronDown, Sparkles, Code, Users, Briefcase, Cpu } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { MainNav } from "@/components/main-nav"
@@ -13,10 +13,11 @@ import { HeroParallax } from "@/components/hero-parallax"
 import { Badge } from "@/components/ui/badge"
 import { AnimatedText } from "@/components/animated-text"
 import { FeaturedMusicPlayer } from "@/components/featured-music-player"
+import { BuyMeCoffee, BuyMeCoffeeButton } from "@/components/ui/buy-me-coffee"
 
 export default function Home() {
   const aboutRef = useRef<HTMLDivElement>(null)
-  const journeyRef = useRef<HTMLDivElement>(null)
+  const futureGoalsRef = useRef<HTMLDivElement>(null)
 
   const heroItems = [
     {
@@ -88,6 +89,17 @@ export default function Home() {
 
   return (
     <div className="flex min-h-screen flex-col bg-black">
+      {/* Global Floating Widget */}
+      <BuyMeCoffee 
+        username="BLVKE"
+        message="Thank you for visiting my portfolio! If you like what you see, consider buying me a coffee! ☕"
+        description="Support Blake's work!"
+        color="#5F7FFF"
+        position="right"
+        xMargin={18}
+        yMargin={18}
+      />
+
       <MainNav />
 
       {/* Hero Section with Parallax */}
@@ -249,38 +261,12 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Core Competencies - Second Row */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="bg-zinc-900/50 border border-zinc-800 rounded-lg p-4 hover:border-purple-500/30 transition-all">
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-purple-500/20 text-purple-400 flex-shrink-0">
-                      <DollarSign className="h-4 w-4" />
-                    </div>
-                    <h3 className="font-semibold text-white text-sm sm:text-base">Squeezing Pennies</h3>
-                  </div>
-                  <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed">
-                    Built sales teams from the ground up and secured long-term wholesale deals for new consumer brands launched with limited budget.
-                  </p>
-                </div>
-
-                <div className="bg-zinc-900/50 border border-zinc-800 rounded-lg p-4 hover:border-purple-500/30 transition-all">
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-purple-500/20 text-purple-400 flex-shrink-0">
-                      <BarChart className="h-4 w-4" />
-                    </div>
-                    <h3 className="font-semibold text-white text-sm sm:text-base">Fixing Problems</h3>
-                  </div>
-                  <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed">
-                    Led a company-wide project to cut out busy work and improve communication. Found gaps that were costing money, and saved $100k/year while making people happier at work.
-                  </p>
-                </div>
-              </div>
-
+              {/* Button Row */}
               <div className="flex flex-col sm:flex-row flex-wrap gap-3 pt-4">
                 <Button
                   className="bg-purple-600 hover:bg-purple-700 w-full sm:w-auto text-sm sm:text-base"
                   onClick={() => {
-                    journeyRef.current?.scrollIntoView({ behavior: "smooth" })
+                    futureGoalsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })
                   }}
                 >
                   More About Me
@@ -355,232 +341,8 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Professional Journey */}
-          <div ref={journeyRef} className="mt-16 sm:mt-20 lg:mt-24">
-            <div className="mb-8 sm:mb-12 text-center">
-              <Badge className="mb-2 bg-purple-500/20 text-purple-300 text-xs sm:text-sm">Experience</Badge>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white px-4 sm:px-0">Professional Journey</h2>
-            </div>
-
-            {/* Mobile Timeline - Vertical */}
-            <div className="relative block lg:hidden space-y-8">
-              {/* Vertical timeline line */}
-              <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500/50 via-purple-500/30 to-zinc-800"></div>
-
-              {/* Timeline items */}
-              <div className="space-y-8">
-                {/* Item 1 - Present */}
-                <div className="relative pl-12">
-                  <div className="absolute left-2.5 top-2 h-3 w-3 -translate-x-1/2">
-                    <div className="flex h-3 w-3 items-center justify-center rounded-full border border-purple-500/30 bg-zinc-900 shadow-lg shadow-purple-500/10">
-                      <div className="h-1.5 w-1.5 rounded-full bg-purple-500"></div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <span className="inline-block rounded-full bg-purple-500/10 px-2 py-1 text-xs text-purple-300">
-                      Present
-                    </span>
-                    <h3 className="mt-2 text-lg font-bold text-white">Director of Sales</h3>
-                    <p className="mt-1 text-sm text-zinc-400">Stealth Startup</p>
-                    <p className="mt-3 text-sm text-zinc-400 leading-relaxed">
-                      Building SaaS tools for the home service industry. Managing SQL databases, designing automation
-                      systems, and integrating data from multiple sources to create unified platforms.
-                    </p>
-                    <div className="mt-3 flex flex-wrap gap-2">
-                      <Badge variant="outline" className="border-zinc-700 text-xs">
-                        SQL
-                      </Badge>
-                      <Badge variant="outline" className="border-zinc-700 text-xs">
-                        Automation
-                      </Badge>
-                      <Badge variant="outline" className="border-zinc-700 text-xs">
-                        Data Integration
-                      </Badge>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Item 2 */}
-                <div className="relative pl-12">
-                  <div className="absolute left-2.5 top-2 h-3 w-3 -translate-x-1/2">
-                    <div className="flex h-3 w-3 items-center justify-center rounded-full border border-purple-500/30 bg-zinc-900 shadow-lg shadow-purple-500/10">
-                      <div className="h-1.5 w-1.5 rounded-full bg-purple-500"></div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <span className="inline-block rounded-full bg-purple-500/10 px-2 py-1 text-xs text-purple-300">
-                      Previous
-                    </span>
-                    <h3 className="mt-2 text-lg font-bold text-white">Director of Research and Analysis</h3>
-                    <p className="mt-1 text-sm text-zinc-400">Dalton Capital</p>
-                    <p className="mt-3 text-sm text-zinc-400 leading-relaxed">
-                      Led operational efficiency initiatives saving $100K+ annually, built financial models for
-                      Fortune 100 executives, and directed research on emerging technologies like AI to inform company
-                      strategy.
-                    </p>
-                    <div className="mt-3 flex flex-wrap gap-2">
-                      <Badge variant="outline" className="border-zinc-700 text-xs">
-                        Financial Modeling
-                      </Badge>
-                      <Badge variant="outline" className="border-zinc-700 text-xs">
-                        Process Optimization
-                      </Badge>
-                      <Badge variant="outline" className="border-zinc-700 text-xs">
-                        Product Development
-                      </Badge>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Item 3 */}
-                <div className="relative pl-12">
-                  <div className="absolute left-2.5 top-2 h-3 w-3 -translate-x-1/2">
-                    <div className="flex h-3 w-3 items-center justify-center rounded-full border border-purple-500/30 bg-zinc-900 shadow-lg shadow-purple-500/10">
-                      <div className="h-1.5 w-1.5 rounded-full bg-purple-500"></div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <span className="inline-block rounded-full bg-purple-500/10 px-2 py-1 text-xs text-purple-300">
-                      Previous
-                    </span>
-                    <h3 className="mt-2 text-lg font-bold text-white">Special Projects Manager</h3>
-                    <p className="mt-1 text-sm text-zinc-400">Vertical Companies</p>
-                    <p className="mt-3 text-sm text-zinc-400 leading-relaxed">
-                      Partnered with executive leadership to secure $80M in fundraising, led M&A due diligence for
-                      dispensary acquisitions, and built executive dashboards that centralized real-time data across
-                      operations.
-                    </p>
-                    <div className="mt-3 flex flex-wrap gap-2">
-                      <Badge variant="outline" className="border-zinc-700 text-xs">
-                        Fundraising
-                      </Badge>
-                      <Badge variant="outline" className="border-zinc-700 text-xs">
-                        M&A
-                      </Badge>
-                      <Badge variant="outline" className="border-zinc-700 text-xs">
-                        Cannabis Industry
-                      </Badge>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Desktop Timeline - Horizontal */}
-            <div className="relative hidden lg:block">
-              {/* Timeline line */}
-              <div className="absolute left-0 right-0 top-16 h-0.5 bg-gradient-to-r from-purple-500/50 via-purple-500/30 to-zinc-800"></div>
-
-              {/* Timeline items */}
-              <div className="relative mx-auto max-w-6xl">
-                <div className="grid grid-cols-3 gap-6">
-                  {/* Item 1 - Present */}
-                  <div className="relative">
-                    <div className="absolute left-1/2 top-16 -ml-3 h-6 w-6 -translate-y-1/2 transform">
-                      <div className="flex h-6 w-6 items-center justify-center rounded-full border border-purple-500/30 bg-zinc-900 shadow-lg shadow-purple-500/10">
-                        <div className="h-2 w-2 rounded-full bg-purple-500"></div>
-                      </div>
-                    </div>
-
-                    <div className="pt-24">
-                      <span className="inline-block rounded-full bg-purple-500/10 px-3 py-1 text-xs text-purple-300">
-                        Present
-                      </span>
-                      <h3 className="mt-2 text-xl font-bold text-white">Director of Sales</h3>
-                      <p className="mt-1 text-zinc-400">Stealth Startup</p>
-                      <p className="mt-4 text-zinc-400">
-                        Building SaaS tools for the home service industry. Managing SQL databases, designing automation
-                        systems, and integrating data from multiple sources to create unified platforms.
-                      </p>
-                      <div className="mt-4 flex flex-wrap gap-2">
-                        <Badge variant="outline" className="border-zinc-700">
-                          SQL
-                        </Badge>
-                        <Badge variant="outline" className="border-zinc-700">
-                          Automation
-                        </Badge>
-                        <Badge variant="outline" className="border-zinc-700">
-                          Data Integration
-                        </Badge>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Item 2 */}
-                  <div className="relative">
-                    <div className="absolute left-1/2 top-16 -ml-3 h-6 w-6 -translate-y-1/2 transform">
-                      <div className="flex h-6 w-6 items-center justify-center rounded-full border border-purple-500/30 bg-zinc-900 shadow-lg shadow-purple-500/10">
-                        <div className="h-2 w-2 rounded-full bg-purple-500"></div>
-                      </div>
-                    </div>
-
-                    <div className="pt-24">
-                      <span className="inline-block rounded-full bg-purple-500/10 px-3 py-1 text-xs text-purple-300">
-                        Previous
-                      </span>
-                      <h3 className="mt-2 text-xl font-bold text-white">Director of Research and Analysis</h3>
-                      <p className="mt-1 text-zinc-400">Dalton Capital</p>
-                      <p className="mt-4 text-zinc-400">
-                        Led operational efficiency initiatives saving $100K+ annually, built financial models for
-                        Fortune 100 executives, and directed research on emerging technologies like AI to inform company
-                        strategy.
-                      </p>
-                      <div className="mt-4 flex flex-wrap gap-2">
-                        <Badge variant="outline" className="border-zinc-700">
-                          Financial Modeling
-                        </Badge>
-                        <Badge variant="outline" className="border-zinc-700">
-                          Process Optimization
-                        </Badge>
-                        <Badge variant="outline" className="border-zinc-700">
-                          Product Development
-                        </Badge>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Item 3 */}
-                  <div className="relative">
-                    <div className="absolute left-1/2 top-16 -ml-3 h-6 w-6 -translate-y-1/2 transform">
-                      <div className="flex h-6 w-6 items-center justify-center rounded-full border border-purple-500/30 bg-zinc-900 shadow-lg shadow-purple-500/10">
-                        <div className="h-2 w-2 rounded-full bg-purple-500"></div>
-                      </div>
-                    </div>
-
-                    <div className="pt-24">
-                      <span className="inline-block rounded-full bg-purple-500/10 px-3 py-1 text-xs text-purple-300">
-                        Previous
-                      </span>
-                      <h3 className="mt-2 text-xl font-bold text-white">Special Projects Manager</h3>
-                      <p className="mt-1 text-zinc-400">Vertical Companies</p>
-                      <p className="mt-4 text-zinc-400">
-                        Partnered with executive leadership to secure $80M in fundraising, led M&A due diligence for
-                        dispensary acquisitions, and built executive dashboards that centralized real-time data across
-                        operations.
-                      </p>
-                      <div className="mt-4 flex flex-wrap gap-2">
-                        <Badge variant="outline" className="border-zinc-700">
-                          Fundraising
-                        </Badge>
-                        <Badge variant="outline" className="border-zinc-700">
-                          M&A
-                        </Badge>
-                        <Badge variant="outline" className="border-zinc-700">
-                          Cannabis Industry
-                        </Badge>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
           {/* Future Goals */}
-          <div className="mt-16 sm:mt-20 lg:mt-24">
+          <div ref={futureGoalsRef} className="mt-16 sm:mt-20 lg:mt-24">
             <div className="mb-8 sm:mb-12 text-center">
               <Badge className="mb-2 bg-purple-500/20 text-purple-300 text-xs sm:text-sm">The Future</Badge>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white px-4 sm:px-0">Where I&apos;m Headed</h2>
@@ -611,6 +373,18 @@ export default function Home() {
                 </div>
               </div>
             </div>
+
+            {/* Contextual Support Section */}
+            <div className="mt-12 text-center">
+              <p className="text-gray-400 text-sm mb-4">
+                Enjoying my work? Support the developer!
+              </p>
+              <BuyMeCoffeeButton 
+                username="BLVKE"
+                text="Buy me a coffee ☕"
+                className="mx-auto"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -628,44 +402,12 @@ export default function Home() {
             </div>
 
             <div className="grid gap-6 sm:gap-8 md:grid-cols-2 xl:grid-cols-3">
-              {/* Project 1 */}
+              {/* Project 1 - Mood2Song */}
               <div className="group relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/50 transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/30 hover:bg-zinc-900/70 hover:shadow-lg hover:shadow-purple-500/5">
                 <div className="relative aspect-video overflow-hidden">
                   <Image
-                    src="/forest-friends-picnic.png"
-                    alt="OurStories"
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                  <div className="absolute right-3 top-3">
-                    <Badge className="bg-purple-500/20 text-purple-300 text-xs">AI</Badge>
-                  </div>
-                </div>
-                <div className="p-4 sm:p-6">
-                  <h3 className="mb-2 text-lg sm:text-xl font-bold text-white">OurStories</h3>
-                  <p className="mb-4 text-xs sm:text-sm text-zinc-400 leading-relaxed">
-                    A bedtime story generator that makes your child the star of the story, with AI-generated images and
-                    physical printing options.
-                  </p>
-                  <div className="mb-4 flex flex-wrap gap-2">
-                    <span className="rounded-full bg-zinc-800 px-2 py-1 text-xs text-zinc-300">AI</span>
-                    <span className="rounded-full bg-zinc-800 px-2 py-1 text-xs text-zinc-300">NLP</span>
-                    <span className="rounded-full bg-zinc-800 px-2 py-1 text-xs text-zinc-300">Image Generation</span>
-                  </div>
-                  <Link href="/projects/ourstories" className="flex items-center text-xs sm:text-sm font-medium text-purple-400">
-                    View Project
-                    <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                </div>
-              </div>
-
-              {/* Project 2 */}
-              <div className="group relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/50 transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/30 hover:bg-zinc-900/70 hover:shadow-lg hover:shadow-purple-500/5">
-                <div className="relative aspect-video overflow-hidden">
-                  <Image
-                    src="/audio-spectrum-display.png"
-                    alt="Music Production Analyzer"
+                    src="/placeholder.svg?key=x9wrf"
+                    alt="Mood2Song"
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
@@ -675,18 +417,48 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="p-4 sm:p-6">
-                  <h3 className="mb-2 text-lg sm:text-xl font-bold text-white">Music Production Analyzer</h3>
+                  <h3 className="mb-2 text-lg sm:text-xl font-bold text-white">Mood2Song</h3>
                   <p className="mb-4 text-xs sm:text-sm text-zinc-400 leading-relaxed">
-                    An AI tool that analyzes dense and long music production videos and podcasts to extract specific
-                    tips and techniques.
+                    A music discovery platform that helps users find songs based on their mood, persona, or specific vibe—combining my passion for music with intuitive UX design.
+                  </p>
+                  <div className="mb-4 flex flex-wrap gap-2">
+                    <span className="rounded-full bg-zinc-800 px-2 py-1 text-xs text-zinc-300">Music Discovery</span>
+                    <span className="rounded-full bg-zinc-800 px-2 py-1 text-xs text-zinc-300">React</span>
+                    <span className="rounded-full bg-zinc-800 px-2 py-1 text-xs text-zinc-300">API Integration</span>
+                  </div>
+                  <Link href="/projects/mood2song" className="flex items-center text-xs sm:text-sm font-medium text-purple-400">
+                    View Project
+                    <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </div>
+              </div>
+
+              {/* Project 2 - Caren's Cookbook */}
+              <div className="group relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/50 transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/30 hover:bg-zinc-900/70 hover:shadow-lg hover:shadow-purple-500/5">
+                <div className="relative aspect-video overflow-hidden">
+                  <Image
+                    src="/culinary-innovation-lab.png"
+                    alt="Caren's Cookbook"
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                  <div className="absolute right-3 top-3">
+                    <Badge className="bg-purple-500/20 text-purple-300 text-xs">AI</Badge>
+                  </div>
+                </div>
+                <div className="p-4 sm:p-6">
+                  <h3 className="mb-2 text-lg sm:text-xl font-bold text-white">Caren's Cookbook</h3>
+                  <p className="mb-4 text-xs sm:text-sm text-zinc-400 leading-relaxed">
+                    AI-Powered Recipe Management Platform that transforms how users collect, organize, and manage recipes with intelligent extraction from URLs and images.
                   </p>
                   <div className="mb-4 flex flex-wrap gap-2">
                     <span className="rounded-full bg-zinc-800 px-2 py-1 text-xs text-zinc-300">AI</span>
-                    <span className="rounded-full bg-zinc-800 px-2 py-1 text-xs text-zinc-300">Music</span>
-                    <span className="rounded-full bg-zinc-800 px-2 py-1 text-xs text-zinc-300">Content Analysis</span>
+                    <span className="rounded-full bg-zinc-800 px-2 py-1 text-xs text-zinc-300">Recipe Management</span>
+                    <span className="rounded-full bg-zinc-800 px-2 py-1 text-xs text-zinc-300">Computer Vision</span>
                   </div>
                   <Link
-                    href="/projects/music-production-analyzer"
+                    href="/projects/carens-cookbook"
                     className="flex items-center text-xs sm:text-sm font-medium text-purple-400"
                   >
                     View Project
@@ -695,33 +467,32 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Project 3 */}
+              {/* Project 3 - Mugshot Matcher */}
               <div className="group relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/50 transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/30 hover:bg-zinc-900/70 hover:shadow-lg hover:shadow-purple-500/5 md:col-span-2 xl:col-span-1">
                 <div className="relative aspect-video overflow-hidden">
                   <Image
-                    src="/jumpscare-preview.png"
-                    alt="JumpScare Generator"
+                    src="/mugshot-matching-game.png"
+                    alt="Mugshot Matcher"
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                   <div className="absolute right-3 top-3">
-                    <Badge className="bg-purple-500/20 text-purple-300 text-xs">Web App</Badge>
+                    <Badge className="bg-purple-500/20 text-purple-300 text-xs">AI</Badge>
                   </div>
                 </div>
                 <div className="p-4 sm:p-6">
-                  <h3 className="mb-2 text-lg sm:text-xl font-bold text-white">JumpScare Generator</h3>
+                  <h3 className="mb-2 text-lg sm:text-xl font-bold text-white">Mugshot Matcher</h3>
                   <p className="mb-4 text-xs sm:text-sm text-zinc-400 leading-relaxed">
-                    A web application that lets users create custom jump scare videos by combining uploaded content with
-                    startling effects.
+                    Interactive criminal profiling game that challenges players to match mugshots with their corresponding crimes. Built as a Progressive Web App with 400+ real criminal records.
                   </p>
                   <div className="mb-4 flex flex-wrap gap-2">
-                    <span className="rounded-full bg-zinc-800 px-2 py-1 text-xs text-zinc-300">React</span>
-                    <span className="rounded-full bg-zinc-800 px-2 py-1 text-xs text-zinc-300">Python</span>
-                    <span className="rounded-full bg-zinc-800 px-2 py-1 text-xs text-zinc-300">FFmpeg</span>
+                    <span className="rounded-full bg-zinc-800 px-2 py-1 text-xs text-zinc-300">Criminal Profiling</span>
+                    <span className="rounded-full bg-zinc-800 px-2 py-1 text-xs text-zinc-300">Interactive Game</span>
+                    <span className="rounded-full bg-zinc-800 px-2 py-1 text-xs text-zinc-300">Educational</span>
                   </div>
                   <Link
-                    href="/projects/jumpscare-generator"
+                    href="/projects/mugshot-matcher"
                     className="flex items-center text-xs sm:text-sm font-medium text-purple-400"
                   >
                     View Project

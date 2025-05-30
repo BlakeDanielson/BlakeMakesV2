@@ -384,7 +384,7 @@ export default function CarensCookbookPage() {
                 <h3 className="text-lg font-semibold text-white">Project Links</h3>
                 <div className="mt-4 space-y-3">
                   <Button variant="outline" className="w-full justify-start" asChild>
-                    <Link href="#" className="flex items-center gap-2">
+                    <Link href="https://github.com/BlakeDanielson/FinalMothersDayV2" className="flex items-center gap-2">
                       <Github className="h-4 w-4" />
                       View on GitHub
                     </Link>

@@ -190,7 +190,7 @@ export default function MusicProductionAnalyzerPage() {
                       Try the Demo
                     </Button>
                   </Link>
-                  <Link href="https://github.com/BlakeDanielson" target="_blank" rel="noopener noreferrer">
+                  <Link href="https://github.com/BlakeDanielson/music-analyzer" target="_blank" rel="noopener noreferrer">
                     <Button variant="outline" className="w-full border-zinc-700">
                       <Github className="mr-2 h-4 w-4" />
                       View Source Code

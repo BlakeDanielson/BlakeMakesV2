@@ -56,7 +56,7 @@ export default function ArticlesPage() {
       <MainNav />
 
       {/* Hero Section */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-black via-zinc-900 to-blue-950/30 pt-20 pb-16 sm:pt-24 sm:pb-20">
+      <div className="relative overflow-hidden bg-gradient-to-br from-black via-zinc-900 to-purple-950/30 pt-20 pb-16 sm:pt-24 sm:pb-20">
         <div className="absolute inset-0 bg-grid-white/5 [mask-image:linear-gradient(0deg,#000000,transparent)]"></div>
         <div className="container mx-auto px-4 relative">
           <div className="mx-auto max-w-4xl text-center">
@@ -66,7 +66,7 @@ export default function ArticlesPage() {
               transition={{ duration: 0.8 }}
               className="space-y-4 sm:space-y-6"
             >
-              <Badge className="mb-4 bg-blue-500/20 text-blue-300">Financial Analysis</Badge>
+              <Badge className="mb-4 bg-purple-500/20 text-purple-300">Financial Analysis</Badge>
               <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
                 Investment Research & Analysis
               </h1>
@@ -76,11 +76,11 @@ export default function ArticlesPage() {
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
                 <div className="flex items-center gap-2 text-sm text-zinc-400">
-                  <span className="font-semibold text-blue-400">{articles.length}</span>
+                  <span className="font-semibold text-purple-400">{articles.length}</span>
                   <span>Published Articles</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-zinc-400">
-                  <span className="font-semibold text-blue-400">920</span>
+                  <span className="font-semibold text-purple-400">920</span>
                   <span>Followers on Seeking Alpha</span>
                 </div>
               </div>
@@ -175,11 +175,11 @@ export default function ArticlesPage() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: index * 0.05 }}
-                      className="group relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/50 transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/30 hover:bg-zinc-900/70 hover:shadow-lg hover:shadow-blue-500/5"
+                      className="group relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/50 transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/30 hover:bg-zinc-900/70 hover:shadow-lg hover:shadow-purple-500/5"
                     >
                       <div className="p-4 sm:p-6">
                         <div className="mb-3 flex items-center justify-between">
-                          <Badge className="bg-blue-500/20 text-blue-300 text-xs">
+                          <Badge className="bg-purple-500/20 text-purple-300 text-xs">
                             {article.category}
                           </Badge>
                           <div className="flex items-center gap-1">
@@ -190,7 +190,7 @@ export default function ArticlesPage() {
                           </div>
                         </div>
 
-                        <h3 className="mb-3 text-lg sm:text-xl font-bold text-white line-clamp-2 group-hover:text-blue-300 transition-colors">
+                        <h3 className="mb-3 text-lg sm:text-xl font-bold text-white line-clamp-2 group-hover:text-purple-300 transition-colors">
                           {article.title}
                         </h3>
 
@@ -201,7 +201,7 @@ export default function ArticlesPage() {
                         <div className="mb-4 flex items-center justify-between text-xs text-zinc-500">
                           <div className="flex items-center gap-4">
                             {article.symbol && (
-                              <span className="font-mono font-semibold text-blue-400">
+                              <span className="font-mono font-semibold text-purple-400">
                                 ${article.symbol}
                               </span>
                             )}
@@ -219,7 +219,7 @@ export default function ArticlesPage() {
                           href={article.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center text-xs sm:text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors"
+                          className="flex items-center text-xs sm:text-sm font-medium text-purple-400 hover:text-purple-300 transition-colors"
                         >
                           Read on Seeking Alpha
                           <ExternalLink className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -235,7 +235,7 @@ export default function ArticlesPage() {
       </div>
 
       {/* Call to Action */}
-      <div className="border-t border-zinc-800 bg-gradient-to-br from-zinc-900 to-blue-950/20 py-16">
+      <div className="border-t border-zinc-800 bg-gradient-to-br from-zinc-900 to-purple-950/20 py-16">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
@@ -247,7 +247,7 @@ export default function ArticlesPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
-                <Button className="bg-blue-600 hover:bg-blue-700 w-full sm:w-auto">
+                <Button className="bg-purple-600 hover:bg-purple-700 w-full sm:w-auto">
                   Let&apos;s Discuss Opportunities
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>

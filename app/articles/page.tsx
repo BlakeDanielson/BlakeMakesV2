@@ -3,10 +3,9 @@
 import { useState, useMemo } from "react"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { ArrowRight, ExternalLink, MessageCircle, TrendingUp, TrendingDown, Minus, Search, Filter, Crown } from "lucide-react"
+import { ArrowRight, ExternalLink, MessageCircle, TrendingUp, TrendingDown, Minus, Filter, Crown } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import { MainNav } from "@/components/main-nav"
 import { SiteFooter } from "@/components/site-footer"
 import { articles, categories } from "@/lib/articles-data"
@@ -34,24 +33,19 @@ const getRatingColor = (rating: string) => {
 }
 
 export default function ArticlesPage() {
-  const [searchTerm, setSearchTerm] = useState("")
   const [selectedCategory, setSelectedCategory] = useState("All")
   const [selectedRating, setSelectedRating] = useState("All")
   const [showEditorsPickOnly, setShowEditorsPickOnly] = useState(false)
 
   const filteredArticles = useMemo(() => {
     return articles.filter(article => {
-      const matchesSearch = article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           article.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           (article.symbol && article.symbol.toLowerCase().includes(searchTerm.toLowerCase()))
-      
       const matchesCategory = selectedCategory === "All" || article.category === selectedCategory
       const matchesRating = selectedRating === "All" || article.rating === selectedRating
       const matchesEditorsPick = !showEditorsPickOnly || article.editorsPick
 
-      return matchesSearch && matchesCategory && matchesRating && matchesEditorsPick
+      return matchesCategory && matchesRating && matchesEditorsPick
     })
-  }, [searchTerm, selectedCategory, selectedRating, showEditorsPickOnly])
+  }, [selectedCategory, selectedRating, showEditorsPickOnly])
 
   return (
     <div className="flex min-h-screen flex-col bg-black">
@@ -95,18 +89,7 @@ export default function ArticlesPage() {
       <div className="border-b border-zinc-800 bg-zinc-900/50 py-6">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-6xl">
-            <div className="flex flex-col lg:flex-row gap-4 items-start lg:items-center justify-between">
-              {/* Search */}
-              <div className="relative flex-1 max-w-md">
-                <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-zinc-400" />
-                <Input
-                  placeholder="Search articles, symbols, or topics..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10 bg-zinc-800 border-zinc-700 text-white placeholder:text-zinc-400"
-                />
-              </div>
-
+            <div className="flex flex-col lg:flex-row gap-4 items-start lg:items-center justify-center">
               {/* Filters */}
               <div className="flex flex-wrap gap-3 items-center">
                 <div className="flex items-center gap-2">
@@ -166,7 +149,6 @@ export default function ArticlesPage() {
                 <p className="text-zinc-400 text-lg">No articles found matching your criteria.</p>
                 <Button
                   onClick={() => {
-                    setSearchTerm("")
                     setSelectedCategory("All")
                     setSelectedRating("All")
                     setShowEditorsPickOnly(false)

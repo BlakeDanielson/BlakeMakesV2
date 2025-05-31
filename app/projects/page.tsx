@@ -396,105 +396,117 @@ function FeaturedProject({ project }: { project: Project }) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`relative overflow-hidden rounded-xl border ${categoryTheme.borderColor} bg-gradient-to-br from-zinc-900 to-black p-1 group`}
+      className="group"
     >
-      <div className="absolute inset-0 bg-grid-white/5 [mask-image:linear-gradient(0deg,#000000,transparent)]"></div>
-      <div className="relative grid gap-6 p-6 lg:grid-cols-2 lg:gap-8 lg:p-10">
-                        <div className="flex flex-col justify-center space-y-4 lg:space-y-6">
-          {/* Status and Category Badges */}
-          <div className="flex flex-wrap gap-2">
-            <Badge className={`${statusInfo.bgColor} ${statusInfo.color} border-0 flex items-center gap-1`}>
-              {statusInfo.icon}
-              {project.status}
-            </Badge>
-            <Badge className={`${categoryTheme.bgColor} ${categoryTheme.textColor} border-0`}>
-              {project.category}
-            </Badge>
-            <Badge className={`bg-black/50 ${getPricingColor(project.pricing)} border-0`}>
-              {project.pricing}
-            </Badge>
-          </div>
-          
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">{project.title}</h2>
-          <p className="text-zinc-400 text-sm sm:text-base">{project.description}</p>
-          
-          {/* Tech Stack */}
-          <div>
-            <p className="text-xs text-zinc-500 mb-3">Tech Stack</p>
-            <div className="flex flex-wrap gap-2">
-              {project.techStack.map((tech: string) => (
-                <span 
-                  key={tech} 
-                  className="inline-flex items-center gap-1.5 rounded-full bg-zinc-800 px-3 py-1.5 text-xs text-zinc-300"
-                >
-                  <span className="text-sm">{techIcons[tech as keyof typeof techIcons] || "⚡"}</span>
-                  <span>{tech}</span>
-                </span>
-              ))}
-            </div>
-          </div>
-          
-          {/* Project Details */}
-          <div className="flex flex-wrap gap-4 text-sm text-zinc-500">
-            {project.completionDate && (
-              <div className="flex items-center gap-1">
-                <Calendar className="h-4 w-4" />
-                <span>{new Date(project.completionDate).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</span>
+      <Link href={project.link} className="block">
+        <div
+          className={`relative overflow-hidden rounded-xl border ${categoryTheme.borderColor} bg-gradient-to-br from-zinc-900 to-black p-1 group cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/10`}
+        >
+          <div className="absolute inset-0 bg-grid-white/5 [mask-image:linear-gradient(0deg,#000000,transparent)]"></div>
+          <div className="relative grid gap-6 p-6 lg:grid-cols-2 lg:gap-8 lg:p-10">
+            <div className="flex flex-col justify-center space-y-4 lg:space-y-6">
+              {/* Status and Category Badges */}
+              <div className="flex flex-wrap gap-2">
+                <Badge className={`${statusInfo.bgColor} ${statusInfo.color} border-0 flex items-center gap-1`}>
+                  {statusInfo.icon}
+                  {project.status}
+                </Badge>
+                <Badge className={`${categoryTheme.bgColor} ${categoryTheme.textColor} border-0`}>
+                  {project.category}
+                </Badge>
+                <Badge className={`bg-black/50 ${getPricingColor(project.pricing)} border-0`}>
+                  {project.pricing}
+                </Badge>
               </div>
-            )}
-            <div className="flex items-center gap-1">
-              <Clock className="h-4 w-4" />
-              <span>{project.duration}</span>
+              
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">{project.title}</h2>
+              <p className="text-zinc-400 text-sm sm:text-base">{project.description}</p>
+              
+              {/* Tech Stack */}
+              <div>
+                <p className="text-xs text-zinc-500 mb-3">Tech Stack</p>
+                <div className="flex flex-wrap gap-2">
+                  {project.techStack.map((tech: string) => (
+                    <span 
+                      key={tech} 
+                      className="inline-flex items-center gap-1.5 rounded-full bg-zinc-800 px-3 py-1.5 text-xs text-zinc-300"
+                    >
+                      <span className="text-sm">{techIcons[tech as keyof typeof techIcons] || "⚡"}</span>
+                      <span>{tech}</span>
+                    </span>
+                  ))}
+                </div>
+              </div>
+              
+              {/* Project Details */}
+              <div className="flex flex-wrap gap-4 text-sm text-zinc-500">
+                {project.completionDate && (
+                  <div className="flex items-center gap-1">
+                    <Calendar className="h-4 w-4" />
+                    <span>{new Date(project.completionDate).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</span>
+                  </div>
+                )}
+                <div className="flex items-center gap-1">
+                  <Clock className="h-4 w-4" />
+                  <span>{project.duration}</span>
+                </div>
+              </div>
+              
+              {/* Action Buttons */}
+              <div className="flex flex-wrap gap-3 pt-2">
+                <Button 
+                  className={`bg-gradient-to-r ${categoryTheme.color} hover:opacity-90 text-white`}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    e.stopPropagation()
+                  }}
+                >
+                  View Case Study
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+                {project.liveLink && (
+                  <Button 
+                    variant="outline" 
+                    className="border-zinc-700 hover:bg-zinc-800"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      e.stopPropagation()
+                      if (project.liveLink) window.open(project.liveLink, '_blank')
+                    }}
+                  >
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    Live Demo
+                  </Button>
+                )}
+                {project.githubLink && (
+                  <Button 
+                    variant="outline" 
+                    className="border-zinc-700 hover:bg-zinc-800"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      e.stopPropagation()
+                      if (project.githubLink) window.open(project.githubLink, '_blank')
+                    }}
+                  >
+                    <Github className="mr-2 h-4 w-4" />
+                    Source Code
+                  </Button>
+                )}
+              </div>
+            </div>
+            
+            <div className="relative aspect-video overflow-hidden rounded-lg border border-zinc-800 order-first lg:order-last">
+              <Image 
+                src={project.image || "/placeholder.svg"} 
+                alt={`${project.title} project screenshot`} 
+                fill 
+                className="object-cover transition-transform duration-500 group-hover:scale-105" 
+              />
+              <div className="absolute inset-0 bg-black/20 opacity-0 transition-opacity group-hover:opacity-100"></div>
             </div>
           </div>
-          
-          {/* Action Buttons */}
-          <div className="flex flex-wrap gap-3 pt-2">
-            <Link href={project.link}>
-              <Button className={`bg-gradient-to-r ${categoryTheme.color} hover:opacity-90 text-white`}>
-                View Case Study
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
-            {project.liveLink && (
-              <Button 
-                variant="outline" 
-                className="border-zinc-700 hover:bg-zinc-800"
-                                 onClick={(e) => {
-                   e.stopPropagation()
-                   if (project.liveLink) window.open(project.liveLink, '_blank')
-                 }}
-              >
-                <ExternalLink className="mr-2 h-4 w-4" />
-                Live Demo
-              </Button>
-            )}
-            {project.githubLink && (
-              <Button 
-                variant="outline" 
-                className="border-zinc-700 hover:bg-zinc-800"
-                                 onClick={(e) => {
-                   e.stopPropagation()
-                   if (project.githubLink) window.open(project.githubLink, '_blank')
-                 }}
-              >
-                <Github className="mr-2 h-4 w-4" />
-                Source Code
-              </Button>
-            )}
-          </div>
         </div>
-        
-        <div className="relative aspect-video overflow-hidden rounded-lg border border-zinc-800 order-first lg:order-last">
-          <Image 
-            src={project.image || "/placeholder.svg"} 
-            alt={`${project.title} project screenshot`} 
-            fill 
-            className="object-cover transition-transform duration-500 group-hover:scale-105" 
-          />
-          <div className="absolute inset-0 bg-black/20 opacity-0 transition-opacity group-hover:opacity-100"></div>
-        </div>
-      </div>
+      </Link>
     </motion.div>
   )
 }

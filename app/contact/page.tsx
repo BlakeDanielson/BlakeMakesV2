@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { useToast } from "@/hooks/use-toast"
+import { CustomBuyMeCoffeeButton } from "@/components/buy-me-coffee-button"
 
 export default function ContactPage() {
   const { toast } = useToast()
@@ -140,6 +141,21 @@ export default function ContactPage() {
                   <path d="M7 17 17 7" />
                 </svg>
               </a>
+            </div>
+
+            {/* Buy Me a Coffee Section */}
+            <div className="mt-8 rounded-lg border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-800/50">
+              <h3 className="text-lg font-bold">Support My Work</h3>
+              <p className="mt-2 text-zinc-600 dark:text-zinc-400">
+                If you enjoy my projects or find my content helpful, consider buying me a coffee! It helps me keep creating and sharing.
+              </p>
+              <div className="mt-4">
+                <CustomBuyMeCoffeeButton 
+                  username="blvke"
+                  text="☕ Buy me a coffee"
+                  className="w-full justify-center"
+                />
+              </div>
             </div>
           </div>
 

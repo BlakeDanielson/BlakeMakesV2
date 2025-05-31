@@ -13,7 +13,7 @@ import { HeroParallax } from "@/components/hero-parallax"
 import { Badge } from "@/components/ui/badge"
 import { AnimatedText } from "@/components/animated-text"
 import { FeaturedMusicPlayer } from "@/components/featured-music-player"
-import { BuyMeCoffee, BuyMeCoffeeButton } from "@/components/ui/buy-me-coffee"
+import { FeaturedArticles } from "@/components/featured-articles"
 
 export default function Home() {
   const aboutRef = useRef<HTMLDivElement>(null)
@@ -89,17 +89,6 @@ export default function Home() {
 
   return (
     <div className="flex min-h-screen flex-col bg-black">
-      {/* Global Floating Widget */}
-      <BuyMeCoffee 
-        username="BLVKE"
-        message="Thank you for visiting my portfolio! If you like what you see, consider buying me a coffee! ☕"
-        description="Support Blake's work!"
-        color="#5F7FFF"
-        position="right"
-        xMargin={18}
-        yMargin={18}
-      />
-
       <MainNav />
 
       {/* Hero Section with Parallax */}
@@ -256,7 +245,7 @@ export default function Home() {
                     <h3 className="font-semibold text-white text-sm sm:text-base">Good With People</h3>
                   </div>
                   <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed">
-                    I work well with both technical teams and business . Good at taking vague &quot;I&apos;ll know it when I see it&quot; requirements and turning them into something everyone can understand and execute on.
+                    I work well with both technical teams and business stakeholders. Good at taking vague &quot;I&apos;ll know it when I see it&quot; requirements and turning them into something everyone can understand and execute on.
                   </p>
                 </div>
               </div>
@@ -372,18 +361,6 @@ export default function Home() {
                   </Link>
                 </div>
               </div>
-            </div>
-
-            {/* Contextual Support Section */}
-            <div className="mt-12 text-center">
-              <p className="text-gray-400 text-sm mb-4">
-                Enjoying my work? Support the developer!
-              </p>
-              <BuyMeCoffeeButton 
-                username="BLVKE"
-                text="Buy me a coffee ☕"
-                className="mx-auto"
-              />
             </div>
           </div>
         </div>
@@ -513,6 +490,9 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* Featured Articles Section */}
+      <FeaturedArticles />
 
       {/* Featured Music Player */}
       <div className="border-t border-zinc-800 bg-black py-16 sm:py-20 lg:py-24">

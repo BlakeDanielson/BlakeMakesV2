@@ -154,7 +154,7 @@ export default function ConsultingPage() {
     {
       icon: Rocket,
       title: "End-to-End Ownership",
-      description: "From initial concept to final deployment, I take full ownership of your project's success"
+      description: "From initial concept to final deployment, you own the project and I own the project'ssuccess"
     }
   ]
 

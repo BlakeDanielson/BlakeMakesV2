@@ -124,8 +124,7 @@ export const articles: Article[] = [
     category: "Security Tech",
     description: "Comparative analysis of two leading threat detection technologies and their market potential.",
     comments: 94,
-    rating: "neutral",
-    editorsPick: true
+    rating: "neutral"
   },
   {
     id: "lockheed-boeing-leonardo-contract",
@@ -135,8 +134,7 @@ export const articles: Article[] = [
     category: "Defense",
     description: "Analysis of major defense contractors competing for significant government contracts.",
     comments: 41,
-    rating: "neutral",
-    editorsPick: true
+    rating: "neutral"
   },
   {
     id: "patriot-one-technologies",
@@ -222,10 +220,9 @@ export const articles: Article[] = [
     date: "2018-07-02",
     symbol: "CGC",
     category: "Cannabis",
-    description: "Analyst's Pick: Deep dive into the biological aspects of cannabis cultivation and production.",
+    description: "Deep dive into the biological aspects of cannabis cultivation and production.",
     comments: 24,
-    rating: "bullish",
-    editorsPick: true
+    rating: "bullish"
   },
   {
     id: "esports-vs-traditional-sports",

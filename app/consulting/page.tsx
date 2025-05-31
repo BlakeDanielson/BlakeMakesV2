@@ -148,7 +148,7 @@ export default function ConsultingPage() {
     {
       icon: Target,
       title: "ROI-Focused Solutions",
-      description: "Finance background ensures every solution is built with clear business value and returns"
+      description: "Finance-first approach ensures every solution is built with clear business value and returns"
     },
     {
       icon: Rocket,

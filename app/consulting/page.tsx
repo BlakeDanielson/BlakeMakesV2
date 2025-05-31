@@ -126,7 +126,6 @@ export default function ConsultingPage() {
         "Everything in MVP",
         "Full application development",
         "Production deployment",
-        "Performance optimization",
         "3 months of support",
         "Training and documentation"
       ],

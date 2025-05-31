@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { ArrowRight, ExternalLink, MessageCircle, TrendingUp, TrendingDown, Minus, Search, Filter } from "lucide-react"
+import { ArrowRight, ExternalLink, MessageCircle, TrendingUp, TrendingDown, Minus, Search, Filter, Crown } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -37,6 +37,7 @@ export default function ArticlesPage() {
   const [searchTerm, setSearchTerm] = useState("")
   const [selectedCategory, setSelectedCategory] = useState("All")
   const [selectedRating, setSelectedRating] = useState("All")
+  const [showEditorsPickOnly, setShowEditorsPickOnly] = useState(false)
 
   const filteredArticles = useMemo(() => {
     return articles.filter(article => {
@@ -46,10 +47,11 @@ export default function ArticlesPage() {
       
       const matchesCategory = selectedCategory === "All" || article.category === selectedCategory
       const matchesRating = selectedRating === "All" || article.rating === selectedRating
+      const matchesEditorsPick = !showEditorsPickOnly || article.editorsPick
 
-      return matchesSearch && matchesCategory && matchesRating
+      return matchesSearch && matchesCategory && matchesRating && matchesEditorsPick
     })
-  }, [searchTerm, selectedCategory, selectedRating])
+  }, [searchTerm, selectedCategory, selectedRating, showEditorsPickOnly])
 
   return (
     <div className="flex min-h-screen flex-col bg-black">
@@ -135,6 +137,20 @@ export default function ArticlesPage() {
                   <option value="bearish">Bearish</option>
                   <option value="neutral">Neutral</option>
                 </select>
+
+                {/* Editor's Pick Filter */}
+                <Button
+                  variant={showEditorsPickOnly ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setShowEditorsPickOnly(!showEditorsPickOnly)}
+                  className={showEditorsPickOnly 
+                    ? "bg-yellow-600 hover:bg-yellow-700 text-white" 
+                    : "border-zinc-700 text-white hover:bg-zinc-800"
+                  }
+                >
+                  <Crown className="h-3 w-3 mr-1" />
+                  Editor's Picks
+                </Button>
               </div>
             </div>
           </div>
@@ -153,6 +169,7 @@ export default function ArticlesPage() {
                     setSearchTerm("")
                     setSelectedCategory("All")
                     setSelectedRating("All")
+                    setShowEditorsPickOnly(false)
                   }}
                   variant="outline"
                   className="mt-4 border-zinc-700 text-white hover:bg-zinc-800"
@@ -178,6 +195,16 @@ export default function ArticlesPage() {
                       className="group relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/50 transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/30 hover:bg-zinc-900/70 hover:shadow-lg hover:shadow-purple-500/5"
                     >
                       <div className="p-4 sm:p-6">
+                        {/* Editor's Pick Badge */}
+                        {article.editorsPick && (
+                          <div className="mb-3 flex items-center gap-1">
+                            <Crown className="h-3 w-3 text-yellow-400" />
+                            <Badge className="bg-yellow-500/20 text-yellow-300 text-xs font-medium">
+                              Editor's Pick
+                            </Badge>
+                          </div>
+                        )}
+
                         <div className="mb-3 flex items-center justify-between">
                           <Badge className="bg-purple-500/20 text-purple-300 text-xs">
                             {article.category}

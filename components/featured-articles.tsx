@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { ArrowRight, ExternalLink, MessageCircle, TrendingUp, TrendingDown, Minus } from "lucide-react"
+import { ArrowRight, ExternalLink, MessageCircle, TrendingUp, TrendingDown, Minus, Crown } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { featuredArticles } from "@/lib/articles-data"
@@ -52,6 +52,16 @@ export function FeaturedArticles() {
                 className="group relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/50 transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/30 hover:bg-zinc-900/70 hover:shadow-lg hover:shadow-purple-500/5"
               >
                 <div className="p-4 sm:p-6">
+                  {/* Editor's Pick Badge */}
+                  {article.editorsPick && (
+                    <div className="mb-3 flex items-center gap-1">
+                      <Crown className="h-3 w-3 text-yellow-400" />
+                      <Badge className="bg-yellow-500/20 text-yellow-300 text-xs font-medium">
+                        Editor's Pick
+                      </Badge>
+                    </div>
+                  )}
+
                   <div className="mb-3 flex items-center justify-between">
                     <Badge className="bg-purple-500/20 text-purple-300 text-xs">
                       {article.category}

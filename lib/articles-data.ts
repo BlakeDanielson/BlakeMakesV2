@@ -9,6 +9,7 @@ export interface Article {
   featured?: boolean
   comments?: number
   rating?: 'bullish' | 'bearish' | 'neutral'
+  editorsPick?: boolean
 }
 
 export const articles: Article[] = [
@@ -65,7 +66,8 @@ export const articles: Article[] = [
     description: "Editor's Pick: Using beer taxation models to predict cannabis market dynamics in Canada.",
     comments: 13,
     rating: "neutral",
-    featured: true
+    featured: true,
+    editorsPick: true
   },
   {
     id: "tilray-share-price-unsustainable",
@@ -88,7 +90,8 @@ export const articles: Article[] = [
     description: "Editor's Pick: Uncovering the hidden gem in the cannabis sector with strong fundamentals and growth potential.",
     comments: 44,
     rating: "bullish",
-    featured: true
+    featured: true,
+    editorsPick: true
   },
   {
     id: "cannaguide-aphria-dcf",
@@ -121,7 +124,8 @@ export const articles: Article[] = [
     category: "Security Tech",
     description: "Comparative analysis of two leading threat detection technologies and their market potential.",
     comments: 94,
-    rating: "neutral"
+    rating: "neutral",
+    editorsPick: true
   },
   {
     id: "lockheed-boeing-leonardo-contract",
@@ -131,7 +135,8 @@ export const articles: Article[] = [
     category: "Defense",
     description: "Analysis of major defense contractors competing for significant government contracts.",
     comments: 41,
-    rating: "neutral"
+    rating: "neutral",
+    editorsPick: true
   },
   {
     id: "patriot-one-technologies",
@@ -219,7 +224,8 @@ export const articles: Article[] = [
     category: "Cannabis",
     description: "Analyst's Pick: Deep dive into the biological aspects of cannabis cultivation and production.",
     comments: 24,
-    rating: "bullish"
+    rating: "bullish",
+    editorsPick: true
   },
   {
     id: "esports-vs-traditional-sports",

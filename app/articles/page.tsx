@@ -70,7 +70,7 @@ export default function ArticlesPage() {
             >
               <Badge className="mb-4 bg-purple-500/20 text-purple-300">Financial Analysis</Badge>
               <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
-                Investment Research & Analysis
+                Investment <span className="text-purple-400">Research & Analysis</span>
               </h1>
               <p className="mx-auto max-w-2xl text-lg text-zinc-300 leading-relaxed">
                 A collection of my financial analysis and investment research from Seeking Alpha, 

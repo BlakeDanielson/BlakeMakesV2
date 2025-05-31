@@ -129,6 +129,14 @@ export default function Home() {
                   About Me
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
+                <Link href="/consulting" className="w-full sm:w-auto">
+                  <Button
+                    size="lg"
+                    className="bg-zinc-800 hover:bg-zinc-700 text-white w-full sm:w-auto text-sm sm:text-base"
+                  >
+                    Hire Me
+                  </Button>
+                </Link>
                 <Link href="/projects" className="w-full sm:w-auto">
                   <Button
                     variant="outline"
@@ -330,34 +338,107 @@ export default function Home() {
             </div>
           </div>
 
+          {/* Consulting Teaser Section */}
+          <div className="mt-16 sm:mt-20 lg:mt-24">
+            <div className="relative rounded-xl border border-purple-500/30 bg-gradient-to-br from-purple-900/10 via-zinc-900/50 to-blue-900/10 p-6 sm:p-8 overflow-hidden">
+              <div className="absolute top-4 right-4 opacity-10">
+                <Briefcase className="h-16 w-16 text-purple-400" />
+              </div>
+              <div className="relative">
+                <Badge className="mb-4 bg-purple-500/20 text-purple-300">Available for Consulting</Badge>
+                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+                  Need Help Building Something <span className="text-purple-400">Amazing</span>?
+                </h3>
+                <p className="text-zinc-300 text-sm sm:text-base leading-relaxed mb-6 max-w-3xl">
+                  I help companies bridge the gap between technical complexity and business strategy. 
+                  From AI integrations to full-stack applications, I deliver solutions that drive real results.
+                </p>
+                <div className="grid sm:grid-cols-3 gap-4 mb-6">
+                  <div className="flex items-center gap-2">
+                    <div className="h-2 w-2 bg-purple-400 rounded-full"></div>
+                    <span className="text-zinc-300 text-sm">AI Product Development</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="h-2 w-2 bg-purple-400 rounded-full"></div>
+                    <span className="text-zinc-300 text-sm">Strategic Consulting</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="h-2 w-2 bg-purple-400 rounded-full"></div>
+                    <span className="text-zinc-300 text-sm">Full-Stack Development</span>
+                  </div>
+                </div>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <Link href="/consulting">
+                    <Button className="bg-purple-600 hover:bg-purple-700 w-full sm:w-auto">
+                      View Services & Pricing
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
+                  <Link href="/contact">
+                    <Button variant="outline" className="border-zinc-700 text-white hover:bg-zinc-800 w-full sm:w-auto">
+                      Start a Conversation
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Future Goals */}
           <div ref={futureGoalsRef} className="mt-16 sm:mt-20 lg:mt-24">
             <div className="mb-8 sm:mb-12 text-center">
-              <Badge className="mb-2 bg-purple-500/20 text-purple-300 text-xs sm:text-sm">The Future</Badge>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white px-4 sm:px-0">Where I&apos;m Headed</h2>
-              <p className="mx-auto mt-4 max-w-2xl text-sm sm:text-base text-zinc-400 px-4 sm:px-0 leading-relaxed">Looking for my next challenge at a company that&apos;s building something that matters</p>
+              <Badge className="mb-2 bg-purple-500/20 text-purple-300 text-xs sm:text-sm">What's Next</Badge>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white px-4 sm:px-0">Ready for New Challenges</h2>
+              <p className="mx-auto mt-4 max-w-2xl text-sm sm:text-base text-zinc-400 px-4 sm:px-0 leading-relaxed">Open to full-time opportunities and consulting projects that make a real impact</p>
             </div>
 
-            <div className="relative rounded-xl border border-purple-500/20 bg-gradient-to-br from-zinc-900 to-black p-6 sm:p-8">
-              <div className="absolute inset-0 bg-grid-white/5 [mask-image:linear-gradient(0deg,#000000,transparent)]"></div>
-              <div className="relative text-justify">
-                <p className="text-sm sm:text-base lg:text-lg text-zinc-300 leading-relaxed">
-                  I&apos;m looking for a role within a killer Product Management, Corporate Strategy, or Strategic Partnerships team where I can work on big problems that actually matter.
-                </p>
-                <p className="mt-4 text-sm sm:text-base lg:text-lg text-zinc-300 leading-relaxed">
-                  I&apos;m good at working with both technical and business teams, especially when things are unclear and expectations are high.
-                </p>
-                <p className="mt-4 text-sm sm:text-base lg:text-lg text-zinc-300 leading-relaxed">
-                  I want to be a part of something meaningful that solves real problems for real people. If you need someone who can wear multiple hats, ask the right questions, and get things done, let&apos;s talk.
-                </p>
-                <div className="mt-6 sm:mt-8">
-                  <Link href="/contact">
-                    <div className="flex justify-center sm:justify-end">
-                      <Button className="bg-purple-600 hover:bg-purple-700 w-full sm:w-auto text-sm sm:text-base">
-                        Let&apos;s Discuss Opportunities
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Button>
+            <div className="grid lg:grid-cols-2 gap-6">
+              {/* Employment Opportunities */}
+              <div className="relative rounded-xl border border-purple-500/20 bg-gradient-to-br from-zinc-900 to-black p-6 sm:p-8">
+                <div className="absolute inset-0 bg-grid-white/5 [mask-image:linear-gradient(0deg,#000000,transparent)]"></div>
+                <div className="relative">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="p-2 bg-purple-500/20 rounded-lg">
+                      <Users className="h-5 w-5 text-purple-400" />
                     </div>
+                    <h3 className="text-xl font-bold text-white">Full-Time Opportunities</h3>
+                  </div>
+                  <p className="text-sm sm:text-base text-zinc-300 leading-relaxed mb-4">
+                    Looking for a role within Product Management, Corporate Strategy, or Strategic Partnerships where I can work on big problems that actually matter.
+                  </p>
+                  <p className="text-sm sm:text-base text-zinc-300 leading-relaxed mb-6">
+                    I excel at working with both technical and business teams, especially when things are unclear and expectations are high.
+                  </p>
+                  <Link href="/contact">
+                    <Button className="bg-purple-600 hover:bg-purple-700 w-full sm:w-auto text-sm">
+                      Discuss Opportunities
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+
+              {/* Consulting Projects */}
+              <div className="relative rounded-xl border border-blue-500/20 bg-gradient-to-br from-zinc-900 to-blue-950/20 p-6 sm:p-8">
+                <div className="absolute inset-0 bg-grid-white/5 [mask-image:linear-gradient(0deg,#000000,transparent)]"></div>
+                <div className="relative">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="p-2 bg-blue-500/20 rounded-lg">
+                      <Briefcase className="h-5 w-5 text-blue-400" />
+                    </div>
+                    <h3 className="text-xl font-bold text-white">Consulting Projects</h3>
+                  </div>
+                  <p className="text-sm sm:text-base text-zinc-300 leading-relaxed mb-4">
+                    Available for strategic consulting and custom development projects. I help companies build AI-powered solutions and bridge technical-business gaps.
+                  </p>
+                  <p className="text-sm sm:text-base text-zinc-300 leading-relaxed mb-6">
+                    From MVP development to full-scale applications, I deliver solutions that drive real business value.
+                  </p>
+                  <Link href="/consulting">
+                    <Button className="bg-blue-600 hover:bg-blue-700 w-full sm:w-auto text-sm">
+                      View Services
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
                   </Link>
                 </div>
               </div>
@@ -374,7 +455,7 @@ export default function Home() {
               <Badge className="mb-2 bg-purple-500/20 text-purple-300 text-xs sm:text-sm">Featured Projects</Badge>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white px-4 sm:px-0">My Best Work</h2>
               <p className="mx-auto mt-4 max-w-2xl text-sm sm:text-base text-zinc-400 px-4 sm:px-0 leading-relaxed">
-                A selection of projects that showcase my skills and expertise
+                A selection of projects that showcase my skills and expertise. <Link href="/consulting" className="text-purple-400 hover:text-purple-300 underline">Available for similar custom development work.</Link>
               </p>
             </div>
 

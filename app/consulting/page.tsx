@@ -138,12 +138,12 @@ export default function ConsultingPage() {
     {
       icon: Users,
       title: "Bridge Technical & Business",
-      description: "Expert at translating complex technical concepts into actionable business strategies"
+      description: "Expert at translating complex and high-level ideas into actionable business strategies"
     },
     {
       icon: Briefcase,
       title: "$80M+ Deployment Experience",
-      description: "Proven track record working with CEOs and facilitating major technology investments"
+      description: "Proven track record working with CEOs and facilitating major technology deployments and investments"
     },
     {
       icon: Target,

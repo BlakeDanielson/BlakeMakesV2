@@ -102,7 +102,7 @@ export default function ConsultingPage() {
         "Stakeholder presentations"
       ],
       cta: "Book Consultation",
-      popular: false
+      priority: "low"
     },
     {
       name: "MVP Development", 
@@ -116,7 +116,7 @@ export default function ConsultingPage() {
         "2 weeks of support"
       ],
       cta: "Start MVP",
-      popular: true
+      priority: "medium"
     },
     {
       name: "Full Product",
@@ -131,7 +131,7 @@ export default function ConsultingPage() {
         "Training and documentation"
       ],
       cta: "Build Full Product",
-      popular: false
+      priority: "high"
     }
   ]
 
@@ -359,36 +359,55 @@ export default function ConsultingPage() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className={`relative h-full ${
-                  tier.popular 
-                    ? 'bg-purple-900/20 border-purple-500 ring-1 ring-purple-500/50' 
-                    : 'bg-zinc-900/50 border-zinc-800'
+                <Card className={`relative h-full transition-all duration-300 hover:scale-105 ${
+                  tier.priority === 'high' 
+                    ? 'bg-gradient-to-br from-purple-900/40 via-purple-800/30 to-blue-900/40 border-purple-400/60 ring-2 ring-purple-400/30 shadow-2xl shadow-purple-500/20' 
+                    : tier.priority === 'medium'
+                    ? 'bg-gradient-to-br from-purple-900/20 via-zinc-900/50 to-purple-900/20 border-purple-500/40 ring-1 ring-purple-500/20 shadow-lg shadow-purple-500/10'
+                    : 'bg-zinc-900/50 border-zinc-700 hover:border-zinc-600'
                 }`}>
-                  {tier.popular && (
-                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                      <Badge className="bg-purple-600 text-white">Most Popular</Badge>
-                    </div>
-                  )}
                   <CardHeader className="text-center">
-                    <CardTitle className="text-white text-2xl">{tier.name}</CardTitle>
-                    <div className="text-3xl font-bold text-purple-400 mt-2">{tier.price}</div>
-                    <CardDescription className="text-zinc-400 mt-2">
+                    <CardTitle className={`text-2xl ${
+                      tier.priority === 'high' ? 'text-white' : 'text-white'
+                    }`}>{tier.name}</CardTitle>
+                    <div className={`text-3xl font-bold mt-2 ${
+                      tier.priority === 'high' 
+                        ? 'text-purple-300' 
+                        : tier.priority === 'medium'
+                        ? 'text-purple-400'
+                        : 'text-purple-400'
+                    }`}>{tier.price}</div>
+                    <CardDescription className={`mt-2 ${
+                      tier.priority === 'high' 
+                        ? 'text-zinc-300' 
+                        : 'text-zinc-400'
+                    }`}>
                       {tier.description}
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <ul className="space-y-3">
                       {tier.features.map((feature) => (
-                        <li key={feature} className="flex items-center gap-2 text-sm text-zinc-300">
-                          <CheckCircle className="h-4 w-4 text-purple-400 flex-shrink-0" />
+                        <li key={feature} className={`flex items-center gap-2 text-sm ${
+                          tier.priority === 'high' ? 'text-zinc-200' : 'text-zinc-300'
+                        }`}>
+                          <CheckCircle className={`h-4 w-4 flex-shrink-0 ${
+                            tier.priority === 'high' 
+                              ? 'text-purple-300' 
+                              : tier.priority === 'medium'
+                              ? 'text-purple-400'
+                              : 'text-purple-400'
+                          }`} />
                           {feature}
                         </li>
                       ))}
                     </ul>
                     <Button 
-                      className={`w-full mt-6 ${
-                        tier.popular 
-                          ? 'bg-purple-600 hover:bg-purple-700' 
+                      className={`w-full mt-6 transition-all duration-300 ${
+                        tier.priority === 'high' 
+                          ? 'bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 shadow-lg shadow-purple-500/25' 
+                          : tier.priority === 'medium'
+                          ? 'bg-purple-600 hover:bg-purple-700 shadow-md shadow-purple-500/20'
                           : 'bg-zinc-800 hover:bg-zinc-700 text-white'
                       }`}
                       onClick={() => contactRef.current?.scrollIntoView({ behavior: "smooth" })}
@@ -424,7 +443,7 @@ export default function ConsultingPage() {
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
                     <Mail className="h-5 w-5 text-purple-400" />
-                    <span className="text-zinc-300">blake@blakemakes.com</span>
+                    <span className="text-zinc-300">blakejdanielson@gmail.com</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Calendar className="h-5 w-5 text-purple-400" />
@@ -489,10 +508,11 @@ export default function ConsultingPage() {
                   <label className="text-sm font-medium text-zinc-300 mb-2 block">Project Type</label>
                   <select className="w-full p-3 bg-zinc-800 border border-zinc-700 rounded-lg text-white focus:border-purple-500 focus:outline-none">
                     <option value="">Select a service</option>
-                    <option value="consultation">Consultation</option>
+                    <option value="consultation">Product/Strategy Consultation</option>
+                    <option value="consultation">Business/Financial Consultation</option>
                     <option value="mvp">MVP Development</option>
                     <option value="full-product">Full Product Development</option>
-                    <option value="ai-integration">AI Integration</option>
+                    <option value="ai-integration">AI/LLM Integration</option>
                     <option value="other">Other</option>
                   </select>
                 </div>

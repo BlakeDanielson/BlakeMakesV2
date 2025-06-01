@@ -44,7 +44,7 @@ export default function CarensCookbookPage() {
 
           <div className="mt-8 overflow-hidden rounded-xl border border-zinc-800 max-w-3xl mx-auto">
             <Image
-              src="/culinary-innovation-lab.png"
+              src="/carenscookbook.png"
               alt="Caren's Cookbook - AI Recipe Management"
               width={1200}
               height={600}
@@ -389,9 +389,11 @@ export default function CarensCookbookPage() {
                       View on GitHub
                     </Link>
                   </Button>
-                  <Button variant="outline" className="w-full justify-start" disabled>
-                    <ExternalLink className="h-4 w-4 mr-2" />
-                    Live Demo (Coming Soon)
+                  <Button variant="outline" className="w-full justify-start" asChild>
+                    <Link href="https://carenscookbook.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                      <ExternalLink className="h-4 w-4" />
+                      Live Demo
+                    </Link>
                   </Button>
                 </div>
               </div>

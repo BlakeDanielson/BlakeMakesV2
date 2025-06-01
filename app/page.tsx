@@ -129,14 +129,12 @@ export default function Home() {
                   About Me
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
-                <Link href="/contact" className="w-full sm:w-auto">
+                <Link href="/projects" className="w-full sm:w-auto">
                   <Button
                     size="lg"
-                    className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white w-full sm:w-auto text-sm sm:text-base relative overflow-hidden group"
+                    className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white w-full sm:w-auto text-sm sm:text-base"
                   >
-                    <span className="relative z-10 transition-all duration-300 group-hover:opacity-0">🔥 Hire Me!</span>
-                    <span className="absolute inset-0 z-10 flex items-center justify-center opacity-0 transition-all duration-300 group-hover:opacity-100">🔥 Limited Time!</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-purple-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    View Projects
                   </Button>
                 </Link>
                 <Link href="/consulting" className="w-full sm:w-auto">
@@ -147,12 +145,14 @@ export default function Home() {
                     Consulting
                   </Button>
                 </Link>
-                <Link href="/projects" className="w-full sm:w-auto">
+                <Link href="/contact" className="w-full sm:w-auto">
                   <Button
                     size="lg"
-                    className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white w-full sm:w-auto text-sm sm:text-base"
+                    className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white w-full sm:w-auto text-sm sm:text-base relative overflow-hidden group"
                   >
-                    View Projects
+                    <span className="relative z-10 transition-all duration-300 group-hover:opacity-0">🔥 Hire Me!</span>
+                    <span className="absolute inset-0 z-10 flex items-center justify-center opacity-0 transition-all duration-300 group-hover:opacity-100">🔥 Limited Time!</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </Button>
                 </Link>
               </div>

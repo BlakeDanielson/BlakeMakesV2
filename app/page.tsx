@@ -118,41 +118,54 @@ export default function Home() {
                   Worked with CEOs to deploy $80M+ and facilitated communication between technical and business teams.
                 </p>
               </div>
-              <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 pt-4 sm:pt-6 px-4 sm:px-0">
-                <Button
-                  size="lg"
-                  className="group bg-purple-600 hover:bg-purple-700 w-full sm:w-auto text-sm sm:text-base"
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 pt-4 sm:pt-6 px-4 sm:px-0 max-w-4xl mx-auto">
+                {/* About Me Tile */}
+                <div 
+                  className="group bg-gradient-to-br from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 rounded-xl p-4 cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
                   onClick={() => {
                     aboutRef.current?.scrollIntoView({ behavior: "smooth" })
                   }}
                 >
-                  About Me
-                </Button>
-                <Link href="/projects" className="w-full sm:w-auto">
-                  <Button
-                    size="lg"
-                    className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white w-full sm:w-auto text-sm sm:text-base"
-                  >
-                    View Projects
-                  </Button>
+                  <div className="text-center">
+                    <div className="text-2xl mb-2">👋</div>
+                    <div className="text-white font-semibold text-sm mb-1">About Me</div>
+                    <div className="text-purple-100 text-xs">The origin story</div>
+                  </div>
+                </div>
+
+                {/* View Projects Tile */}
+                <Link href="/projects" className="block">
+                  <div className="group bg-gradient-to-br from-purple-500 to-indigo-600 hover:from-purple-400 hover:to-indigo-500 rounded-xl p-4 cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-indigo-500/25">
+                    <div className="text-center">
+                      <div className="text-2xl mb-2">🚀</div>
+                      <div className="text-white font-semibold text-sm mb-1">View Projects</div>
+                      <div className="text-purple-100 text-xs">Cool stuff I built</div>
+                    </div>
+                  </div>
                 </Link>
-                <Link href="/consulting" className="w-full sm:w-auto">
-                  <Button
-                    size="lg"
-                    className="bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 text-white w-full sm:w-auto text-sm sm:text-base"
-                  >
-                    Consulting
-                  </Button>
+
+                {/* Consulting Tile */}
+                <Link href="/consulting" className="block">
+                  <div className="group bg-gradient-to-br from-indigo-600 to-blue-600 hover:from-indigo-500 hover:to-blue-500 rounded-xl p-4 cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25">
+                    <div className="text-center">
+                      <div className="text-2xl mb-2">💼</div>
+                      <div className="text-white font-semibold text-sm mb-1">Consulting</div>
+                      <div className="text-blue-100 text-xs">Let's build together</div>
+                    </div>
+                  </div>
                 </Link>
-                <Link href="/contact" className="w-full sm:w-auto">
-                  <Button
-                    size="lg"
-                    className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white w-full sm:w-auto text-sm sm:text-base relative overflow-hidden group"
-                  >
-                    <span className="relative z-10 transition-all duration-300 group-hover:opacity-0">😲 Hire Me!</span>
-                    <span className="absolute inset-0 z-10 flex items-center justify-center opacity-0 transition-all duration-300 group-hover:opacity-100">😲 Limited Time!</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  </Button>
+
+                {/* Hire Me Tile */}
+                <Link href="/contact" className="block">
+                  <div className="group bg-gradient-to-br from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 rounded-xl p-4 cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 relative overflow-hidden">
+                    <div className="text-center relative z-10">
+                      <div className="text-2xl mb-2 transition-all duration-300 group-hover:scale-110">😲</div>
+                      <div className="text-white font-semibold text-sm mb-1">Hire Me!</div>
+                      <div className="text-blue-100 text-xs opacity-100 group-hover:opacity-0 transition-opacity duration-300">Rare opportunity</div>
+                      <div className="text-blue-100 text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute inset-x-0 bottom-2">Limited time!</div>
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
                 </Link>
               </div>
             </motion.div>

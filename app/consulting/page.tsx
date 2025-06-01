@@ -255,7 +255,7 @@ export default function ConsultingPage() {
                   Hi, I&apos;m Blake Danielson
                 </h3>
                 <p className="text-zinc-300 text-lg leading-relaxed mb-6">
-                  I&apos;m a full-stack developer, financial analyst, and strategic consultant who bridges the gap between complex technical solutions and real business value. With experience facilitating <span className="text-purple-400 font-semibold">$80M+ in technology deployments</span>, I help companies turn ambitious ideas into profitable realities.
+                  I&apos;m a full-stack developer, financial analyst, and strategic consultant who bridges the gap between complex technical solutions and real business value. With 5+ years bringing <span className="text-purple-400 font-semibold">Founder's and CEO's visions to life</span>, I help people and companies turn ambitious ideas into profitable realities.
                 </p>
               </div>
 
@@ -266,7 +266,7 @@ export default function ConsultingPage() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-white mb-1">Technical Expertise</h4>
-                    <p className="text-sm text-zinc-400">AI/LLM integrations, React/Next.js, full-stack development, cloud architecture</p>
+                    <p className="text-sm text-zinc-400">AI/LLM integrations, React/Next.js, Python, full-stack development, data models, cloud architecture</p>
                   </div>
                 </div>
 

@@ -33,14 +33,14 @@ export function MainNav() {
           <span className="hidden sm:inline-block">Blake Danielson</span>
         </Link>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 h-full">
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex md:gap-5">
+          <nav className="hidden md:flex md:gap-5 md:items-center h-full">
             {routes.map((route) => (
               <Link
                 key={route.href}
                 href={route.href}
-                className={`text-sm font-medium transition-colors hover:text-purple-400 touch-target ${
+                className={`text-sm font-medium transition-colors hover:text-purple-400 touch-target flex items-center h-full ${
                   pathname === route.href ? "text-purple-500" : "text-zinc-400"
                 }`}
               >

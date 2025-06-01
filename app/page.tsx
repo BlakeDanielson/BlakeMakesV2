@@ -127,7 +127,6 @@ export default function Home() {
                   }}
                 >
                   About Me
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
                 <Link href="/projects" className="w-full sm:w-auto">
                   <Button

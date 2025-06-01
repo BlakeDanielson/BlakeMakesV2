@@ -38,7 +38,7 @@ const pricingTiers = [
   {
     name: "Full Product",
     price: "Starting at $15,000",
-    description: "Complete application development and deployment",
+    description: "Full application development and deployment",
     features: [
       "Everything in MVP",
       "Full application development",

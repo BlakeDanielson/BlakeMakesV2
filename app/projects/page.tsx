@@ -213,7 +213,7 @@ const projects: Project[] = [
     title: "Caren's Cookbook",
     description:
       "AI-Powered Recipe Management Platform that transforms how users collect, organize, and manage recipes with intelligent extraction from URLs and images, smart categorization, and personalized digital cookbook experience.",
-    image: "/culinary-innovation-lab.png",
+    image: "/carenscookbook.png",
     category: "AI",
     tags: ["AI", "Recipe Management", "Computer Vision", "NLP", "Web Scraping"],
     techStack: ["Next.js 15", "TypeScript", "PostgreSQL", "Prisma", "OpenAI", "Google Gemini", "Clerk", "Redis"],

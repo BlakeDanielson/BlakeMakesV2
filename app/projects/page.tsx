@@ -177,7 +177,7 @@ const projects: Project[] = [
     title: "Mood2Song",
     description:
       "I created this music discovery platform that helps users find songs based on their mood, persona, or specific vibe—combining my passion for music with intuitive UX design.",
-    image: "/placeholder.svg?key=x9wrf",
+    image: "/mood2song.png",
     category: "Music",
     tags: ["Music Discovery", "React", "API Integration", "UX Design"],
     techStack: ["Next", "Typescript", "API", "AI", "React", "Spotify"],

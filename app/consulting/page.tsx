@@ -260,45 +260,73 @@ export default function ConsultingPage() {
               </div>
 
               <div className="grid sm:grid-cols-2 gap-4">
-                <div className="flex items-start gap-3">
-                  <div className="p-2 bg-purple-500/20 rounded-lg mt-1">
-                    <Code className="h-5 w-5 text-purple-400" />
+                <motion.div 
+                  className="relative group"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-xl blur-sm group-hover:blur-md transition-all duration-300"></div>
+                  <div className="relative flex items-start gap-3 p-4 bg-zinc-900/80 border border-purple-500/30 rounded-xl backdrop-blur-sm group-hover:border-purple-400/50 transition-all duration-300">
+                    <div className="p-2 bg-purple-500/20 rounded-lg mt-1 group-hover:bg-purple-500/30 transition-colors duration-300">
+                      <Code className="h-5 w-5 text-purple-400 group-hover:text-purple-300 transition-colors duration-300" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-1 group-hover:text-purple-100 transition-colors duration-300">Technical Expertise</h4>
+                      <p className="text-sm text-zinc-400 group-hover:text-zinc-300 transition-colors duration-300">AI/LLM integrations, React/Next.js, Python, full-stack development, data models, cloud architecture</p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-1">Technical Expertise</h4>
-                    <p className="text-sm text-zinc-400">AI/LLM integrations, React/Next.js, Python, full-stack development, data models, cloud architecture</p>
-                  </div>
-                </div>
+                </motion.div>
 
-                <div className="flex items-start gap-3">
-                  <div className="p-2 bg-purple-500/20 rounded-lg mt-1">
-                    <Users className="h-5 w-5 text-purple-400" />
+                <motion.div 
+                  className="relative group"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-xl blur-sm group-hover:blur-md transition-all duration-300"></div>
+                  <div className="relative flex items-start gap-3 p-4 bg-zinc-900/80 border border-purple-500/30 rounded-xl backdrop-blur-sm group-hover:border-purple-400/50 transition-all duration-300">
+                    <div className="p-2 bg-purple-500/20 rounded-lg mt-1 group-hover:bg-purple-500/30 transition-colors duration-300">
+                      <Users className="h-5 w-5 text-purple-400 group-hover:text-purple-300 transition-colors duration-300" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-1 group-hover:text-purple-100 transition-colors duration-300">Business Acumen</h4>
+                      <p className="text-sm text-zinc-400 group-hover:text-zinc-300 transition-colors duration-300">Product strategy, ROI optimization, stakeholder management, financial modeling</p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-1">Business Acumen</h4>
-                    <p className="text-sm text-zinc-400">Product strategy, ROI optimization, stakeholder management, financial modeling</p>
-                  </div>
-                </div>
+                </motion.div>
 
-                <div className="flex items-start gap-3">
-                  <div className="p-2 bg-purple-500/20 rounded-lg mt-1">
-                    <Target className="h-5 w-5 text-purple-400" />
+                <motion.div 
+                  className="relative group"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-xl blur-sm group-hover:blur-md transition-all duration-300"></div>
+                  <div className="relative flex items-start gap-3 p-4 bg-zinc-900/80 border border-purple-500/30 rounded-xl backdrop-blur-sm group-hover:border-purple-400/50 transition-all duration-300">
+                    <div className="p-2 bg-purple-500/20 rounded-lg mt-1 group-hover:bg-purple-500/30 transition-colors duration-300">
+                      <Target className="h-5 w-5 text-purple-400 group-hover:text-purple-300 transition-colors duration-300" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-1 group-hover:text-purple-100 transition-colors duration-300">Proven Results</h4>
+                      <p className="text-sm text-zinc-400 group-hover:text-zinc-300 transition-colors duration-300">CEO-level consulting, major deployment experience, finance-first approach</p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-1">Proven Results</h4>
-                    <p className="text-sm text-zinc-400">CEO-level consulting, major deployment experience, finance-first approach</p>
-                  </div>
-                </div>
+                </motion.div>
 
-                <div className="flex items-start gap-3">
-                  <div className="p-2 bg-purple-500/20 rounded-lg mt-1">
-                    <Rocket className="h-5 w-5 text-purple-400" />
+                <motion.div 
+                  className="relative group"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-xl blur-sm group-hover:blur-md transition-all duration-300"></div>
+                  <div className="relative flex items-start gap-3 p-4 bg-zinc-900/80 border border-purple-500/30 rounded-xl backdrop-blur-sm group-hover:border-purple-400/50 transition-all duration-300">
+                    <div className="p-2 bg-purple-500/20 rounded-lg mt-1 group-hover:bg-purple-500/30 transition-colors duration-300">
+                      <Rocket className="h-5 w-5 text-purple-400 group-hover:text-purple-300 transition-colors duration-300" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-1 group-hover:text-purple-100 transition-colors duration-300">End-to-End Delivery</h4>
+                      <p className="text-sm text-zinc-400 group-hover:text-zinc-300 transition-colors duration-300">From concept to deployment, with ongoing support and optimization</p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-1">End-to-End Delivery</h4>
-                    <p className="text-sm text-zinc-400">From concept to deployment, with ongoing support and optimization</p>
-                  </div>
-                </div>
+                </motion.div>
               </div>
 
               <div className="pt-4">

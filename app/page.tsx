@@ -132,26 +132,25 @@ export default function Home() {
                 <Link href="/contact" className="w-full sm:w-auto">
                   <Button
                     size="lg"
-                    className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white w-full sm:w-auto text-sm sm:text-base relative overflow-hidden group"
+                    className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white w-full sm:w-auto text-sm sm:text-base relative overflow-hidden group"
                   >
                     <span className="relative z-10 transition-all duration-300 group-hover:opacity-0">🔥 Hire Me!</span>
                     <span className="absolute inset-0 z-10 flex items-center justify-center opacity-0 transition-all duration-300 group-hover:opacity-100">🔥 Limited Time!</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-purple-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </Button>
                 </Link>
                 <Link href="/consulting" className="w-full sm:w-auto">
                   <Button
                     size="lg"
-                    className="bg-zinc-800 hover:bg-zinc-700 text-white w-full sm:w-auto text-sm sm:text-base"
+                    className="bg-gradient-to-r from-purple-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 text-white w-full sm:w-auto text-sm sm:text-base"
                   >
                     Consulting
                   </Button>
                 </Link>
                 <Link href="/projects" className="w-full sm:w-auto">
                   <Button
-                    variant="outline"
                     size="lg"
-                    className="border-zinc-800 bg-zinc-950/50 text-white backdrop-blur-sm hover:bg-zinc-900/50 hover:text-purple-300 w-full sm:w-auto text-sm sm:text-base"
+                    className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white w-full sm:w-auto text-sm sm:text-base"
                   >
                     View Projects
                   </Button>

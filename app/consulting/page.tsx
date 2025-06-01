@@ -2,6 +2,7 @@
 
 import { useRef } from "react"
 import { motion } from "framer-motion"
+import Image from "next/image"
 import { 
   ArrowRight, 
   CheckCircle, 
@@ -207,6 +208,106 @@ export default function ConsultingPage() {
               </Button>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* About Me Section */}
+      <section className="py-20 bg-zinc-950/50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <Badge className="mb-4 bg-purple-500/20 text-purple-300">About Blake</Badge>
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+              Your Technical & Business Partner
+            </h2>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto items-center">
+            {/* Photo */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="relative w-full max-w-md mx-auto">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-2xl blur-xl"></div>
+                <Image
+                  src="/blake.jpg"
+                  alt="Blake Danielson"
+                  className="relative w-full h-auto rounded-2xl shadow-2xl border border-zinc-800"
+                  width={300}
+                  height={300}
+                />
+              </div>
+            </motion.div>
+
+            {/* Content */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <div>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  Hi, I&apos;m Blake Danielson
+                </h3>
+                <p className="text-zinc-300 text-lg leading-relaxed mb-6">
+                  I&apos;m a full-stack developer, financial analyst, and strategic consultant who bridges the gap between complex technical solutions and real business value. With experience facilitating <span className="text-purple-400 font-semibold">$80M+ in technology deployments</span>, I help companies turn ambitious ideas into profitable realities.
+                </p>
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="flex items-start gap-3">
+                  <div className="p-2 bg-purple-500/20 rounded-lg mt-1">
+                    <Code className="h-5 w-5 text-purple-400" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-white mb-1">Technical Expertise</h4>
+                    <p className="text-sm text-zinc-400">AI/LLM integrations, React/Next.js, full-stack development, cloud architecture</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="p-2 bg-purple-500/20 rounded-lg mt-1">
+                    <Users className="h-5 w-5 text-purple-400" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-white mb-1">Business Acumen</h4>
+                    <p className="text-sm text-zinc-400">Product strategy, ROI optimization, stakeholder management, financial modeling</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="p-2 bg-purple-500/20 rounded-lg mt-1">
+                    <Target className="h-5 w-5 text-purple-400" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-white mb-1">Proven Results</h4>
+                    <p className="text-sm text-zinc-400">CEO-level consulting, major deployment experience, finance-first approach</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="p-2 bg-purple-500/20 rounded-lg mt-1">
+                    <Rocket className="h-5 w-5 text-purple-400" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-white mb-1">End-to-End Delivery</h4>
+                    <p className="text-sm text-zinc-400">From concept to deployment, with ongoing support and optimization</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-4">
+                <p className="text-zinc-400 italic">
+                  &ldquo;I don&apos;t just build software—I build solutions that drive measurable business growth and competitive advantage.&rdquo;
+                </p>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 

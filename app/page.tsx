@@ -134,7 +134,8 @@ export default function Home() {
                     size="lg"
                     className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white w-full sm:w-auto text-sm sm:text-base relative overflow-hidden group"
                   >
-                    <span className="relative z-10">🔥 Hire Me!</span>
+                    <span className="relative z-10 transition-all duration-300 group-hover:opacity-0">🔥 Hire Me!</span>
+                    <span className="absolute inset-0 z-10 flex items-center justify-center opacity-0 transition-all duration-300 group-hover:opacity-100">🔥 Limited Time!</span>
                     <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </Button>
                 </Link>

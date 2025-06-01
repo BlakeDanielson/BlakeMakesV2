@@ -195,7 +195,7 @@ const projects: Project[] = [
     title: "Mug Matcher",
     description:
       "Interactive criminal profiling game that challenges players to match mugshots with their corresponding crimes. Built as a Progressive Web App with 400+ real criminal records, sophisticated scoring system, and dual UI themes for an engaging educational experience.",
-    image: "/mugshot-matching-game.png",
+    image: "/mugshotmatcher.png",
     category: "AI",
     tags: ["Criminal Profiling", "Interactive Game", "Educational", "Progressive Web App"],
     techStack: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS", "Framer Motion", "Game"],

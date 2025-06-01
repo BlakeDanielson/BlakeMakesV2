@@ -5,15 +5,14 @@ import type React from "react"
 import { useState } from "react"
 import Link from "next/link"
 import { ArrowLeft, Mail, MessageSquare, Send, Linkedin, Github, Music, Star } from "lucide-react"
+import { toast } from "sonner"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { useToast } from "@/hooks/use-toast"
 import { CustomBuyMeCoffeeButton } from "@/components/buy-me-coffee-button"
 
 export default function ContactPage() {
-  const { toast } = useToast()
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -42,8 +41,7 @@ export default function ContactPage() {
         throw new Error(errorData.error || 'Failed to send message')
       }
 
-      toast({
-        title: "Message sent!",
+      toast.success("Message sent!", {
         description: "Thank you for your message. I'll get back to you soon.",
       })
 
@@ -51,10 +49,8 @@ export default function ContactPage() {
       e.currentTarget.reset()
     } catch (error) {
       console.error('Error sending message:', error)
-      toast({
-        title: "Error sending message",
+      toast.error("Error sending message", {
         description: error instanceof Error ? error.message : "Please try again later or email me directly.",
-        variant: "destructive",
       })
     } finally {
       setIsSubmitting(false)

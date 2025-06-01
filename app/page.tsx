@@ -115,7 +115,7 @@ export default function Home() {
                 </p>
 
                 <p className="text-sm sm:text-base lg:text-lg text-zinc-300 font-medium px-2 sm:px-0 leading-relaxed">
-                  Worked with CEOs to deploy $80M+ and facilitated communication between technical and business teams.
+                  Seeking a leadership role at a visionary company where I can leverage my demonstrated track record of success to drive breakthrough innovation and scale transformative products that define markets.
                 </p>
               </div>
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 pt-4 sm:pt-6 px-4 sm:px-0 max-w-4xl mx-auto">

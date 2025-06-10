@@ -120,6 +120,42 @@ const projects: Project[] = [
     duration: "3 months"
   },
   {
+    title: "Mood2Song",
+    description:
+      "I created this music discovery platform that helps users find songs based on their mood, persona, or specific vibe—combining my passion for music with intuitive UX design.",
+    image: "/mood2song.png",
+    category: "Music",
+    tags: ["Music Discovery", "React", "API Integration", "UX Design"],
+    techStack: ["Next", "Typescript", "API", "AI", "React", "Spotify"],
+    link: "/projects/mood2song",
+    githubLink: "https://github.com/BlakeDanielson/mood2song",
+    liveLink: null,
+    featured: false,
+    icon: <Music className="h-5 w-5" />,
+    status: "Live",
+    pricing: "Free",
+    completionDate: "2025-04",
+    duration: "1 month"
+  },
+  {
+    title: "Mug Matcher",
+    description:
+      "Interactive criminal profiling game that challenges players to match mugshots with their corresponding crimes. Built as a Progressive Web App with 400+ real criminal records, sophisticated scoring system, and dual UI themes for an engaging educational experience.",
+    image: "/mugshotmatcher.png",
+    category: "AI",
+    tags: ["Criminal Profiling", "Interactive Game", "Educational", "Progressive Web App"],
+    techStack: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS", "Framer Motion", "Game"],
+    link: "/projects/mugshot-matcher",
+    githubLink: "https://github.com/BlakeDanielson/mug-matcher",
+    liveLink: "https://mugmatcher.app",
+    featured: false,
+    icon: <BrainCircuit className="h-5 w-5" />,
+    status: "Live",
+    pricing: "Free",
+    completionDate: "2025-04",
+    duration: "6 weeks"
+  },
+  {
     title: "Music Production Analyzer",
     description:
       "I built this AI tool after spending countless hours watching production tutorials, wishing I could quickly extract specific techniques without watching entire videos.",
@@ -172,42 +208,6 @@ const projects: Project[] = [
     pricing: "Free",
     completionDate: "2025-03",
     duration: "2 weeks"
-  },
-  {
-    title: "Mood2Song",
-    description:
-      "I created this music discovery platform that helps users find songs based on their mood, persona, or specific vibe—combining my passion for music with intuitive UX design.",
-    image: "/mood2song.png",
-    category: "Music",
-    tags: ["Music Discovery", "React", "API Integration", "UX Design"],
-    techStack: ["Next", "Typescript", "API", "AI", "React", "Spotify"],
-    link: "/projects/mood2song",
-    githubLink: "https://github.com/BlakeDanielson/mood2song",
-    liveLink: null,
-    featured: false,
-    icon: <Music className="h-5 w-5" />,
-    status: "Live",
-    pricing: "Free",
-    completionDate: "2025-04",
-    duration: "1 month"
-  },
-  {
-    title: "Mug Matcher",
-    description:
-      "Interactive criminal profiling game that challenges players to match mugshots with their corresponding crimes. Built as a Progressive Web App with 400+ real criminal records, sophisticated scoring system, and dual UI themes for an engaging educational experience.",
-    image: "/mugshotmatcher.png",
-    category: "AI",
-    tags: ["Criminal Profiling", "Interactive Game", "Educational", "Progressive Web App"],
-    techStack: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS", "Framer Motion", "Game"],
-    link: "/projects/mugshot-matcher",
-    githubLink: "https://github.com/BlakeDanielson/mug-matcher",
-    liveLink: "https://mugmatcher.app",
-    featured: false,
-    icon: <BrainCircuit className="h-5 w-5" />,
-    status: "Live",
-    pricing: "Free",
-    completionDate: "2025-04",
-    duration: "6 weeks"
   },
   {
     title: "Caren's Cookbook",

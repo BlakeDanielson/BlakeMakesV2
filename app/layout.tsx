@@ -6,6 +6,7 @@ import "./globals.css"
 import { BuyMeCoffeeWidget } from "@/components/buy-me-coffee-widget"
 import { PerformanceMonitor } from "@/components/performance-monitor"
 import { Toaster } from "@/components/ui/sonner"
+import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -130,6 +131,7 @@ export default function RootLayout({
         {children}
         <BuyMeCoffeeWidget />
         <Toaster />
+        <Analytics />
       </body>
     </html>
   )

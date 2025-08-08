@@ -40,14 +40,14 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://blakemakesthings.com', // Replace with your actual domain
     siteName: 'Blake Danielson Portfolio',
-    title: 'Blake Danielson | AI Product Developer & Financial Analyst',
-    description: 'Portfolio of Blake Danielson, an AI product developer financial analyst, and music producer ',
+    title: 'Blake Danielson | AI Product Leader • 2x YPO CEO Right‑Hand • Startup Veteran',
+    description: 'Portfolio of Blake Danielson, an AI product leader, 2x YPO CEO right-hand, and startup veteran',
     images: [
       {
         url: '/og-image.jpg', // Create this 1200x630 image and place in public folder
         width: 1200,
         height: 630,
-        alt: 'Blake Danielson - AI Product Developer & Financial Analyst',
+        alt: 'Blake Danielson - AI Product Leader • 2x YPO CEO Right‑Hand • Startup Veteran',
       },
     ],
   },
@@ -55,8 +55,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@BLVKEmusic', // Replace with your actual Twitter handle or remove if no Twitter
     creator: '@BLVKEmusic', // Replace with your actual Twitter handle or remove if no Twitter
-    title: 'Blake Danielson | AI Product Developer & Music Producer',
-    description: 'Portfolio of Blake Danielson, an AI product developer financial analyst, and music producer ',
+    title: 'Blake Danielson | AI Product Leader • 2x YPO CEO Right‑Hand • Startup Veteran',
+    description: 'Portfolio of Blake Danielson, an AI product leader, 2x YPO CEO right-hand, and startup veteran',
     images: ['/og-image.jpg'], // Same image as Open Graph
   },
   robots: {

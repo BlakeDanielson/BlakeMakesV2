@@ -50,7 +50,7 @@ export function AboutSection() {
                 Hi, I&apos;m Blake Danielson
               </h3>
               <p className="text-zinc-300 text-lg leading-relaxed mb-6">
-                I&apos;m a full-stack developer, financial analyst, and strategic consultant who bridges the gap between complex technical solutions and real business value. With 5+ years bringing <span className="text-purple-400 font-semibold">Founder's and CEO's visions to life</span>, I help people and companies turn ambitious ideas into profitable realities.
+                I&apos;m a startup veteran who keeps coming back to the trenches. I bridge the gap between complex technical solutions and real business value. With 5+ years bringing <span className="text-purple-400 font-semibold">Founder's and CEO's visions to life</span>, I help people and companies turn ambitious ideas into profitable realities.
               </p>
             </div>
 

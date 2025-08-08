@@ -243,7 +243,7 @@ export default function Home() {
                   There were operations in armored vehicle logistics, freight and cargo security. The industries were intense, the stakes were high, and so were the expectations.
                   <br />
                   <br />
-                  I built financial models that helped close Fortune 500 partnerships and overhauled operations to save over $100K annually by automating workflows. But the real win was spotting the silent friction points—closing the communication gaps that were jamming up entire teams and reshaping how the whole organization made decisions: faster, smarter, and more aligned.
+                  I built AI Agents that helped overhaul operations to save over $100K annually by automating workflows. But the real win was spotting the silent friction points—closing the communication gaps that were jamming up entire teams and reshaping how the whole organization made decisions: faster, smarter, and more aligned.
                 </p>
               </div>
 

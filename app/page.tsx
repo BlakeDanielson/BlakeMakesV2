@@ -22,22 +22,18 @@ export default function Home() {
   const heroItems = [
     {
       title: "Abstract Gradient",
-      link: "/projects/financial-modeling",
       thumbnail: "/hero-backgrounds/abstract-gradient.jpg",
     },
     {
       title: "Nature Landscape",
-      link: "/projects/operational-efficiency",
       thumbnail: "/hero-backgrounds/nature-landscape.jpg",
     },
     {
       title: "Urban Geometric",
-      link: "/projects/data-integration",
       thumbnail: "/hero-backgrounds/urban-geometric.jpg",
     },
     {
       title: "Tech Particles",
-      link: "/projects/strategic-partnerships",
       thumbnail: "/hero-backgrounds/tech-particles.jpg",
     },
   ]
@@ -45,15 +41,15 @@ export default function Home() {
   // Identity/role phrases for animation
   const identityPhrases = [
     "a Product Manager",
-    "a Technical Softskiller",
+    "a wizard with AI",
     "a Bandwidth Expander",
     "a Pretty Chill Guy",
     "an Entrepreneur",
     "a Music Producer",
     "a Great +1 to a Wedding",
-    "a Strategic Advisor",
-    "a Financial Writer",
-  ]
+    "a Strategic Thinker",
+    "a safe motorcycle rider",
+    ]
 
   // Business/Leadership skills
   const businessSkills = [

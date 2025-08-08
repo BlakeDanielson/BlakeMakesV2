@@ -10,7 +10,7 @@ import { motion, useScroll, useTransform } from "framer-motion"
 interface HeroParallaxProps {
   items: {
     title: string
-    link: string
+    link?: string
     thumbnail: string
   }[]
   children: React.ReactNode
@@ -37,7 +37,22 @@ export function HeroParallax({ items, children }: HeroParallaxProps) {
                 i % 2 === 0 ? "translate-y-8" : "-translate-y-8"
               }`}
             >
-              <Link href={item.link}>
+              {item.link ? (
+                <Link href={item.link}>
+                  <div className="group relative h-full w-full overflow-hidden rounded-xl border border-zinc-800">
+                    <Image
+                      src={item.thumbnail || "/placeholder.svg"}
+                      alt={item.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-black/60 opacity-0 transition-opacity group-hover:opacity-100"></div>
+                    <div className="absolute bottom-0 left-0 right-0 p-4 text-white opacity-0 transition-opacity group-hover:opacity-100">
+                      <h3 className="text-lg font-bold">{item.title}</h3>
+                    </div>
+                  </div>
+                </Link>
+              ) : (
                 <div className="group relative h-full w-full overflow-hidden rounded-xl border border-zinc-800">
                   <Image
                     src={item.thumbnail || "/placeholder.svg"}
@@ -50,7 +65,7 @@ export function HeroParallax({ items, children }: HeroParallaxProps) {
                     <h3 className="text-lg font-bold">{item.title}</h3>
                   </div>
                 </div>
-              </Link>
+              )}
             </div>
           ))}
         </div>

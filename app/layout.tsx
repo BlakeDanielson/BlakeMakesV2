@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ["latin"] })
 
 // Update metadata to include music
 export const metadata: Metadata = {
-  title: "Blake Danielson | AI Product Developer & Music Producer",
+  title: "Blake Danielson | Founder’s Right‑Hand • AI Product • Startup Operator",
   description:
     "Portfolio of Blake Danielson, an AI product developer and music producer building thoughtful AI for human experiences and creating original music compositions.",
   keywords: [
@@ -40,14 +40,14 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://blakemakesthings.com', // Replace with your actual domain
     siteName: 'Blake Danielson Portfolio',
-    title: 'Blake Danielson | AI Product Leader • 2x YPO CEO Right‑Hand • Startup Veteran',
-    description: 'Portfolio of Blake Danielson, an AI product leader, 2x YPO CEO right-hand, and startup veteran',
+    title: 'Blake Danielson | Founder’s Right‑Hand • AI Product • Startup Operator',
+    description: 'Portfolio of Blake Danielson, an AI product developer financial analyst, and music producer ',
     images: [
       {
         url: '/og-image.jpg', // Create this 1200x630 image and place in public folder
         width: 1200,
         height: 630,
-        alt: 'Blake Danielson - AI Product Leader • 2x YPO CEO Right‑Hand • Startup Veteran',
+        alt: 'Blake Danielson - AI Product Developer & Financial Analyst',
       },
     ],
   },
@@ -55,8 +55,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@BLVKEmusic', // Replace with your actual Twitter handle or remove if no Twitter
     creator: '@BLVKEmusic', // Replace with your actual Twitter handle or remove if no Twitter
-    title: 'Blake Danielson | AI Product Leader • 2x YPO CEO Right‑Hand • Startup Veteran',
-    description: 'Portfolio of Blake Danielson, an AI product leader, 2x YPO CEO right-hand, and startup veteran',
+    title: 'Blake Danielson | Founder’s Right‑Hand • AI Product • Startup Operator',
+    description: 'Portfolio of Blake Danielson, an AI product developer financial analyst, and music producer ',
     images: ['/og-image.jpg'], // Same image as Open Graph
   },
   robots: {

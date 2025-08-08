@@ -40,47 +40,28 @@ export default function Home() {
 
   // Identity/role phrases for animation
   const identityPhrases = [
-    "a Product Manager",
-    "a wizard with AI",
-    "a Bandwidth Expander",
-    "a Pretty Chill Guy",
-    "an Entrepreneur",
-    "a Music Producer",
-    "a Great +1 to a Wedding",
-    "a Strategic Thinker",
-    "a safe motorcycle rider",
-    ]
+    "an AI Product Builder",
+    "a Founder’s Right‑Hand",
+    "a Startup Operator",
+    "a Full‑Stack Builder",
+  ]
 
   // Business/Leadership skills
   const businessSkills = [
-    "Financial Modeling",
-    "Strategic Planning",
-    "Communication",
-    "Stakeholder Management",
-    "Process Optimization",
-    "Data Analysis",
-    "Executive Presentations",
-    "Team Leadership",
-    "Business Development",
-    "Project Management",
-    "Market Research",
-    "Strategic Partnerships",
+    "Ship MVPs fast: clickable prototypes → production v1 with analytics, auth, and payments.",
+    "AI-native workflows: LLM agents, retrieval, automations that cut time/cost by 50–90%.",
+    "Ruthless focus: remove non‑essential features; launch, learn, iterate.",
+    "Full‑stack execution: product specs, design, code, infra, analytics, GTM handoff.",
+    "Growth loops: email onboarding, in‑product prompts, referral hooks, content pipelines.",
+    "Ops enablement: dashboards, alerts, ‘single source of truth’ for the team.",
   ]
 
   // Technical skills
   const technicalSkills = [
-    "Prompt Engineering",
-    "Python",
-    "TypeScript", 
-    "React/Next",
-    "Node.js",
-    "FastAPI/Express",
-    "AI/LLM Integration",
-    "PostgreSQL/MySQL",
-    "Web App Development",
-    "Database Design",
-    "Automation Scripts",
-    "Cloud Deployment"
+    "AI Product: LLM agents, RAG, prompt systems, evals, instrumentation.",
+    "Full Stack: Next.js/TypeScript, Node, Python, Postgres/Prisma, serverless.",
+    "Scrappy GTM: landing pages, onboarding flows, lifecycle emails, CRM wiring.",
+    "Founder Ops: board‑ready updates, investor narrative, KPI dashboards.",
   ]
 
   return (
@@ -106,12 +87,12 @@ export default function Home() {
                 </div>
               </h1>
               <div className="space-y-2 sm:space-y-3 mt-4 sm:mt-6">
-              <p className="text-sm sm:text-base lg:text-lg text-zinc-300 font-medium px-2 sm:px-0 leading-relaxed">
-                  Expert at translating complex technical concepts into actionable business strategies that stakeholders of all backgrounds can understand and buy into.
+                <p className="text-sm sm:text-base lg:text-lg text-zinc-300 font-medium px-2 sm:px-0 leading-relaxed">
+                  AI product builder for early-stage teams. I turn vague ideas into live products, fast.
                 </p>
 
                 <p className="text-sm sm:text-base lg:text-lg text-zinc-300 font-medium px-2 sm:px-0 leading-relaxed">
-                  Seeking a leadership role at a visionary company where I can leverage my demonstrated track record of success to drive breakthrough innovation and scale transformative products that define markets.
+                  2x YPO CEO right-hand; I handle product, AI integration, and scrappy growth.
                 </p>
               </div>
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 pt-4 sm:pt-6 px-4 sm:px-0 max-w-4xl mx-auto">
@@ -134,8 +115,8 @@ export default function Home() {
                   <div className="group bg-gradient-to-br from-purple-500 to-indigo-600 hover:from-purple-400 hover:to-indigo-500 rounded-xl p-4 cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-indigo-500/25">
                     <div className="text-center">
                       <div className="text-2xl mb-2">🚀</div>
-                      <div className="text-white font-semibold text-sm mb-1">View Projects</div>
-                      <div className="text-purple-100 text-xs">Cool stuff I built</div>
+                      <div className="text-white font-semibold text-sm mb-1">See What I’ve Built</div>
+                      <div className="text-purple-100 text-xs">Shipped projects</div>
                     </div>
                   </div>
                 </Link>
@@ -145,8 +126,8 @@ export default function Home() {
                   <div className="group bg-gradient-to-br from-indigo-600 to-blue-600 hover:from-indigo-500 hover:to-blue-500 rounded-xl p-4 cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25">
                     <div className="text-center">
                       <div className="text-2xl mb-2">💼</div>
-                      <div className="text-white font-semibold text-sm mb-1">Consulting</div>
-                      <div className="text-blue-100 text-xs">Let's build together</div>
+                      <div className="text-white font-semibold text-sm mb-1">Ship Your v1</div>
+                      <div className="text-blue-100 text-xs">2–4 week MVP sprint</div>
                     </div>
                   </div>
                 </Link>
@@ -298,18 +279,18 @@ export default function Home() {
           {/* Skills Section with Dot + Label Style */}
           <div className="mt-16 sm:mt-20 lg:mt-24">
             <div className="mb-8 sm:mb-12 text-center">
-              <Badge className="mb-2 bg-purple-500/20 text-purple-300 text-xs sm:text-sm">My Skills</Badge>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white px-4 sm:px-0">Expertise & Capabilities</h2>
+              <Badge className="mb-2 bg-purple-500/20 text-purple-300 text-xs sm:text-sm">What I Do for Startups</Badge>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white px-4 sm:px-0">Execution & Capabilities</h2>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              {/* Business & Leadership Skills Tile */}
+              {/* What I do tile */}
               <div className="rounded-xl border border-purple-500/30 bg-zinc-900/30 p-4 sm:p-6 shadow-lg shadow-purple-500/5 hover:border-purple-500/50 transition-all">
                 <div className="flex items-center gap-3 mb-4 sm:mb-6">
                   <div className="flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-purple-500/20 text-purple-400 flex-shrink-0">
                     <Briefcase className="h-4 w-4 sm:h-5 sm:w-5" />
                   </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-white">Business & Leadership</h3>
+                  <h3 className="text-lg sm:text-xl font-bold text-white">What I Do for Startups</h3>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 sm:gap-y-4 gap-x-4 sm:gap-x-6">
@@ -328,13 +309,13 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Technical Skills Tile */}
+              {/* Signature Capabilities tile */}
               <div className="rounded-xl border border-teal-500/30 bg-zinc-900/30 p-4 sm:p-6 shadow-lg shadow-teal-500/5 hover:border-teal-500/50 transition-all">
                 <div className="flex items-center gap-3 mb-4 sm:mb-6">
                   <div className="flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-teal-500/20 text-teal-400 flex-shrink-0">
                     <Cpu className="h-4 w-4 sm:h-5 sm:w-5" />
                   </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-white">Technical Skills</h3>
+                  <h3 className="text-lg sm:text-xl font-bold text-white">Signature Capabilities</h3>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 sm:gap-y-4 gap-x-4 sm:gap-x-6">
@@ -362,38 +343,37 @@ export default function Home() {
                 <Briefcase className="h-16 w-16 text-purple-400" />
               </div>
               <div className="relative">
-                <Badge className="mb-4 bg-purple-500/20 text-purple-300">Available for Consulting</Badge>
+                <Badge className="mb-4 bg-purple-500/20 text-purple-300">Proof & Outcomes</Badge>
                 <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
-                  Need Help Building Something <span className="text-purple-400">Amazing</span>?
+                  Outcomes I Deliver
                 </h3>
                 <p className="text-zinc-300 text-sm sm:text-base leading-relaxed mb-6 max-w-3xl">
-                  I help companies bridge the gap between technical complexity and business strategy. 
-                  From AI integrations to full-stack applications, I deliver solutions that drive real results.
+                  Real results from AI-native product and full‑stack execution.
                 </p>
                 <div className="grid sm:grid-cols-3 gap-4 mb-6">
                   <div className="flex items-center gap-2">
                     <div className="h-2 w-2 bg-purple-400 rounded-full"></div>
-                    <span className="text-zinc-300 text-sm">AI Product Development</span>
+                    <span className="text-zinc-300 text-sm">Built and launched [X] MVPs; shipped production features used by [N] users.</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="h-2 w-2 bg-purple-400 rounded-full"></div>
-                    <span className="text-zinc-300 text-sm">Strategic Consulting</span>
+                    <span className="text-zinc-300 text-sm">Automated [process], saving $100K+/yr; reduced cycle time from [X] days → [Y] hours.</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="h-2 w-2 bg-purple-400 rounded-full"></div>
-                    <span className="text-zinc-300 text-sm">Full-Stack Development</span>
+                    <span className="text-zinc-300 text-sm">Closed partnerships using working demos and tight narrative decks.</span>
                   </div>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Link href="/consulting">
                     <Button className="bg-purple-600 hover:bg-purple-700 w-full sm:w-auto">
-                      View Services & Pricing
+                      Ship Your v1
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </Link>
-                  <Link href="/contact">
+                  <Link href="/projects">
                     <Button variant="outline" className="border-zinc-700 text-white hover:bg-zinc-800 w-full sm:w-auto">
-                      Start a Conversation
+                      See What I’ve Built
                     </Button>
                   </Link>
                 </div>
@@ -404,13 +384,13 @@ export default function Home() {
           {/* Future Goals */}
           <div ref={futureGoalsRef} className="mt-16 sm:mt-20 lg:mt-24">
             <div className="mb-8 sm:mb-12 text-center">
-              <Badge className="mb-2 bg-purple-500/20 text-purple-300 text-xs sm:text-sm">What's Next</Badge>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white px-4 sm:px-0">Ready for New Challenges</h2>
-              <p className="mx-auto mt-4 max-w-2xl text-sm sm:text-base text-zinc-400 px-4 sm:px-0 leading-relaxed">Open to full-time opportunities and consulting projects that make a real impact</p>
+              <Badge className="mb-2 bg-purple-500/20 text-purple-300 text-xs sm:text-sm">How I Work</Badge>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white px-4 sm:px-0">Fast, Focused, Ship‑First</h2>
+              <p className="mx-auto mt-4 max-w-2xl text-sm sm:text-base text-zinc-400 px-4 sm:px-0 leading-relaxed">48h Diagnostic → 2–4 Week MVP Sprint → Iterate with Users</p>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-6">
-              {/* Employment Opportunities */}
+              {/* 48h Diagnostic */}
               <div className="relative rounded-xl border border-purple-500/20 bg-gradient-to-br from-zinc-900 to-black p-6 sm:p-8">
                 <div className="absolute inset-0 bg-grid-white/5 [mask-image:linear-gradient(0deg,#000000,transparent)]"></div>
                 <div className="relative">
@@ -418,24 +398,24 @@ export default function Home() {
                     <div className="p-2 bg-purple-500/20 rounded-lg">
                       <Users className="h-5 w-5 text-purple-400" />
                     </div>
-                    <h3 className="text-xl font-bold text-white">Full-Time Opportunities</h3>
+                    <h3 className="text-xl font-bold text-white">48h Diagnostic</h3>
                   </div>
                   <p className="text-sm sm:text-base text-zinc-300 leading-relaxed mb-4">
-                    Looking for a role within Product Management, Corporate Strategy, or Strategic Partnerships where I can work on big problems that actually matter.
+                    Audit idea, stack, data, and risks; deliver a plan with the smallest shippable win.
                   </p>
                   <p className="text-sm sm:text-base text-zinc-300 leading-relaxed mb-6">
-                    I excel at working with both technical and business teams, especially when things are unclear and expectations are high.
+                    Alignment on the bet, crisp scope, instrumentation from day one.
                   </p>
                   <Link href="/contact">
                     <Button className="bg-purple-600 hover:bg-purple-700 w-full sm:w-auto text-sm">
-                      Discuss Opportunities
+                      Get the Plan
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </Link>
                 </div>
               </div>
 
-              {/* Consulting Projects */}
+              {/* 2–4 Week MVP Sprint */}
               <div className="relative rounded-xl border border-blue-500/20 bg-gradient-to-br from-zinc-900 to-blue-950/20 p-6 sm:p-8">
                 <div className="absolute inset-0 bg-grid-white/5 [mask-image:linear-gradient(0deg,#000000,transparent)]"></div>
                 <div className="relative">
@@ -443,17 +423,17 @@ export default function Home() {
                     <div className="p-2 bg-blue-500/20 rounded-lg">
                       <Briefcase className="h-5 w-5 text-blue-400" />
                     </div>
-                    <h3 className="text-xl font-bold text-white">Consulting Projects</h3>
+                    <h3 className="text-xl font-bold text-white">2–4 Week MVP Sprint</h3>
                   </div>
                   <p className="text-sm sm:text-base text-zinc-300 leading-relaxed mb-4">
-                    Available for strategic consulting and custom development projects. I help companies build AI-powered solutions and bridge technical-business gaps.
+                    Ship a real product with analytics and basic GTM. Payments, auth, and onboarding wired.
                   </p>
                   <p className="text-sm sm:text-base text-zinc-300 leading-relaxed mb-6">
-                    From MVP development to full-scale applications, I deliver solutions that drive real business value.
+                    Then iterate with users: instrument usage, run interviews, ship weekly improvements.
                   </p>
                   <Link href="/consulting">
                     <Button className="bg-blue-600 hover:bg-blue-700 w-full sm:w-auto text-sm">
-                      View Services
+                      Start a Sprint
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </Link>

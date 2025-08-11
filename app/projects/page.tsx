@@ -360,31 +360,6 @@ function ProjectCard({ project }: { project: Project }) {
                </div>
              </div>
             
-            {/* Actions */}
-            <div className="mb-4 flex flex-wrap gap-3">
-              <Button 
-                size="sm"
-                className={`bg-gradient-to-r ${categoryTheme.color} hover:opacity-90 text-white`}
-              >
-                Details
-              </Button>
-              {project.liveLink && (
-                <Button 
-                  size="sm"
-                  variant="outline" 
-                  className="border-zinc-700 hover:bg-zinc-800"
-                  onClick={(e) => {
-                    e.preventDefault()
-                    e.stopPropagation()
-                    if (project.liveLink) window.open(project.liveLink, '_blank')
-                  }}
-                >
-                  <ExternalLink className="mr-2 h-4 w-4" />
-                  Link
-                </Button>
-              )}
-            </div>
-             
              {/* Tech Stack */}
              <div className="mb-4">
                <p className="text-xs text-zinc-500 mb-2">Tech Stack</p>
@@ -458,6 +433,32 @@ function FeaturedProject({ project }: { project: Project }) {
                     </span>
                   ))}
                 </div>
+              </div>
+              
+              {/* Actions */}
+              <div className="mt-2 flex flex-wrap gap-3">
+                <Button 
+                  size="sm"
+                  className="rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:opacity-90"
+                >
+                  More Info
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+                {project.liveLink && (
+                  <Button 
+                    size="sm"
+                    variant="outline" 
+                    className="border-zinc-700 hover:bg-zinc-800"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      e.stopPropagation()
+                      if (project.liveLink) window.open(project.liveLink, '_blank')
+                    }}
+                  >
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    Link
+                  </Button>
+                )}
               </div>
               
               {/* Project Details */}

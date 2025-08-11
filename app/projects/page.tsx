@@ -17,21 +17,18 @@ import { Project, CategoryTheme, StatusInfo } from "./types"
 // Project categories
 const categories = ["All", "AI", "Music", "Web App", "NLP", "Data Viz", "RPG"]
 
-// Tech stack icons mapping
-const techIcons = {
+// Tech stack icons mapping (deduplicated with aliases)
+const techIconByCanonical: Record<string, string> = {
   "React": "⚛️",
-  "React 19": "⚛️",
-  "Next": "▲",
   "Next.js": "▲",
-  "Next.js 15": "▲",
-  "Typescript": "📘",
   "TypeScript": "📘",
+  "JavaScript": "🟨",
   "Python": "🐍",
   "FastAPI": "⚡",
   "PostgreSQL": "🐘",
   "Prisma": "🔺",
-  "GPT-4o": "🤖",
   "OpenAI": "🤖",
+  "GPT-4o": "🤖",
   "Google Gemini": "💎",
   "Clerk": "🔐",
   "Redis": "🔴",
@@ -44,7 +41,6 @@ const techIcons = {
   "API": "🔌",
   "Database": "🗄️",
   "Machine Learning": "🧠",
-  "Web Game": "🎮",
   "Game": "🎮",
   "E-commerce": "🛒",
   "Audio": "🎵",
@@ -56,7 +52,23 @@ const techIcons = {
   "D&D": "🎲",
   "RPG": "⚔️",
   "Interactive Fiction": "📖",
-  "Real-time": "⚡"
+  "Real-time": "⚡",
+  "CSS": "🎨",
+  "Chrome APIs": "🧩",
+  "Manifest v3": "📄"
+}
+
+const techIconAliases: Record<string, string> = {
+  "React 19": "React",
+  "Next": "Next.js",
+  "Next.js 15": "Next.js",
+  "Typescript": "TypeScript",
+  "Web Game": "Game"
+}
+
+function getTechIcon(tech: string): string {
+  const canonical = techIconAliases[tech] || tech
+  return techIconByCanonical[canonical] || "⚡"
 }
 
 // Category colors and themes
@@ -377,13 +389,13 @@ function ProjectCard({ project }: { project: Project }) {
              <div className="mb-4">
                <p className="text-xs text-zinc-500 mb-2">Tech Stack</p>
                <div className="flex flex-wrap gap-2">
-                 {project.techStack.map((tech: string) => (
+                  {project.techStack.map((tech: string) => (
                    <span 
                      key={tech} 
                      className="inline-flex items-center gap-1.5 rounded-full bg-zinc-800 px-3 py-1.5 text-xs text-zinc-300"
                      title={tech}
                    >
-                     <span className="text-sm">{techIcons[tech as keyof typeof techIcons] || "⚡"}</span>
+                      <span className="text-sm">{getTechIcon(tech)}</span>
                      <span className="hidden sm:inline">{tech}</span>
                    </span>
                  ))}
@@ -441,7 +453,7 @@ function FeaturedProject({ project }: { project: Project }) {
                       key={tech} 
                       className="inline-flex items-center gap-1.5 rounded-full bg-zinc-800 px-3 py-1.5 text-xs text-zinc-300"
                     >
-                      <span className="text-sm">{techIcons[tech as keyof typeof techIcons] || "⚡"}</span>
+                      <span className="text-sm">{getTechIcon(tech)}</span>
                       <span>{tech}</span>
                     </span>
                   ))}

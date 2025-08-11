@@ -318,37 +318,7 @@ function ProjectCard({ project }: { project: Project }) {
             />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
             
-            {/* Quick action buttons */}
-            <div className="absolute bottom-3 right-3 flex gap-2 opacity-0 transition-opacity group-hover:opacity-100">
-              {project.githubLink && (
-                <Button
-                  size="sm"
-                  variant="secondary"
-                  className="h-8 w-8 p-0 bg-black/50 hover:bg-black/70"
-                  onClick={(e) => {
-                    e.preventDefault()
-                    e.stopPropagation()
-                    if (project.githubLink) window.open(project.githubLink, '_blank')
-                  }}
-                >
-                  <Github className="h-4 w-4" />
-                </Button>
-              )}
-              {project.liveLink && (
-                <Button
-                  size="sm"
-                  variant="secondary"
-                  className="h-8 w-8 p-0 bg-black/50 hover:bg-black/70"
-                  onClick={(e) => {
-                    e.preventDefault()
-                    e.stopPropagation()
-                    if (project.liveLink) window.open(project.liveLink, '_blank')
-                  }}
-                >
-                  <ExternalLink className="h-4 w-4" />
-                </Button>
-              )}
-            </div>
+            
           </div>
           
           {/* Content Section */}

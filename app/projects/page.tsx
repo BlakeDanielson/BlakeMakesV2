@@ -376,6 +376,33 @@ function ProjectCard({ project }: { project: Project }) {
                  ))}
                </div>
              </div>
+
+            {/* Actions */}
+            <div className="mt-2 flex flex-wrap gap-3">
+              <Button 
+                size="sm"
+                className="rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:opacity-90"
+              >
+                More Info
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+              {(project.liveLink || project.githubLink) && (
+                <Button 
+                  size="sm"
+                  variant="outline" 
+                  className="border-zinc-700 hover:bg-zinc-800"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    e.stopPropagation()
+                    const targetUrl = project.liveLink || project.githubLink
+                    if (targetUrl) window.open(targetUrl, '_blank')
+                  }}
+                >
+                  <ExternalLink className="mr-2 h-4 w-4" />
+                  Link
+                </Button>
+              )}
+            </div>
                        </div>
          </CardContent>
        </Card>
@@ -435,31 +462,7 @@ function FeaturedProject({ project }: { project: Project }) {
                 </div>
               </div>
               
-              {/* Actions */}
-              <div className="mt-2 flex flex-wrap gap-3">
-                <Button 
-                  size="sm"
-                  className="rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:opacity-90"
-                >
-                  More Info
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-                {project.liveLink && (
-                  <Button 
-                    size="sm"
-                    variant="outline" 
-                    className="border-zinc-700 hover:bg-zinc-800"
-                    onClick={(e) => {
-                      e.preventDefault()
-                      e.stopPropagation()
-                      if (project.liveLink) window.open(project.liveLink, '_blank')
-                    }}
-                  >
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    Link
-                  </Button>
-                )}
-              </div>
+              {/* Actions for featured card removed per user request */}
               
               {/* Project Details */}
               <div className="flex flex-wrap gap-4 text-sm text-zinc-500">

@@ -361,9 +361,7 @@ function ProjectCard({ project }: { project: Project }) {
               <h3 className="text-lg sm:text-xl font-bold text-white truncate">{project.title}</h3>
             </div>
             
-                         {/* Description */}
-             <p className="mb-4 text-sm text-zinc-400 line-clamp-3">{project.description}</p>
-             
+            
              {/* Project Tags */}
              <div className="mb-4">
                <div className="flex flex-wrap gap-2">
@@ -438,7 +436,6 @@ function FeaturedProject({ project }: { project: Project }) {
               </div>
               
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">{project.title}</h2>
-              <p className="text-zinc-400 text-sm sm:text-base">{project.description}</p>
               
               {/* Tech Stack */}
               <div>

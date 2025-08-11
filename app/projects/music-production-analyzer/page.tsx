@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowLeft, ExternalLink, Github, Calendar, Users, Sparkles, Music, Headphones, Video } from "lucide-react"
+import { ArrowLeft, ExternalLink, Github, Calendar, Users, Sparkles, Music, Headphones, Video, Brain } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -44,6 +44,14 @@ export default function MusicProductionAnalyzerPage() {
           <div className="mt-12 grid gap-12 md:grid-cols-3">
             <div className="space-y-6 md:col-span-2">
               <div>
+                <h2 className="text-2xl font-bold text-white">🎧 What is Music Production Analyzer?</h2>
+                <p className="mt-4 text-zinc-400">
+                  An AI assistant for producers that extracts concrete techniques from long tutorials and podcasts —
+                  making it easy to jump straight to the moments that matter.
+                </p>
+              </div>
+
+              <div>
                 <h2 className="text-2xl font-bold text-white">The Challenge</h2>
                 <p className="mt-4 text-zinc-400">
                   Music production tutorials and podcasts are often lengthy and packed with valuable information, but
@@ -63,7 +71,7 @@ export default function MusicProductionAnalyzerPage() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-bold text-white">Key Features</h2>
+                <h2 className="text-2xl font-bold text-white">🎯 Core User Features</h2>
                 <ul className="mt-4 space-y-2 text-zinc-400">
                   <li className="flex items-start">
                     <Sparkles className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
@@ -89,7 +97,7 @@ export default function MusicProductionAnalyzerPage() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-bold text-white">Technical Implementation</h2>
+                <h2 className="text-2xl font-bold text-white">🏗️ Technical Architecture</h2>
                 <p className="mt-4 text-zinc-400">
                   The analyzer combines several AI technologies to process multimedia content effectively:
                 </p>
@@ -113,6 +121,34 @@ export default function MusicProductionAnalyzerPage() {
                     <span>Knowledge graph to connect related concepts and techniques</span>
                   </li>
                 </ul>
+              </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-white">🤖 AI-Powered Features</h2>
+                <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                  <div className="rounded-lg border border-zinc-800 bg-zinc-900/50 p-4">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Brain className="h-5 w-5 text-purple-500" />
+                      <h3 className="font-semibold text-white">Technique Extraction</h3>
+                    </div>
+                    <ul className="text-sm text-zinc-400 space-y-1">
+                      <li>• Detects and indexes mix/master tips, sound design moves, and DAW shortcuts</li>
+                      <li>• Links each tip to precise timestamps</li>
+                      <li>• Groups related ideas into topics</li>
+                    </ul>
+                  </div>
+                  <div className="rounded-lg border border-zinc-800 bg-zinc-900/50 p-4">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Brain className="h-5 w-5 text-purple-500" />
+                      <h3 className="font-semibold text-white">Contextual Summaries</h3>
+                    </div>
+                    <ul className="text-sm text-zinc-400 space-y-1">
+                      <li>• Generates concise summaries for long sections</li>
+                      <li>• Extracts gear settings and parameters</li>
+                      <li>• Provides follow-up suggestions to learn faster</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
 
               <div className="grid gap-4 sm:grid-cols-2">

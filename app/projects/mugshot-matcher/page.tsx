@@ -44,6 +44,14 @@ export default function MugshotMatcherPage() {
           <div className="mt-12 grid gap-12 md:grid-cols-3">
             <div className="space-y-6 md:col-span-2">
               <div>
+                <h2 className="text-2xl font-bold text-white">🕵️ What is Mug Matcher?</h2>
+                <p className="mt-4 text-zinc-400">
+                  Mug Matcher is a detective-skills web game where players match mugshots to crimes. It blends visual
+                  recognition with criminal justice education and a polished PWA experience.
+                </p>
+              </div>
+
+              <div>
                 <h2 className="text-2xl font-bold text-white">The Challenge</h2>
                 <p className="mt-4 text-zinc-400">
                   Traditional criminal justice education and detective training often rely on theoretical knowledge without practical application. 
@@ -66,7 +74,7 @@ export default function MugshotMatcherPage() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-bold text-white">Key Features</h2>
+                <h2 className="text-2xl font-bold text-white">🎯 Core User Features</h2>
                 <ul className="mt-4 space-y-2 text-zinc-400">
                   <li className="flex items-start">
                     <Brain className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
@@ -96,7 +104,7 @@ export default function MugshotMatcherPage() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-bold text-white">Technical Implementation</h2>
+                <h2 className="text-2xl font-bold text-white">🏗️ Technical Architecture</h2>
                 <p className="mt-4 text-zinc-400">
                   Mug Matcher combines cutting-edge web technologies with sophisticated game mechanics:
                 </p>
@@ -145,6 +153,8 @@ export default function MugshotMatcherPage() {
                   </div>
                 </div>
               </div>
+
+              {/* No AI section explicitly separated here since features are gameplay-first */}
 
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="overflow-hidden rounded-lg border border-zinc-800">

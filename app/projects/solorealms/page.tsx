@@ -98,7 +98,37 @@ export default function SoloRealmsPage() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-bold text-white">🎯 Core Game Features</h2>
+                <h2 className="text-2xl font-bold text-white">🤖 AI-Powered Features</h2>
+                <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                  <div className="rounded-lg border border-zinc-800 bg-zinc-900/50 p-4">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Brain className="h-5 w-5 text-purple-500" />
+                      <h3 className="font-semibold text-white">Dynamic Narrative Engine</h3>
+                    </div>
+                    <ul className="text-sm text-zinc-400 space-y-1">
+                      <li>• GPT-4o story generation with scene memory</li>
+                      <li>• Context persistence across sessions</li>
+                      <li>• Safety rails for lore consistency</li>
+                      <li>• Optional TTS narration pipeline</li>
+                    </ul>
+                  </div>
+                  <div className="rounded-lg border border-zinc-800 bg-zinc-900/50 p-4">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Shield className="h-5 w-5 text-purple-500" />
+                      <h3 className="font-semibold text-white">Rules-Aware Guidance</h3>
+                    </div>
+                    <ul className="text-sm text-zinc-400 space-y-1">
+                      <li>• D&D 5e action suggestions and clarifications</li>
+                      <li>• Combat narration aligned with turn state</li>
+                      <li>• Skill check prompts and outcomes</li>
+                      <li>• Inline summaries for long sessions</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-white">🎯 Core User Features</h2>
                 <div className="mt-4 grid gap-4 sm:grid-cols-2">
                   <div className="rounded-lg border border-zinc-800 bg-zinc-900/50 p-4">
                     <div className="flex items-center gap-2 mb-2">

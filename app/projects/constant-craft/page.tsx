@@ -43,6 +43,15 @@ export default function ConstantCraftPage() {
           <div className="mt-12 grid gap-12 md:grid-cols-3">
             <div className="space-y-6 md:col-span-2">
               <div>
+                <h2 className="text-2xl font-bold text-white">🎮 What is Constant-Craft?</h2>
+                <p className="mt-4 text-zinc-400">
+                  Constant-Craft is an interactive element-combination game inspired by Infinite Craft. Players start with
+                  earth, water, fire, and air, and discover hundreds of new items by combining them in creative ways —
+                  built for speed, responsiveness, and a delightful sense of discovery.
+                </p>
+              </div>
+
+              <div>
                 <h2 className="text-2xl font-bold text-white">The Challenge</h2>
                 <p className="mt-4 text-zinc-400">
                   Creating an engaging game that captures the addictive simplicity of Infinite Craft while maintaining
@@ -62,7 +71,7 @@ export default function ConstantCraftPage() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-bold text-white">Key Features</h2>
+                <h2 className="text-2xl font-bold text-white">🎯 Core User Features</h2>
                 <ul className="mt-4 space-y-2 text-zinc-400">
                   <li className="flex items-start">
                     <Sparkles className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
@@ -88,7 +97,7 @@ export default function ConstantCraftPage() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-bold text-white">Technical Implementation</h2>
+                <h2 className="text-2xl font-bold text-white">🏗️ Technical Architecture</h2>
                 <p className="mt-4 text-zinc-400">
                   The application was built with a focus on performance and user experience:
                 </p>

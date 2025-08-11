@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowLeft, ExternalLink, Github, Calendar, Users, Sparkles, Video, Upload, Code } from "lucide-react"
+import { ArrowLeft, ExternalLink, Github, Calendar, Users, Sparkles, Video, Upload, Code, Brain } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -44,6 +44,14 @@ export default function JumpscareGeneratorPage() {
           <div className="mt-12 grid gap-12 md:grid-cols-3">
             <div className="space-y-6 md:col-span-2">
               <div>
+                <h2 className="text-2xl font-bold text-white">🎬 What is JumpScare Generator?</h2>
+                <p className="mt-4 text-zinc-400">
+                  JumpScare Generator is a web app that lets anyone create perfectly timed jump-scare videos by
+                  combining their own clips with curated faces, effects, and sounds — no pro editing tools required.
+                </p>
+              </div>
+
+              <div>
                 <h2 className="text-2xl font-bold text-white">The Challenge</h2>
                 <p className="mt-4 text-zinc-400">
                   Creating effective jump scares requires precise timing, audio-visual synchronization, and technical
@@ -64,7 +72,7 @@ export default function JumpscareGeneratorPage() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-bold text-white">Key Features</h2>
+                <h2 className="text-2xl font-bold text-white">🎯 Core User Features</h2>
                 <ul className="mt-4 space-y-2 text-zinc-400">
                   <li className="flex items-start">
                     <Sparkles className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
@@ -90,7 +98,7 @@ export default function JumpscareGeneratorPage() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-bold text-white">Technical Implementation</h2>
+                <h2 className="text-2xl font-bold text-white">🏗️ Technical Architecture</h2>
                 <p className="mt-4 text-zinc-400">
                   The JumpScare Generator combines modern web technologies with powerful backend processing:
                 </p>
@@ -116,6 +124,23 @@ export default function JumpscareGeneratorPage() {
                     <span>WebSockets for real-time processing status updates</span>
                   </li>
                 </ul>
+              </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-white">🤖 AI-Powered Features</h2>
+                <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                  <div className="rounded-lg border border-zinc-800 bg-zinc-900/50 p-4">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Brain className="h-5 w-5 text-purple-500" />
+                      <h3 className="font-semibold text-white">Auto Timing Assist</h3>
+                    </div>
+                    <ul className="text-sm text-zinc-400 space-y-1">
+                      <li>• Optional beat/onset detection to align scare</li>
+                      <li>• Loudness normalization for consistent jumps</li>
+                      <li>• Smart defaults for casual users</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
 
               <div className="grid gap-4 sm:grid-cols-2">

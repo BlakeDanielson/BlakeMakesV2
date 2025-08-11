@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowLeft, ExternalLink, Github, Calendar, Users, Sparkles, Shield, CheckCircle, Target, Globe, TrendingUp } from "lucide-react"
+import { ArrowLeft, ExternalLink, Github, Calendar, Users, Sparkles, Shield, CheckCircle, Target, Globe, TrendingUp, Brain } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -43,6 +43,14 @@ export default function LinkedinApplicantCounterPage() {
           <div className="mt-12 grid gap-12 md:grid-cols-3">
             <div className="space-y-6 md:col-span-2">
               <div>
+                <h2 className="text-2xl font-bold text-white">🔍 What is LinkedIn Applicant Counter?</h2>
+                <p className="mt-4 text-zinc-400">
+                  A privacy-first Chrome extension that reveals the true applicant count on LinkedIn job postings by
+                  parsing data already available to your browser — no servers, no tracking.
+                </p>
+              </div>
+
+              <div>
                 <h2 className="text-2xl font-bold text-white">The Problem</h2>
                 <p className="mt-4 text-zinc-400">
                   LinkedIn often abstracts applicant counts (e.g., “10+ applicants”), making it hard to gauge true competition. Manually digging through DevTools works, but it’s tedious and inconsistent across job templates.
@@ -57,7 +65,7 @@ export default function LinkedinApplicantCounterPage() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-bold text-white">Key Features</h2>
+                <h2 className="text-2xl font-bold text-white">🎯 Core User Features</h2>
                 <ul className="mt-4 space-y-2 text-zinc-400">
                   <li className="flex items-start">
                     <Sparkles className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
@@ -79,7 +87,7 @@ export default function LinkedinApplicantCounterPage() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-bold text-white">Technical Notes</h2>
+                <h2 className="text-2xl font-bold text-white">🏗️ Technical Architecture</h2>
                 <ul className="mt-4 space-y-2 text-zinc-400">
                   <li className="flex items-start">
                     <Target className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-purple-500" />
@@ -95,6 +103,8 @@ export default function LinkedinApplicantCounterPage() {
                   </li>
                 </ul>
               </div>
+
+              {/* No AI section for this project */}
 
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="overflow-hidden rounded-lg border border-zinc-800">

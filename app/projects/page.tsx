@@ -102,22 +102,22 @@ const categoryThemes: Record<string, CategoryTheme> = {
 // Project data with enhanced details
 const projects: Project[] = [
   {
-    title: "OurStories",
+    title: "LinkedIn Applicant Counter",
     description:
-      "I created this bedtime story generator that makes children the stars of their own stories—complete with AI-generated images that incorporate their photos. A passion project that combines storytelling with cutting-edge AI.",
-    image: "/forest-friends-picnic.png",
-    category: "AI",
-    tags: ["AI", "NLP", "Image Generation", "E-commerce"],
-    techStack: ["Next", "Typescript", "API", "AI", "React"],
-    link: "/projects/ourstories",
-    githubLink: "https://github.com/BlakeDanielson/OurStoriesV3",
-    liveLink: "https://ourstories.app",
+      "A Chrome extension that automatically reveals the true number of applicants on LinkedIn job postings by extracting counts from API data and displaying them directly on the page.",
+    image: "/linkedin-applicant-counter.png",
+    category: "Web App",
+    tags: ["Chrome Extension", "LinkedIn", "Job Search", "UX"],
+    techStack: ["JavaScript", "Manifest v3", "Chrome APIs", "CSS"],
+    link: "/projects/linkedin-applicant-counter",
+    githubLink: "https://github.com/BlakeDanielson/HowManyApplied",
+    liveLink: null,
     featured: false,
-    icon: <BookOpen className="h-5 w-5" />,
-    status: "In Development",
-    pricing: "Premium",
-    completionDate: "2025-03",
-    duration: "3 months"
+    icon: <Code className="h-5 w-5" />,
+    status: "Live",
+    pricing: "Free",
+    completionDate: "2025-08",
+    duration: "1 week"
   },
   {
     title: "Mood2Song",
@@ -210,22 +210,22 @@ const projects: Project[] = [
     duration: "2 weeks"
   },
   {
-    title: "LinkedIn Applicant Counter",
+    title: "OurStories",
     description:
-      "A Chrome extension that automatically reveals the true number of applicants on LinkedIn job postings by extracting counts from API data and displaying them directly on the page.",
-    image: "/linkedin-applicant-counter.png",
-    category: "Web App",
-    tags: ["Chrome Extension", "LinkedIn", "Job Search", "UX"],
-    techStack: ["JavaScript", "Manifest v3", "Chrome APIs", "CSS"],
-    link: "/projects/linkedin-applicant-counter",
-    githubLink: "https://github.com/BlakeDanielson/HowManyApplied",
-    liveLink: null,
+      "I created this bedtime story generator that makes children the stars of their own stories—complete with AI-generated images that incorporate their photos. A passion project that combines storytelling with cutting-edge AI.",
+    image: "/forest-friends-picnic.png",
+    category: "AI",
+    tags: ["AI", "NLP", "Image Generation", "E-commerce"],
+    techStack: ["Next", "Typescript", "API", "AI", "React"],
+    link: "/projects/ourstories",
+    githubLink: "https://github.com/BlakeDanielson/OurStoriesV3",
+    liveLink: "https://ourstories.app",
     featured: false,
-    icon: <Code className="h-5 w-5" />,
-    status: "Live",
-    pricing: "Free",
-    completionDate: "2025-08",
-    duration: "1 week"
+    icon: <BookOpen className="h-5 w-5" />,
+    status: "In Development",
+    pricing: "Premium",
+    completionDate: "2025-03",
+    duration: "3 months"
   },
   {
     title: "Caren's Cookbook",

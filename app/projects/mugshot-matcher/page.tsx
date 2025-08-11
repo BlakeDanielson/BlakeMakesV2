@@ -215,7 +215,7 @@ export default function MugshotMatcherPage() {
                 </div>
 
                 <div className="mt-6 flex flex-col gap-3">
-                  <Link href="https://mugmatcher.app" target="_blank" rel="noopener noreferrer">
+                  <Link href="https://mugshotmatcher.app" target="_blank" rel="noopener noreferrer">
                     <Button className="w-full bg-purple-600 hover:bg-purple-700">
                       <ExternalLink className="mr-2 h-4 w-4" />
                       Play Mug Matcher

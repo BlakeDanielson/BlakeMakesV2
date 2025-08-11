@@ -347,6 +347,31 @@ function ProjectCard({ project }: { project: Project }) {
                  </Badge>
                </div>
              </div>
+            
+            {/* Actions */}
+            <div className="mb-4 flex flex-wrap gap-3">
+              <Button 
+                size="sm"
+                className={`bg-gradient-to-r ${categoryTheme.color} hover:opacity-90 text-white`}
+              >
+                Details
+              </Button>
+              {project.liveLink && (
+                <Button 
+                  size="sm"
+                  variant="outline" 
+                  className="border-zinc-700 hover:bg-zinc-800"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    e.stopPropagation()
+                    if (project.liveLink) window.open(project.liveLink, '_blank')
+                  }}
+                >
+                  <ExternalLink className="mr-2 h-4 w-4" />
+                  Link
+                </Button>
+              )}
+            </div>
              
              {/* Tech Stack */}
              <div className="mb-4">

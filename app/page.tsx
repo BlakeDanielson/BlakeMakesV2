@@ -88,11 +88,11 @@ export default function Home() {
               </h1>
               <div className="space-y-2 sm:space-y-3 mt-4 sm:mt-6">
                 <p className="text-sm sm:text-base lg:text-lg text-zinc-300 font-medium px-2 sm:px-0 leading-relaxed">
-                  AI product builder for early-stage teams. I turn vague ideas into live products, fast.
+                Startup Operator | Built & Launched Products with 2x YPO Founders
                 </p>
 
                 <p className="text-sm sm:text-base lg:text-lg text-zinc-300 font-medium px-2 sm:px-0 leading-relaxed">
-                  2x YPO CEO right-hand; I handle product, AI integration, and scrappy growth.
+                Rubik's Cube in 50s | Final Round Palantir Echo
                 </p>
               </div>
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 pt-4 sm:pt-6 px-4 sm:px-0 max-w-4xl mx-auto">

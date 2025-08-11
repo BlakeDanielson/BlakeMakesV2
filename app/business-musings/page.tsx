@@ -28,7 +28,7 @@ const musings = [
     type: "observation",
     title: "The Paradox of Decision-Making",
     content:
-      "The most important decisions often feel the least urgent. While we rush to put out daily fires, the truly transformative choices—those that reshape our trajectory—rarely announce themselves with sirens. They whisper, waiting patiently for our attention.",
+      "The most important decisions often feel the least urgent. While we rush to put out daily fires, the truly transformative choices - those that reshape our trajectory - rarely announce themselves with sirens. They whisper, waiting patiently for our attention.",
     image: "/foggy-fork.png",
   },
   {
@@ -44,7 +44,7 @@ const musings = [
     type: "observation",
     title: "Feedback Loops",
     content:
-      "The most successful businesses create tight feedback loops between decision and consequence. The shorter this loop, the faster the learning, and the quicker the evolution. Companies that extend this gap—whether through bureaucracy or ego—inevitably fall behind.",
+      "The most successful businesses create tight feedback loops between decision and consequence. The shorter this loop, the faster the learning, and the quicker the evolution. Companies that extend this gap - whether through bureaucracy or ego - inevitably fall behind.",
     image: "/blackboard-circular-arrows.png",
   },
   {
@@ -59,7 +59,7 @@ const musings = [
     type: "story",
     title: "The Talent Multiplier",
     content:
-      "A-players hire A+ players. B-players hire C-players. The first rule of building a world-class organization is to understand that exceptional talent doesn't fear being outshined—they actively seek it. When you find leaders who instinctively surround themselves with people smarter than themselves, you've found the growth engines of your company.",
+      "A-players hire A+ players. B-players hire C-players. The first rule of building a world-class organization is to understand that exceptional talent doesn't fear being outshined - they actively seek it. When you find leaders who instinctively surround themselves with people smarter than themselves, you've found the growth engines of your company.",
     image: "/collaborative-innovation.png",
   },
 ]

@@ -46,7 +46,7 @@ export function ImpactMetricsSection() {
             <h4 className="text-xl font-bold text-white mb-2">Strategic Excellence</h4>
             <p className="text-zinc-300">
               I transform complex technical challenges into strategic advantages by combining analytical rigor with
-              practical implementation. My solutions don&apos;t just solve immediate problems—they create scalable frameworks
+              practical implementation. My solutions don&apos;t just solve immediate problems - they create scalable frameworks
               that continue delivering value as your business evolves.
             </p>
             <div className="mt-4 p-3 border border-zinc-700/50 rounded-lg bg-zinc-800/30">
@@ -54,7 +54,7 @@ export function ImpactMetricsSection() {
                 &quot;Blake&apos;s database optimization project reduced our reporting time from days to minutes while cutting our
                 cloud costs by 40%. The ROI was immediate and substantial.&quot;
               </p>
-              <p className="text-xs text-zinc-500 mt-2">— Former Director of Operations</p>
+              <p className="text-xs text-zinc-500 mt-2">- Former Director of Operations</p>
             </div>
           </div>
         </div>

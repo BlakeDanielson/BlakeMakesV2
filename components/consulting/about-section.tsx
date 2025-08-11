@@ -126,7 +126,7 @@ export function AboutSection() {
 
             <div className="pt-4">
               <p className="text-zinc-400 italic">
-                &ldquo;I don&apos;t just build software—I build solutions that drive measurable business growth and competitive advantage.&rdquo;
+                &ldquo;I don&apos;t just build software - I build solutions that drive measurable business growth and competitive advantage.&rdquo;
               </p>
             </div>
           </motion.div>

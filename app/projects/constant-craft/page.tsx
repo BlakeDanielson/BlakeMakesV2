@@ -46,7 +46,7 @@ export default function ConstantCraftPage() {
                 <h2 className="text-2xl font-bold text-white">🎮 What is Constant-Craft?</h2>
                 <p className="mt-4 text-zinc-400">
                   Constant-Craft is an interactive element-combination game inspired by Infinite Craft. Players start with
-                  earth, water, fire, and air, and discover hundreds of new items by combining them in creative ways —
+                  earth, water, fire, and air, and discover hundreds of new items by combining them in creative ways -
                   built for speed, responsiveness, and a delightful sense of discovery.
                 </p>
               </div>

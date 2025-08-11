@@ -49,7 +49,7 @@ export default function Home() {
   // Business/Leadership skills
   const businessSkills = [
     "Ship MVPs fast: clickable prototypes → production v1 with analytics, auth, and payments.",
-    "AI-native workflows: LLM agents, retrieval, automations that cut time/cost by 50–90%.",
+    "AI-native workflows: LLM agents, retrieval, automations that cut time/cost by 50-90%.",
     "Ruthless focus: remove non‑essential features; launch, learn, iterate.",
     "Full‑stack execution: product specs, design, code, infra, analytics, GTM handoff.",
     "Growth loops: email onboarding, in‑product prompts, referral hooks, content pipelines.",
@@ -127,7 +127,7 @@ export default function Home() {
                     <div className="text-center">
                       <div className="text-2xl mb-2">💼</div>
                       <div className="text-white font-semibold text-sm mb-1">Ship Your v1</div>
-                      <div className="text-blue-100 text-xs">2–4 week MVP sprint</div>
+                    <div className="text-blue-100 text-xs">2-4 week MVP sprint</div>
                     </div>
                   </div>
                 </Link>
@@ -224,7 +224,7 @@ export default function Home() {
                   There were operations in armored vehicle logistics, freight and cargo security. The industries were intense, the stakes were high, and so were the expectations.
                   <br />
                   <br />
-                  I built AI Agents that helped overhaul operations to save over $100K annually by automating workflows. But the real win was spotting the silent friction points—closing the communication gaps that were jamming up entire teams and reshaping how the whole organization made decisions: faster, smarter, and more aligned.
+                  I built AI Agents that helped overhaul operations to save over $100K annually by automating workflows. But the real win was spotting the silent friction points - closing the communication gaps that were jamming up entire teams and reshaping how the whole organization made decisions: faster, smarter, and more aligned.
                 </p>
               </div>
 
@@ -385,8 +385,8 @@ export default function Home() {
           <div ref={futureGoalsRef} className="mt-16 sm:mt-20 lg:mt-24">
             <div className="mb-8 sm:mb-12 text-center">
               <Badge className="mb-2 bg-purple-500/20 text-purple-300 text-xs sm:text-sm">How I Work</Badge>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white px-4 sm:px-0">Fast, Focused, Ship‑First</h2>
-              <p className="mx-auto mt-4 max-w-2xl text-sm sm:text-base text-zinc-400 px-4 sm:px-0 leading-relaxed">48h Diagnostic → 2–4 Week MVP Sprint → Iterate with Users</p>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white px-4 sm:px-0">Fast, Focused, Ship-First</h2>
+              <p className="mx-auto mt-4 max-w-2xl text-sm sm:text-base text-zinc-400 px-4 sm:px-0 leading-relaxed">48h Diagnostic - 2-4 Week MVP Sprint - Iterate with Users</p>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-6">
@@ -415,7 +415,7 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* 2–4 Week MVP Sprint */}
+              {/* 2-4 Week MVP Sprint */}
               <div className="relative rounded-xl border border-blue-500/20 bg-gradient-to-br from-zinc-900 to-blue-950/20 p-6 sm:p-8">
                 <div className="absolute inset-0 bg-grid-white/5 [mask-image:linear-gradient(0deg,#000000,transparent)]"></div>
                 <div className="relative">
@@ -423,7 +423,7 @@ export default function Home() {
                     <div className="p-2 bg-blue-500/20 rounded-lg">
                       <Briefcase className="h-5 w-5 text-blue-400" />
                     </div>
-                    <h3 className="text-xl font-bold text-white">2–4 Week MVP Sprint</h3>
+                    <h3 className="text-xl font-bold text-white">2-4 Week MVP Sprint</h3>
                   </div>
                   <p className="text-sm sm:text-base text-zinc-300 leading-relaxed mb-4">
                     Ship a real product with analytics and basic GTM. Payments, auth, and onboarding wired.
@@ -473,8 +473,8 @@ export default function Home() {
                 </div>
                 <div className="p-4 sm:p-6">
                   <h3 className="mb-2 text-lg sm:text-xl font-bold text-white">Mood2Song</h3>
-                  <p className="mb-4 text-xs sm:text-sm text-zinc-400 leading-relaxed">
-                    A music discovery platform that helps users find songs based on their mood, persona, or specific vibe—combining my passion for music with intuitive UX design.
+                   <p className="mb-4 text-xs sm:text-sm text-zinc-400 leading-relaxed">
+                    A music discovery platform that helps users find songs based on their mood, persona, or specific vibe - combining my passion for music with intuitive UX design.
                   </p>
                   <div className="mb-4 flex flex-wrap gap-2">
                     <span className="rounded-full bg-zinc-800 px-2 py-1 text-xs text-zinc-300">Music Discovery</span>

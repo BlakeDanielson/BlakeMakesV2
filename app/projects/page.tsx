@@ -134,7 +134,7 @@ const projects: Project[] = [
   {
     title: "Mood2Song",
     description:
-      "I created this music discovery platform that helps users find songs based on their mood, persona, or specific vibe—combining my passion for music with intuitive UX design.",
+      "I created this music discovery platform that helps users find songs based on their mood, persona, or specific vibe - combining my passion for music with intuitive UX design.",
     image: "/mood2song.png",
     category: "Music",
     tags: ["Music Discovery", "React", "API Integration", "UX Design"],
@@ -224,7 +224,7 @@ const projects: Project[] = [
   {
     title: "OurStories",
     description:
-      "I created this bedtime story generator that makes children the stars of their own stories—complete with AI-generated images that incorporate their photos. A passion project that combines storytelling with cutting-edge AI.",
+      "I created this bedtime story generator that makes children the stars of their own stories - complete with AI-generated images that incorporate their photos. A passion project that combines storytelling with cutting-edge AI.",
     image: "/forest-friends-picnic.png",
     category: "AI",
     tags: ["AI", "NLP", "Image Generation", "E-commerce"],
@@ -561,7 +561,7 @@ export default function ProjectsPage() {
             Projects That <span className="text-purple-400">Made an Impact</span>
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-300">
-            From executive dashboards that transformed decision-making to AI tools that solve real problems—these are
+            From executive dashboards that transformed decision-making to AI tools that solve real problems - these are
             the projects I&apos;m most proud of.
           </p>
 
@@ -635,7 +635,7 @@ export default function ProjectsPage() {
             <h2 className="text-3xl font-bold text-white">Have a project in mind?</h2>
             <p className="mt-4 text-zinc-400">
               I&apos;m always looking for interesting challenges and creative collaborations. Whether you need help with data
-              integration, process optimization, or building something entirely new—I&apos;d love to hear about it.
+              integration, process optimization, or building something entirely new - I&apos;d love to hear about it.
             </p>
             <div className="mt-8">
               <Link href="/contact">

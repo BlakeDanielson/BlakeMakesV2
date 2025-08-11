@@ -5,6 +5,7 @@ import Script from "next/script"
 import "./globals.css"
 import { BuyMeCoffeeWidget } from "@/components/buy-me-coffee-widget"
 import { PerformanceMonitor } from "@/components/performance-monitor"
+import { TypographyNormalizer } from "@/components/typography-normalizer"
 import { Toaster } from "@/components/ui/sonner"
 import { Analytics } from "@vercel/analytics/next"
 
@@ -128,6 +129,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <PerformanceMonitor />
+        <TypographyNormalizer />
         {children}
         <BuyMeCoffeeWidget />
         <Toaster />

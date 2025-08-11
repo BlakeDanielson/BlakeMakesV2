@@ -46,7 +46,7 @@ export default function LinkedinApplicantCounterPage() {
                 <h2 className="text-2xl font-bold text-white">🔍 What is LinkedIn Applicant Counter?</h2>
                 <p className="mt-4 text-zinc-400">
                   A privacy-first Chrome extension that reveals the true applicant count on LinkedIn job postings by
-                  parsing data already available to your browser — no servers, no tracking.
+                  parsing data already available to your browser - no servers, no tracking.
                 </p>
               </div>
 
@@ -60,7 +60,7 @@ export default function LinkedinApplicantCounterPage() {
               <div>
                 <h2 className="text-2xl font-bold text-white">The Solution</h2>
                 <p className="mt-4 text-zinc-400">
-                  The extension automates the known manual method: it observes page data and safe, allowed globals to extract applicant counts when available, then renders a small banner at the top of the job view—no servers, no tracking.
+                  The extension automates the known manual method: it observes page data and safe, allowed globals to extract applicant counts when available, then renders a small banner at the top of the job view - no servers, no tracking.
                 </p>
               </div>
 

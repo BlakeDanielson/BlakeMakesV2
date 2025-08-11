@@ -45,7 +45,7 @@ export default function Mood2SongPage() {
               <div>
                 <h2 className="text-2xl font-bold text-white">🎵 What is Mood2Song?</h2>
                 <p className="mt-4 text-zinc-400">
-                  Mood2Song is a music discovery experience that helps you find songs by emotion, persona, and vibe —
+                  Mood2Song is a music discovery experience that helps you find songs by emotion, persona, and vibe -
                   pairing an intuitive UX with rich filtering and streaming integrations for instant listening.
                 </p>
               </div>

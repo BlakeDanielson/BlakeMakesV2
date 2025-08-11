@@ -47,7 +47,7 @@ export default function JumpscareGeneratorPage() {
                 <h2 className="text-2xl font-bold text-white">🎬 What is JumpScare Generator?</h2>
                 <p className="mt-4 text-zinc-400">
                   JumpScare Generator is a web app that lets anyone create perfectly timed jump-scare videos by
-                  combining their own clips with curated faces, effects, and sounds — no pro editing tools required.
+                  combining their own clips with curated faces, effects, and sounds - no pro editing tools required.
                 </p>
               </div>
 

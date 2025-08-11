@@ -46,7 +46,7 @@ export default function MusicProductionAnalyzerPage() {
               <div>
                 <h2 className="text-2xl font-bold text-white">🎧 What is Music Production Analyzer?</h2>
                 <p className="mt-4 text-zinc-400">
-                  An AI assistant for producers that extracts concrete techniques from long tutorials and podcasts —
+                  An AI assistant for producers that extracts concrete techniques from long tutorials and podcasts -
                   making it easy to jump straight to the moments that matter.
                 </p>
               </div>

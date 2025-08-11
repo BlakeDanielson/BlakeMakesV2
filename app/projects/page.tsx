@@ -210,6 +210,24 @@ const projects: Project[] = [
     duration: "2 weeks"
   },
   {
+    title: "LinkedIn Applicant Counter",
+    description:
+      "A Chrome extension that automatically reveals the true number of applicants on LinkedIn job postings by extracting counts from API data and displaying them directly on the page.",
+    image: "/linkedin-applicant-counter.png",
+    category: "Web App",
+    tags: ["Chrome Extension", "LinkedIn", "Job Search", "UX"],
+    techStack: ["JavaScript", "Manifest v3", "Chrome APIs", "CSS"],
+    link: "/projects/linkedin-applicant-counter",
+    githubLink: "https://github.com/BlakeDanielson/HowManyApplied",
+    liveLink: null,
+    featured: false,
+    icon: <Code className="h-5 w-5" />,
+    status: "Live",
+    pricing: "Free",
+    completionDate: "2025-08",
+    duration: "1 week"
+  },
+  {
     title: "Caren's Cookbook",
     description:
       "AI-Powered Recipe Management Platform that transforms how users collect, organize, and manage recipes with intelligent extraction from URLs and images, smart categorization, and personalized digital cookbook experience.",

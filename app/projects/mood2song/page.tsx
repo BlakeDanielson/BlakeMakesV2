@@ -32,7 +32,7 @@ export default function Mood2SongPage() {
 
           <div className="mt-8 overflow-hidden rounded-xl border border-zinc-800 max-w-3xl mx-auto">
             <Image
-              src="/music-discovery-mood.png"
+              src="/mood2song.png"
               alt="Mood2Song Interface"
               width={1200}
               height={600}

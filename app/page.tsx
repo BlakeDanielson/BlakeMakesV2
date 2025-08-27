@@ -115,7 +115,7 @@ export default function Home() {
                   <div className="group bg-gradient-to-br from-purple-500 to-indigo-600 hover:from-purple-400 hover:to-indigo-500 rounded-xl p-4 cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-indigo-500/25">
                     <div className="text-center">
                       <div className="text-2xl mb-2">🚀</div>
-                      <div className="text-white font-semibold text-sm mb-1">See What I’ve Built</div>
+                      <div className="text-white font-semibold text-sm mb-1">See What I&apos;ve Built</div>
                       <div className="text-purple-100 text-xs">Shipped projects</div>
                     </div>
                   </div>

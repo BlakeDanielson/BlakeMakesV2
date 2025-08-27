@@ -125,26 +125,7 @@ export default function ConstantCraftPage() {
                 </ul>
               </div>
 
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div className="overflow-hidden rounded-lg border border-zinc-800">
-                  <Image
-                    src="/stylized-game-hud.png"
-                    alt="Game interface"
-                    width={400}
-                    height={300}
-                    className="aspect-[4/3] w-full object-cover"
-                  />
-                </div>
-                <div className="overflow-hidden rounded-lg border border-zinc-800">
-                  <Image
-                    src="/atomic-assembly.png"
-                    alt="Element combination animation"
-                    width={400}
-                    height={300}
-                    className="aspect-[4/3] w-full object-cover"
-                  />
-                </div>
-              </div>
+
             </div>
 
             <div className="space-y-8">

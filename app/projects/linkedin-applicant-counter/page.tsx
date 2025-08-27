@@ -106,26 +106,7 @@ export default function LinkedinApplicantCounterPage() {
 
               {/* No AI section for this project */}
 
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div className="overflow-hidden rounded-lg border border-zinc-800">
-                  <Image
-                    src="/soundcloud-logo-on-headphones.png"
-                    alt="Abstract UI panel"
-                    width={400}
-                    height={300}
-                    className="aspect-[4/3] w-full object-cover"
-                  />
-                </div>
-                <div className="overflow-hidden rounded-lg border border-zinc-800">
-                  <Image
-                    src="/chess-midgame-control.png"
-                    alt="Decision-making illustration"
-                    width={400}
-                    height={300}
-                    className="aspect-[4/3] w-full object-cover"
-                  />
-                </div>
-              </div>
+
             </div>
 
             <div className="space-y-8">

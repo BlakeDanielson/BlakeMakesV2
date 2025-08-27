@@ -143,26 +143,7 @@ export default function JumpscareGeneratorPage() {
                 </div>
               </div>
 
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div className="overflow-hidden rounded-lg border border-zinc-800">
-                  <Image
-                    src="/jumpscare-interface.png"
-                    alt="JumpScare Generator Interface"
-                    width={400}
-                    height={300}
-                    className="aspect-[4/3] w-full object-cover"
-                  />
-                </div>
-                <div className="overflow-hidden rounded-lg border border-zinc-800">
-                  <Image
-                    src="/jumpscare-effects.png"
-                    alt="JumpScare Effects Library"
-                    width={400}
-                    height={300}
-                    className="aspect-[4/3] w-full object-cover"
-                  />
-                </div>
-              </div>
+
             </div>
 
             <div className="space-y-8">

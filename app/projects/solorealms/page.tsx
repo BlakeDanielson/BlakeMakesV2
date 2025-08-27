@@ -319,26 +319,7 @@ export default function SoloRealmsPage() {
                 </div>
               </div>
 
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div className="overflow-hidden rounded-lg border border-zinc-800">
-                  <Image
-                    src="/placeholder.svg?height=300&width=400&query=fantasy character sheet interface"
-                    alt="Character sheet interface"
-                    width={400}
-                    height={300}
-                    className="aspect-[4/3] w-full object-cover"
-                  />
-                </div>
-                <div className="overflow-hidden rounded-lg border border-zinc-800">
-                  <Image
-                    src="/placeholder.svg?height=300&width=400&query=fantasy dungeon combat scene"
-                    alt="Combat interface"
-                    width={400}
-                    height={300}
-                    className="aspect-[4/3] w-full object-cover"
-                  />
-                </div>
-              </div>
+
             </div>
 
             <div className="space-y-8">

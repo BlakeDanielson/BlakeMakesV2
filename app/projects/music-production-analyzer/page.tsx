@@ -151,26 +151,7 @@ export default function MusicProductionAnalyzerPage() {
                 </div>
               </div>
 
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div className="overflow-hidden rounded-lg border border-zinc-800">
-                  <Image
-                    src="/audio-spectrum-analysis.png"
-                    alt="Audio analysis interface"
-                    width={400}
-                    height={300}
-                    className="aspect-[4/3] w-full object-cover"
-                  />
-                </div>
-                <div className="overflow-hidden rounded-lg border border-zinc-800">
-                  <Image
-                    src="/audio-workspace.png"
-                    alt="Searchable database interface"
-                    width={400}
-                    height={300}
-                    className="aspect-[4/3] w-full object-cover"
-                  />
-                </div>
-              </div>
+
             </div>
 
             <div className="space-y-8">

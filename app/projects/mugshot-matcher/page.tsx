@@ -33,7 +33,7 @@ export default function MugshotMatcherPage() {
 
           <div className="mt-8 overflow-hidden rounded-xl border border-zinc-800 max-w-3xl mx-auto">
             <Image
-              src="/mugshot-matching-game.png"
+              src="/mugshotmatcher.png"
               alt="Mug Matcher Game Interface"
               width={1200}
               height={600}
@@ -159,7 +159,7 @@ export default function MugshotMatcherPage() {
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="overflow-hidden rounded-lg border border-zinc-800">
                   <Image
-                    src="/mugshot-game-interface.png"
+                    src="/mugshotmatcher.png"
                     alt="Game Interface with Mugshots"
                     width={400}
                     height={300}
@@ -168,7 +168,7 @@ export default function MugshotMatcherPage() {
                 </div>
                 <div className="overflow-hidden rounded-lg border border-zinc-800">
                   <Image
-                    src="/crime-matching-system.png"
+                    src="/historical-mugshot-database.png"
                     alt="Crime Matching System"
                     width={400}
                     height={300}

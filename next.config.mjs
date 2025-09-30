@@ -8,6 +8,10 @@ const nextConfig = {
   },
   compress: true,
   poweredByHeader: false,
+  // Ensure Fast Refresh is enabled (it's on by default, but explicitly setting it)
+  reactStrictMode: true,
+  // Optimize for faster rebuilds
+  swcMinify: true,
 }
 
 export default nextConfig

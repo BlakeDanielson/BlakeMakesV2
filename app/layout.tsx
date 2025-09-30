@@ -1,5 +1,5 @@
 import type React from "react"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
 import Script from "next/script"
 import "./globals.css"
@@ -11,9 +11,21 @@ import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({ subsets: ["latin"] })
 
+// Viewport configuration (separate from metadata as per Next.js 14+ requirements)
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#000000' }
+  ],
+}
+
 // Update metadata to include music
 export const metadata: Metadata = {
-  title: "Blake Danielson | Founder’s Right‑Hand • AI Product • Startup Operator",
+  title: "Blake Danielson | Founder's Right‑Hand • AI Product • Startup Operator",
   description:
     "Portfolio of Blake Danielson, an AI product developer and music producer building thoughtful AI for human experiences and creating original music compositions.",
   keywords: [
@@ -41,7 +53,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://blakemakesthings.com', // Replace with your actual domain
     siteName: 'Blake Danielson Portfolio',
-    title: 'Blake Danielson | Founder’s Right‑Hand • AI Product • Startup Operator',
+    title: 'Blake Danielson | Founder\'s Right‑Hand • AI Product • Startup Operator',
     description: 'Portfolio of Blake Danielson, an AI product developer financial analyst, and music producer ',
     images: [
       {
@@ -56,7 +68,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@BLVKEmusic', // Replace with your actual Twitter handle or remove if no Twitter
     creator: '@BLVKEmusic', // Replace with your actual Twitter handle or remove if no Twitter
-    title: 'Blake Danielson | Founder’s Right‑Hand • AI Product • Startup Operator',
+    title: 'Blake Danielson | Founder\'s Right‑Hand • AI Product • Startup Operator',
     description: 'Portfolio of Blake Danielson, an AI product developer financial analyst, and music producer ',
     images: ['/og-image.jpg'], // Same image as Open Graph
   },
@@ -71,16 +83,6 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
-    userScalable: true,
-  },
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#000000' }
-  ],
   appleWebApp: {
     capable: true,
     statusBarStyle: 'black-translucent',

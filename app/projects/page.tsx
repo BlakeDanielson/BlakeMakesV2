@@ -17,48 +17,8 @@ import { Project, CategoryTheme, StatusInfo } from "./types"
 // Project categories
 const categories = ["All", "AI", "Music", "Web App", "NLP", "Data Viz", "RPG"]
 
-// Tech stack icons mapping (deduplicated with aliases)
-const techIconByCanonical: Record<string, string> = {
-  "React": "⚛️",
-  "Next.js": "▲",
-  "TypeScript": "📘",
-  "JavaScript": "🟨",
-  "Python": "🐍",
-  "FastAPI": "⚡",
-  "PostgreSQL": "🐘",
-  "Prisma": "🔺",
-  "OpenAI": "🤖",
-  "GPT-4o": "🤖",
-  "Google Gemini": "💎",
-  "Clerk": "🔐",
-  "Redis": "🔴",
-  "WebSocket": "🔌",
-  "XState": "🔄",
-  "AI": "🤖",
-  "NLP": "💬",
-  "Node.js": "🟢",
-  "FFmpeg": "🎬",
-  "API": "🔌",
-  "Database": "🗄️",
-  "Machine Learning": "🧠",
-  "Game": "🎮",
-  "E-commerce": "🛒",
-  "Audio": "🎵",
-  "Video": "🎬",
-  "Spotify": "🎵",
-  "Web Scraping": "🕷️",
-  "Image Processing": "🖼️",
-  "UX Design": "🎨",
-  "D&D": "🎲",
-  "RPG": "⚔️",
-  "Interactive Fiction": "📖",
-  "Real-time": "⚡",
-  "CSS": "🎨",
-  "Chrome APIs": "🧩",
-  "Manifest v3": "📄"
-}
-
-const techIconAliases: Record<string, string> = {
+// Tech stack aliases for normalization
+const techAliases: Record<string, string> = {
   "React 19": "React",
   "Next": "Next.js",
   "Next.js 15": "Next.js",
@@ -66,9 +26,8 @@ const techIconAliases: Record<string, string> = {
   "Web Game": "Game"
 }
 
-function getTechIcon(tech: string): string {
-  const canonical = techIconAliases[tech] || tech
-  return techIconByCanonical[canonical] || "⚡"
+function normalizeTech(tech: string): string {
+  return techAliases[tech] || tech
 }
 
 // Category colors and themes
@@ -365,15 +324,14 @@ function ProjectCard({ project }: { project: Project }) {
                <p className="text-xs text-zinc-500 mb-2">Tech Stack</p>
                <div className="flex flex-wrap gap-2">
                   {project.techStack.map((tech: string) => (
-                   <span 
-                     key={tech} 
-                     className="inline-flex items-center gap-1.5 rounded-full bg-zinc-800 px-3 py-1.5 text-xs text-zinc-300"
-                     title={tech}
-                   >
-                      <span className="text-sm">{getTechIcon(tech)}</span>
-                     <span className="hidden sm:inline">{tech}</span>
-                   </span>
-                 ))}
+                  <span 
+                    key={tech} 
+                    className="rounded-full bg-zinc-800 px-3 py-1.5 text-xs text-zinc-300"
+                    title={tech}
+                  >
+                    {tech}
+                  </span>
+                ))}
                </div>
              </div>
 
@@ -381,7 +339,7 @@ function ProjectCard({ project }: { project: Project }) {
             <div className="mt-2 flex flex-wrap gap-3">
               <Button 
                 size="sm"
-                className="rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:opacity-90"
+                className="rounded-full bg-purple-600 text-white hover:bg-purple-700"
               >
                 More Info
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -453,10 +411,9 @@ function FeaturedProject({ project }: { project: Project }) {
                   {project.techStack.map((tech: string) => (
                     <span 
                       key={tech} 
-                      className="inline-flex items-center gap-1.5 rounded-full bg-zinc-800 px-3 py-1.5 text-xs text-zinc-300"
+                      className="rounded-full bg-zinc-800 px-3 py-1.5 text-xs text-zinc-300"
                     >
-                      <span className="text-sm">{getTechIcon(tech)}</span>
-                      <span>{tech}</span>
+                      {tech}
                     </span>
                   ))}
                 </div>
@@ -481,7 +438,7 @@ function FeaturedProject({ project }: { project: Project }) {
               {/* Action Buttons */}
               <div className="flex flex-wrap gap-3 pt-2">
                 <Button 
-                  className={`bg-gradient-to-r ${categoryTheme.color} hover:opacity-90 text-white`}
+                  className="bg-purple-600 hover:bg-purple-700 text-white"
                   onClick={(e) => {
                     e.preventDefault()
                     e.stopPropagation()
@@ -571,7 +528,7 @@ export default function ProjectsPage() {
 
       {/* Main Content */}
       <div className="container mx-auto px-4 py-12">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-7xl">
           {/* Featured Projects */}
           {featuredProjects.length > 0 && (
             <div className="space-y-8 mb-12 lg:mb-16">
